@@ -1,0 +1,53 @@
+---
+Name: Name of the docset
+Patterns:
+  Overview:
+    - Name: Overview of the docset
+      Type: overview
+      Author: mabrigg
+    - Name: Compare the docset to the thing
+      Type: comparison
+      Author: mabrigg
+  Quickstart:
+    - Name: Get started with the docset sandbox
+      Type: quickstart
+      Author: mabrigg
+    - Name: Update the docset in the sandbox
+      Type: quickstart
+      Author: mabrigg
+  Tutorial: 
+    - Name: Make a docset in the sandbox
+      Type: tutorial
+      Author: mabrigg
+    - Name: Add a doc to the docset
+      Type: tutorial
+      Author: mabrigg
+  How-to:
+    - Name: Define a docset
+      Type: How-to
+      Author: mabrigg
+    - Name: Create a document
+      Type: How-to
+      Author: mabrigg
+    - Name: Change a document
+      Type: How-to
+      Author: mabrigg
+    - Name: Publish a document
+      Type: How-to
+      Author: mabrigg
+    - Name: Delete a document
+      Type: How-to
+      Author: mabrigg
+    - Name: Hold a doc review
+      Type: How-to
+      Author: mabrigg
+  Concepts:
+    - Name: Parts of the docset
+      Type: overview
+      Author: mabrigg
+    - Name: The Publishing System
+      Type: overview
+      Author: mabrigg
+    - Name: Document Style
+      Type: overview
+      Author: mabrigg
