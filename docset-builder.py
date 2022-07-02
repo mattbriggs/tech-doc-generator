@@ -49,14 +49,14 @@ def main():
 
         top_pat_pair = {}
         top_pat_pair["name"] = pat
-        top_pat_pair["href"] = "{}/toc.yml".format(pat).lower()
+        top_pat_pair["href"] = "{}/toc.yml".format(pat)
         top_toc.append(top_pat_pair)
 
         guide_toc = []
         for i in design["Patterns"][pat]:
             section = {}
             section["name"] = i["Name"]
-            section["href"] = "{}.md".format(i["Filename"])
+            section["href"] = "{}".format(i["Filename"])
             guide_toc.append(section)
             try:
                 os.mkdir(pathstem + "{}\\".format(pat))
