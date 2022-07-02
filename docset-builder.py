@@ -49,7 +49,7 @@ def main():
 
         top_pat_pair = {}
         top_pat_pair["name"] = pat
-        top_pat_pair["href"] = "/{}/toc.yml".format(pat).lower()
+        top_pat_pair["href"] = "{}/toc.yml".format(pat).lower()
         top_toc.append(top_pat_pair)
 
         guide_toc = []
