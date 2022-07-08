@@ -35,6 +35,10 @@ You will need the following parts installed:
 10. Run the script:` python docset-builder.py`.
 11. Open your target directory and review the output in Visual Studio Code. You can create a branch, commit the changed, and create a PR to generate an OPS preview of the content.
 
+## Notes on the code
+
+The document level templates are based on the proof of concept document templates. I use the [Mustache](http://mustache.github.com/) template system with the [Pystache](https://github.com/sarnold/pystache) implementation.
+
 ## If you have issues, file a GitHub issue
 
 [Create a GitHub Issue](https://github.com/mattbriggs/tech-doc-generator/issues/new/choose)
