@@ -1,0 +1,3 @@
+---
+target: "<path-to-target-repo>"
+docdesign: "<path-to-doc-design>\\doc-design.yml"
