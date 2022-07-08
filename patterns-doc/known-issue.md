@@ -1,10 +1,10 @@
 ---
 title: Known issues - feature-name #Required; Change feature-name to the name of the feature or service that the known issues relate to.
 description: #Required; article description that is displayed in search results. Include the complete message that the customer sees.
-author: {} #Required; your GitHub user alias, with correct capitalization.
-ms.author: {} #Required; microsoft alias of author; optional team alias.
+author: {{Author}} #Required; your GitHub user alias, with correct capitalization.
+ms.author: {{Author}} #Required; microsoft alias of author; optional team alias.
 ms.topic: troubleshooting #Required
-ms.date: {} #Required; mm/dd/yyyy format.
+ms.date: {{Date}} #Required; mm/dd/yyyy format.
 ---
 
 <!---Recommended: Remove all the comments in this template before you

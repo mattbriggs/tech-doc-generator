@@ -1,10 +1,10 @@
 ---
-title: {} #Required;  this page title is displayed in search results. For SEO purposes, include the primary keywords of the error message/problem description. 
+title: {{Title}} #Required;  this page title is displayed in search results. For SEO purposes, include the primary keywords of the error message/problem description. 
 description: #Required;  this article description is displayed in search results.
-author: {} #Required;  your GitHub user alias — correct capitalization is needed.
-ms.author: {} #Required; Microsoft alias of author.
+author: {{Author}} #Required;  your GitHub user alias — correct capitalization is needed.
+ms.author: {{Author}} #Required; Microsoft alias of author.
 ms.topic: troubleshooting #Required
-ms.date: {} #Required; enter the date in the mm/dd/yyyy format.
+ms.date: {{Date}} #Required; enter the date in the mm/dd/yyyy format.
 ---
 
 <!---Recommended: Remove all the comments in this template before you sign-off or merge to the main branch.--->

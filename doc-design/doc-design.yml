@@ -1,68 +1,68 @@
 ---
-Name: Name of the docset
+Title: Name of the docset
 Patterns:
   Overview:
-    - Name: Overview of the docset
+    - Title: Overview of the docset
       Filename: overview-of-the-docset.md
       Type: overview
       Author: mabrigg
-    - Name: Compare the docset to the thing
+    - Title: Compare the docset to the thing
       Filename: compare-the-docset-to-the-thing.md
       Type: comparision
       Author: mabrigg
   Quickstart:
-    - Name: Get started with the docset sandbox
+    - Title: Get started with the docset sandbox
       Filename: get-started-with-the-docset-sandbox.md
       Type: quickstart
       Author: mabrigg
-    - Name: Update the docset in the sandbox
+    - Title: Update the docset in the sandbox
       Filename: update-the-docset-in-the-sandbox.md
       Type: quickstart
       Author: mabrigg
   Tutorial: 
-    - Name: Make a docset in the sandbox
+    - Title: Make a docset in the sandbox
       Filename: make-a-docset-in-the-sandbox.md
       Type: tutorial
       Author: mabrigg
-    - Name: Add a doc to the docset
+    - Title: Add a doc to the docset
       Filename: add-a-doc-to-the-docset.md
       Type: tutorial
       Author: mabrigg
   How-to:
-    - Name: Define a docset
+    - Title: Define a docset
       Filename: define-a-docset.md
       Type: how-to
       Author: mabrigg
-    - Name: Create a document
+    - Title: Create a document
       Filename: create-a-document.md
       Type: how-to
       Author: mabrigg
-    - Name: Change a document
+    - Title: Change a document
       Filename: change-a-document.md
       Type: how-to
       Author: mabrigg
-    - Name: Publish a document
+    - Title: Publish a document
       Filename: publish-a-document.md
       Type: how-to
       Author: mabrigg
-    - Name: Delete a document
+    - Title: Delete a document
       Filename: delete-a-document.md
       Type: how-to
       Author: mabrigg
-    - Name: Hold a doc review
+    - Title: Hold a doc review
       Filename: hold-a-doc-review.md
       Type: how-to
       Author: mabrigg
   Concepts:
-    - Name: Parts of the docset
+    - Title: Parts of the docset
       Filename: parts-of-the-docset.md
       Type: overview
       Author: mabrigg
-    - Name: The Publishing System
+    - Title: The Publishing System
       Filename: the-publishing-system.md
       Type: overview
       Author: mabrigg
-    - Name: Document Style
+    - Title: Document Style
       Filename: document-style.md
       Type: overview
       Author: mabrigg

@@ -1,11 +1,11 @@
 ---
-title: {} #Required; page title displayed in search results. Include the word "tutorial". Include the brand.
+title: {{Title}} #Required; page title displayed in search results. Include the word "tutorial". Include the brand.
 description: #Required; article description that is displayed in search results. Include the word "tutorial".
-author: {} #Required; your GitHub user alias, with correct capitalization.
-ms.author: {} #Required; microsoft alias of author; optional team alias.
+author: {{Author}} #Required; your GitHub user alias, with correct capitalization.
+ms.author: {{Author}} #Required; microsoft alias of author; optional team alias.
 ms.service: #Required; service per approved list. service slug assigned to your service by ACOM.
 ms.topic: tutorial #Required
-ms.date: {} #Required; mm/dd/yyyy format.
+ms.date: {{Date}} #Required; mm/dd/yyyy format.
 ---
 
 <!--
@@ -28,7 +28,7 @@ will complete.
 -->
 
 
-# Tutorial: {}
+# Tutorial: {{Title}}
 TODO: Add your heading
 
 <!-- 2. Introductory paragraph ----------------------------------------------------------

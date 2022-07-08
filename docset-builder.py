@@ -1,5 +1,6 @@
 import os
 import yaml
+import pystache as ST
 import common_utilities as CU
 
 
@@ -12,13 +13,12 @@ def create_toc_yaml(path, toc_list):
 
 def create_doc(documents, pathname, meta_dict):
     '''with the filename stem and metadata create the file'''
-    a = meta_dict["Name"]
-    b = meta_dict["Author"]
-    c = meta_dict["Author"]
-    d = "7/1/2022"
-    e = meta_dict["Name"]
-    file_text = documents[meta_dict["Type"]].format(a, b, c, d, e)
-    CU.write_text(file_text, pathname)
+    meta_dict["Date"] = "7/1/2022"
+    try:
+        file_text = ST.render(documents[meta_dict["Type"]], meta_dict)
+        CU.write_text(file_text, pathname)
+    except:
+        print("Problem creating: {}".format(pathname))
 
 def main():
     '''Main generator logic.'''
@@ -40,7 +40,7 @@ def main():
 
     top_toc = []
     top_pair = {}
-    top_pair["name"] = design["Name"]
+    top_pair["name"] = design["Title"]
     top_pair["href"] = "index.yml"
     top_toc.append(top_pair)
 
@@ -55,7 +55,7 @@ def main():
         guide_toc = []
         for i in design["Patterns"][pat]:
             section = {}
-            section["name"] = i["Name"]
+            section["name"] = i["Title"]
             section["href"] = "{}".format(i["Filename"])
             guide_toc.append(section)
             try:

@@ -1,11 +1,11 @@
 ---
-title: {} #Required; page title is displayed in search results. Include the brand.
+title: {{Title}} #Required; page title is displayed in search results. Include the brand.
 description: #Required; article description that is displayed in search results. 
-author: {} #Required; your GitHub user alias, with correct capitalization.
-ms.author: {} #Required; microsoft alias of author; optional team alias.
+author: {{Author}} #Required; your GitHub user alias, with correct capitalization.
+ms.author: {{Author}} #Required; microsoft alias of author; optional team alias.
 ms.service: #Required; service per approved list. slug assigned by ACOM.
 ms.topic: conceptual #Required; leave this attribute/value as-is.
-ms.date: {} #Required; mm/dd/yyyy format.
+ms.date: {{Date}} #Required; mm/dd/yyyy format.
 ms.custom: template-concept #Required; leave this attribute/value as-is.
 ---
 
@@ -26,7 +26,7 @@ Required. Set expectations for what the content covers, so customers know the
 content meets their needs. Should NOT begin with a verb.
 -->
 
-# {}
+# {{Title}}
 
 <!-- 2. Introductory paragraph 
 Required. Lead with a light intro that describes what the article covers. Answer the 

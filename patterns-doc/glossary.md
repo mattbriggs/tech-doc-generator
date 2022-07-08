@@ -1,11 +1,11 @@
 ---
-title: {} #Required; page title is displayed in search results. Include the brand.
+title: {{Title}} #Required; page title is displayed in search results. Include the brand.
 description: #Required; article description that is displayed in search results. 
-author: {} #Required; your GitHub user alias, with correct capitalization.
-ms.author: {} #Required; microsoft alias of author; optional team alias.
+author: {{Author}} #Required; your GitHub user alias, with correct capitalization.
+ms.author: {{Author}} #Required; microsoft alias of author; optional team alias.
 ms.service: #Required; service per approved list. slug assigned by ACOM.
 ms.topic: reference #Required; leave this attribute/value as-is.
-ms.date: {} #Required; mm/dd/yyyy format.
+ms.date: {{Date}} #Required; mm/dd/yyyy format.
 ---
 
 <!--
@@ -22,7 +22,7 @@ See the [Glossary pattern](article-glossary.md) in the pattern library.
 Required:  Use `Glossary: <product>` as the H1 and article title.
 -->
 
-# Glossary: {}
+# Glossary:{{Title}}
 TODO: Add your heading
 
 <!-- 2. Introductory paragraph ----------------------------------------------------------
