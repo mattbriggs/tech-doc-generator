@@ -37,7 +37,7 @@ You will need the following parts installed:
 
 ## Notes on the code
 
-The document level templates are based on the proof of concept document templates. I use the [Mustache](http://mustache.github.com/) template system with the [Pystache](https://github.com/sarnold/pystache) implementation.
+The document level templates are based on the proof of concept document templates. I use the [Mustache](https://mustache.github.io/) template system with the [Pystache](https://github.com/sarnold/pystache) implementation.
 
 ## If you have issues, file a GitHub issue
 
