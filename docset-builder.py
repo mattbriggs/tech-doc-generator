@@ -55,7 +55,7 @@ def main():
         guide_toc = []
         for i in design["Patterns"][pat]:
             section = {}
-            section["name"] = i["Title"]
+            section["name"] = i["Title`"]
             section["href"] = "{}".format(i["Filename"])
             guide_toc.append(section)
             try:
