@@ -1,0 +1,14 @@
+---
+ID: "34F0057F-96A1-4AD5-979A-48B96DFA97B6"
+Name: "Component Name"
+Modality: "None"
+Boilerplate: |
+  # Heading
+  This is the boilerplate.
+Generator: |
+  ## {{Tite}}
+  {{Gen: sentence-type}}
+Instructions: 
+  Type the instructions in markdown down authoring the element.
+Validation: |
+  Place holder for validation logic.

@@ -1,3 +1,17 @@
+'''
+Docset Builder
+The docset builder script assembled a document set by using the doc-design.yml
+and the patterns definitions to create the documentation at a target location.
+
+The script expects to find a config.yml file in the same folder as the builder
+script.
+
+Version 1 uses the patterns-v1-* folders.
+
+7.15.2022
+Matt Briggs
+'''
+
 import os
 import yaml
 import pystache as ST
@@ -30,7 +44,7 @@ def main():
         design = yaml.load(stream, Loader=yaml.CLoader)
 
     documents = {}
-    templates = CU.get_files("./patterns-doc", "md")
+    templates = CU.get_files("./patterns-v1-doc", "md")
     for i in templates:
         temp = i.split("\\")[-1].split(".")[0]
         temp_text = CU.get_text_from_file(i)

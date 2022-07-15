@@ -1,0 +1,19 @@
+---
+ID: "E590E953-1B1C-41D3-A58E-9467C582BB56"
+Name: "Component Name"
+Modality: "None"
+Boilerplate: |
+  > [!IMPORTANT]
+  > Essential information required for user success.
+Generator: |
+  ## {{Tite}}
+  {{Gen: sentence-type}}
+Instructions: 
+  Essential information required for user success.
+  Alerts are a Markdown extension to create block quotes that render on Docs with colors and icons that indicate the significance of the content.
+
+  Avoid notes, tips, and important boxes. Readers tend to skip over them. It's better to put that info directly into the article text.
+
+  If you need to use alerts, limit them to one or two per article. Multiple notes should never be next to each other in an article.
+Validation: |
+  Place holder for validation logic.
