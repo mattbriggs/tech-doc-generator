@@ -1,0 +1,47 @@
+---
+ID: "34F0057F-96A1-4AD5-979A-48B96DFA97B6"
+Name: "break-fix"
+Modality: "None"
+Version: 1.0.0
+Boilerplate: |
+  ### Description
+
+      Describe how the user of the software may encounter the issue. If there 
+      is an error message, include the text of the error message so that a 
+      search for an error string will return the break-fix component.
+
+      Describe any conditions that may result of the issue.
+
+  ### How to fix
+
+      Summarize how the problem can be fixed.
+
+      1. Take step.
+      2. Take step.
+      3. Take step.
+
+      If there is a validation the issue has been resolved, include a 
+      description additional instructoins on validating the issue.
+Generator: |
+  ### Description
+
+      Describe how the user of the software may encounter the issue. If there 
+      is an error message, include the text of the error message so that a 
+      search for an error string will return the break-fix component.
+
+      Describe any conditions that may result of the issue.
+
+  ### How to fix
+
+      Summarize how the problem can be fixed.
+
+      1. Take step.
+      2. Take step.
+      3. Take step.
+
+      If there is a validation the issue has been resolved, include a 
+      description additional instructoins on validating the issue.
+Instructions: 
+  Type the instructions in markdown down authoring the element.
+Validation: |
+  Place holder for validation logic.

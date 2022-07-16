@@ -1,0 +1,15 @@
+---
+ID: "34F0057F-96A1-4AD5-979A-48B96DFA97B6"
+Name: "image-icon.1.0.0.yml"
+Modality: "None"
+Version: 1.0.0
+Boilerplate: |
+  This is currenlty not a feature. It may be helpful to have a CDN that allows for reference SVG icons.
+Generator: |
+  This is currenlty not a feature. It may be helpful to have a CDN that allows for reference SVG icons.
+Instructions: 
+  Type the instructions in markdown down authoring the element.
+  https://fontawesome.com/docs/web/add-icons/how-to
+  https://review.docs.microsoft.com/en-us/office-authoring-guide/icons-for-office-landing-pages?branch=main
+Validation: |
+  Place holder for validation logic.

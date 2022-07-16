@@ -1,0 +1,29 @@
+---
+ID: "34F0057F-96A1-4AD5-979A-48B96DFA97B6"
+Name: "procedure"
+Modality: "None"
+Version: 1.0.0
+Boilerplate: |
+
+  Describe the context and intent of the procedural section.
+
+  1. Step 1
+  2. Step 2
+  3. Step 3
+
+Generator: |
+
+  Describe the context and intent of the procedural section.
+
+  1. Step 1
+  2. Step 2
+  3. Step 3
+
+Instructions: 
+  Each major step in completing a task should be represented as an H2 in the article.
+  These steps should be numbered.
+  The procedure should be introduced with a brief sentence or two.
+  Multiple procedures should be organized in H2 level sections.
+  Procedure steps use ordered lists.
+Validation: |
+  Place holder for validation logic.

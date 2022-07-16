@@ -1,0 +1,23 @@
+---
+ID: "AEB82747-0F8A-41D9-ACA9-3DFEDB0E99A3"
+Name: "Template name"
+Modality: "None"
+Version: 1.0.0
+Purpose: |
+  Textual description of the purpose of the document pattern.
+Components:
+  - Component: file-name.1.0.0.yml
+    Boiler: None
+    Repeat: No
+  - Component: file-name.1.0.0.yml
+    Boiler: None
+    Repeat: No
+  - Component: file-name.1.0.0.yml
+    Boiler: None
+    Repeat: Yes
+Instructions-Open: |
+  Type the opening instructions for the document pattern.
+Instructions-Close: |
+  Type the closing instructions for the document pattern.
+Validation: |
+  Place holder for validation logic.

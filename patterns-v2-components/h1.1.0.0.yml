@@ -1,0 +1,13 @@
+---
+ID: "34F0057F-96A1-4AD5-979A-48B96DFA97B6"
+Name: "h1"
+Modality: "None"
+Version: 1.0.0
+Boilerplate: |
+  # {{Title}}
+Generator: |
+  ## {{Tite}}
+Instructions: 
+  The primary heading at the top of the article.
+Validation: |
+  Place holder for validation logic.

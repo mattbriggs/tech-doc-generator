@@ -1,0 +1,14 @@
+---
+ID: "34F0057F-96A1-4AD5-979A-48B96DFA97B6"
+Name: "image-screenshots"
+Modality: "None"
+Version: 1.0.0
+Boilerplate: |
+  ![Alt text that describes the content of the image.](/media/folder-with-same-name-as-article-file/service-technology-image-description.png)
+Generator: |
+  ![Alt text that describes the content of the image.](/media/folder-with-same-name-as-article-file/service-technology-image-description.png)
+Instructions: 
+  Type the instructions in markdown down authoring the element.
+  https://review.docs.microsoft.com/en-us/help/contribute/contribute-how-to-create-screenshot?branch=main
+Validation: |
+  Place holder for validation logic.

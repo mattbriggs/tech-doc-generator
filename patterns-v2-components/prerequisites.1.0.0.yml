@@ -1,0 +1,27 @@
+---
+ID: "34F0057F-96A1-4AD5-979A-48B96DFA97B6"
+Name: "prerequisites"
+Modality: "None"
+Version: 1.0.0
+Boilerplate: |
+  ## Prerequisites
+  - Item
+  - Item
+  - Item
+Generator: |
+  ## Prerequisites
+  - Item
+  - Item
+  - Item
+Instructions: | 
+  If there are prerequisites for the task covered by the how-to guide, make 
+  **Prerequisites** your first H2 in the guide. 
+
+  The prerequisites H2 is never numbered.
+
+  Use clear and unambiguous language and use a unordered list format.
+
+  If there are specific versions of software a user needs, call out those 
+  versions (for example: Visual Studio 2019 or later).
+Validation: |
+  Place holder for validation logic.

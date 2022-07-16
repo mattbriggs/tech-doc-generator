@@ -1,0 +1,15 @@
+---
+ID: "34F0057F-96A1-4AD5-979A-48B96DFA97B6"
+Name: "next-steps"
+Modality: "None"
+Version: 1.0.0
+Boilerplate: |
+  > [!div class="nextstepaction"]
+  > [button text](link to topic)
+Generator: |
+  > [!div class="nextstepaction"]
+  > [button text](link to topic)
+Instructions: 
+  Add a next step action button to Docs pages.
+Validation: |
+  Place holder for validation logic.

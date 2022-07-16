@@ -1,0 +1,14 @@
+---
+ID: "34F0057F-96A1-4AD5-979A-48B96DFA97B6"
+Name: "tags"
+Modality: "None"
+Version: 1.0.0
+Boilerplate: |
+  TBD
+Generator: |
+  TBD
+Instructions: 
+  Type the instructions in markdown down authoring the element.
+  https://review.docs.microsoft.com/en-us/help/contribute/metadata-taxonomies?toc=%2Fhelp%2Fplatform%2Ftoc.json&bc=%2Fhelp%2Fplatform%2Fbreadcrumb%2Ftoc.json&branch=main#product
+Validation: |
+  Place holder for validation logic.

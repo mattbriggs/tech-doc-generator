@@ -1,0 +1,20 @@
+---
+ID: "34F0057F-96A1-4AD5-979A-48B96DFA97B6"
+Name: "table"
+Modality: "None"
+Version: 1.0.0
+Boilerplate: |
+  |This is   |a simple   |table header|
+  |----------|-----------|------------|
+  |table     |data       |here        |
+  |it doesn't|actually   |have to line up nicely!|
+Generator: |
+  |This is   |a simple   |table header|
+  |----------|-----------|------------|
+  |table     |data       |here        |
+  |it doesn't|actually   |have to line up nicely!|
+Instructions: |
+  The simplest way to create a table in Markdown is to use pipes and lines.
+  https://review.docs.microsoft.com/en-us/help/contribute/markdown-reference?toc=%2Fhelp%2Fplatform%2Ftoc.json&bc=%2Fhelp%2Fplatform%2Fbreadcrumb%2Ftoc.json&branch=main#tables
+Validation: |
+  Place holder for validation logic.

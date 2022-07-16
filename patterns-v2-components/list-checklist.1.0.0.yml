@@ -1,0 +1,19 @@
+---
+ID: "34F0057F-96A1-4AD5-979A-48B96DFA97B6"
+Name: "list-checklist"
+Modality: "None"
+Version: 1.0.0
+Boilerplate: |
+  > [!div class="checklist"]
+  > * List item 1
+  > * List item 2
+  > * List item 3
+  Generator: |
+  > [!div class="checklist"]
+  > * List item 1
+  > * List item 2
+  > * List item 3
+Instructions: 
+  Type the instructions in markdown down authoring the element.
+Validation: |
+  Place holder for validation logic.

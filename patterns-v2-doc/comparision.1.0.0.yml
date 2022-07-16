@@ -1,0 +1,57 @@
+---
+ID: "ECD8D92C-F55C-45F8-A3CF-3BEA009A4BA2"
+Name: "Comparison"
+Modality: "None"
+Version: 1.0.0
+Purpose: |
+  This template provides the basic structure of a standard product comparison article. The comparison pattern is an article pattern that guides a customer to select the best product or service for their needs.
+Components:
+  - Component: metadata.1.0.0.yml
+    Repeat: No
+  - Component: open-template-instruction.1.0.0.yml
+    Repeat: No
+  - Component: h1.1.0.0.yml
+    Boiler: "{{Title}}"
+    Repeat: No
+  - Component: paragraph-intro.1.0.0.yml
+    Boiler: None
+    Repeat: No
+  - Component: paragraph-summary.1.0.0.yml
+    Boiler: "This section helps you select the most likely services for your needs."
+    Repeat: No
+  - Component: list-bulleted.1.0.0.yml
+    Boiler: None
+    Repeat: No
+  - Component: table.1.0.0.yml
+    Boiler: None
+    Repeat: No
+  - Component: paragraph-summary.1.0.0.yml
+    Boiler: "The result of this section is a starting point for consideration. Use the following sections to perform a detailed evaluation of the service to confirm that it meets your needs."
+    Repeat: No
+  - Component: h2.1.0.0.yml
+    Boiler: "Choose a candidate service"
+    Repeat: Begin
+  - Component: paragraph-summary.1.0.0.yml
+    Boiler: "This section helps you select the most likely services for your needs."
+    Repeat: Yes
+  - Component: table.1.0.0.yml
+    Boiler: None
+    Repeat: End
+  - Component: h2.1.0.0.yml
+    Boiler: "{{Criterion-category}}"
+    Repeat: Begin
+  - Component: paragraph-summary.1.0.0.yml
+    Boiler: None
+    Repeat: Yes
+  - Component: table.1.0.0.yml
+    Boiler: None
+    Repeat: End
+  - Component: close-template-instruction.1.0.0.yml
+    Boiler: None
+    Repeat: No
+Instructions-Open: |
+  Type the opening instructions for the document pattern.
+Instructions-Close: |
+  Type the closing instructions for the document pattern.
+Validation: |
+  Place holder for validation logic.
