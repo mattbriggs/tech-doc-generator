@@ -4,12 +4,11 @@ Name: "Component Name"
 Modality: "None"
 Version: 1.0.0
 Boilerplate: |
-  # Heading
-  This is the boilerplate.
+  [Add your paragraph summarizing what becomes before or after.]
 Generator: |
-  ## {{Tite}}
   {{Gen: sentence-type}}
 Instructions: 
-  Type the instructions in markdown down authoring the element.
+  A summary gives a concise overview of the document, section, introduction
+  or reviewing the main points in your own words.
 Validation: |
   Place holder for validation logic.

@@ -8,12 +8,19 @@ ms.topic: {{doctype}} #Required; leave this attribute/value as-is.
 ms.date: {{Date}} #Required; mm/dd/yyyy format.
 ms.custom: template-concept #Required; leave this attribute/value as-is.
 ---
+
 <!--Remove all the comments in this template before you sign-off or merge to 
 the main branch.-->
+
 # {{Title}}
+
 [add your introductory paragraph]
+
 ## Heading 2
+
 # Heading
 This is the boilerplate.
+
 <!-- Remove all the comments in this template before you sign-off or merge 
 to the main branch. -->
+

@@ -29,7 +29,7 @@ Components:
         compares the following services:".
       - In each bulleted item, include a link to the overview article for the 
         service. (TODO: FOR DISCUSSION)
-  - Place this section immediately after the article headline (H1).
+      - Place this section immediately after the article headline (H1).
   - Component: list-bulleted.1.0.0.yml
     Boiler: None
   - Component: table.1.0.0.yml

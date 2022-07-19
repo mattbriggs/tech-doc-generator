@@ -4,12 +4,14 @@ Name: "Component Name"
 Modality: "None"
 Version: 1.0.0
 Boilerplate: |
-  # Heading
-  This is the boilerplate.
+  [Add your paragraph developing a principle.]
 Generator: |
-  ## {{Tite}}
   {{Gen: sentence-type}}
 Instructions: 
-  Type the instructions in markdown down authoring the element.
+  Principles, which are guidelines for performing a job task in varied 
+  situations. It is also a statement of a cause and effect relationship 
+  which provides guidelines for action. For example, naming guidelines 
+  are used in Visual Basic so that the code will be easier to read 
+  and maintain.
 Validation: |
   Place holder for validation logic.

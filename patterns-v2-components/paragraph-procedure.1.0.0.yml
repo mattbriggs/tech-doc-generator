@@ -4,12 +4,15 @@ Name: "Component Name"
 Modality: "None"
 Version: 1.0.0
 Boilerplate: |
-  # Heading
-  This is the boilerplate.
+  [Add your paragraph walking through a procedure.]
 Generator: |
-  ## {{Tite}}
   {{Gen: sentence-type}}
-Instructions: 
-  Type the instructions in markdown down authoring the element.
+Instructions: |
+  Procedures, which are a set of steps that can be performed by one person 
+  and that are always done the same way each time. For example: How to log 
+  on to a computer, how to install Windows 2000. Procedures may be performed 
+  in a linear sequence or may take the form of "If…Then". The key is that 
+  the worker uses relatively little judgment when applying procedures since 
+  the steps are fairly cut and dry. 
 Validation: |
   Place holder for validation logic.

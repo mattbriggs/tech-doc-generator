@@ -25,7 +25,11 @@ def main():
                 try:
                     comp_path = "./patterns-v2-components/" + j["Component"]
                     c = get_yaml(comp_path)
-                    outfile += c["Boilerplate"]
+                    outfile += c["Boilerplate"] + "\n"
+                    try:
+                        outfile += "<-- " + c["Instructions"] + j["Help"] + " -->\n"
+                    except:
+                        pass
                 except:
                     pass
             CU.write_text(outfile, outpath)

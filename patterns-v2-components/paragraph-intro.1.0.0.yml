@@ -4,9 +4,8 @@ Name: "Component Name"
 Modality: "None"
 Version: 1.0.0
 Boilerplate: |
-  [add your introductory paragraph]
+  [Add your introductory paragraph]
 Generator: |
-  ## {{Tite}}
   {{Gen: sentence-type}}
 Instructions: 
   Lead with a light intro that describes what the article covers. Answer the

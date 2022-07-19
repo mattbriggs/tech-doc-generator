@@ -4,12 +4,12 @@ Name: "Component Name"
 Modality: "None"
 Version: 1.0.0
 Boilerplate: |
-  # Heading
-  This is the boilerplate.
+  [Add your concept paragraph]
 Generator: |
-  ## {{Tite}}
   {{Gen: sentence-type}}
 Instructions: 
-  Type the instructions in markdown down authoring the element.
+  Concepts, which are a group of objects (concrete or abstract), symbols, ideas 
+  or events that are designated by a single word or term, share common features, 
+  and vary on not so common features
 Validation: |
   Place holder for validation logic.

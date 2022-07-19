@@ -6,7 +6,7 @@ Version: 1.0.0
 Boilerplate: |
   # {{Title}}
 Generator: |
-  ## {{Tite}}
+  ## {{Title}}
 Instructions: 
   The primary heading at the top of the article.
 Validation: |

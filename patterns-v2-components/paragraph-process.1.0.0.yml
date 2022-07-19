@@ -4,12 +4,15 @@ Name: "Component Name"
 Modality: "None"
 Version: 1.0.0
 Boilerplate: |
-  # Heading
-  This is the boilerplate.
+  [Add your paragraph walking through a process.]
 Generator: |
-  ## {{Tite}}
   {{Gen: sentence-type}}
-Instructions: 
-  Type the instructions in markdown down authoring the element.
+Instructions: |
+  Processes, which are descriptions of how something works or of what happens 
+  when something is done. Processes have phases or stages. Processes are not 
+  tasks done by one person, but may be done by many persons or organizations. 
+  For example: How purchase orders are processed, how a computer works, how 
+  Windows 2000 validates user accounts during the logon process, or how 
+  courses are developed.
 Validation: |
   Place holder for validation logic.

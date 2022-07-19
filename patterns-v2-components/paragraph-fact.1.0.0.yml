@@ -4,12 +4,14 @@ Name: "Component Name"
 Modality: "None"
 Version: 1.0.0
 Boilerplate: |
-  # Heading
-  This is the boilerplate.
+  [Add your fact paragraph]
 Generator: |
-  ## {{Tite}}
   {{Gen: sentence-type}}
-Instructions: 
-  Type the instructions in markdown down authoring the element.
+Instructions: | 
+  Facts, which are unique, specific, one-of-a-kind information (concrete 
+  or abstract). Each one is either unique or like every other one. 
+  Examples: There are three children in the family. Form 1040 EZ. or 
+  model K2 computer. You can make a statement about a fact, and it will 
+  always be true.
 Validation: |
   Place holder for validation logic.
