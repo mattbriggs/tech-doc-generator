@@ -1,33 +1,42 @@
 ---
 Title: |
-  The name of the pattern.
+  MVC content set
 Version: |
-  The semantic version number of the pattern.
+  1.0.0
 Context: |
-  In what situation does this pattern find itself?
-Pattern category: |
-  [Component, Document, Guide, DocSet, Domain], [Docs, Learn, Navigation, Code]
+  In Azure technical documentation to published, in general, to docs.microsoft.com/en-us/azure/, content required similar structures. This structure of top level elements of the table of content followed a specific order and became a requirement for docs to be published.
+Pattern category: | 
+  DocSet, Docs
 Problem: |
-  Use a problem statement for the problem that was encountered.
+  Azure documentation used inconsistent organization from content set to content set resulting in confusion in readers quickly looking for information in Azure content. Content sets didn't share an approach to content presentation or publishing shared types of information.
 Intent: |
-  What is the context and intended purpose of the pattern and solution? 
-  This section contains the statement of the solution approach. It is the 
-  bold section in A Pattern Language.
+  Content published using the MVC content set pattern uses the same content organization and collection of content types so that readers can find the information they are looking for when browsing different services in Azure.
 Diagram: |
-  For content patterns, use a tree-diagram that allows you to create a 
-  hierarchical model of the information in the solution without specifying 
-  the implementation. There is no need to get into the document level details; 
-  however, important elements to the pattern/solution should be called out.
-  Use .dot notation (GraphViz): https://www.graphviz.org/doc/info/lang.html
+  digraph {
+  A -> B 
+  A -> C
+  A -> D
+  A -> E
+  A -> F 
+  
+  A [label="MVC"]
+  B [label = "Overview"]
+  C [label = "Quickstarts"]
+  D [label = "Tutorials"]
+  E [label = "Samples"]
+  F [label = "Concepts"]
+  }
 Consequence: |
-  The result of the solution.
+  Content sets using the pattern follow the same level one structure.
 Rational: |
-  The answer to the reason for this pattern and solution to exist.
+  The pattern provides a prescriptive and rigid structure that can be mechanically validated. The pattern supports a consistent presentation of content at the highest level.
 Related patterns: |
-  The pattern may co-exist (work on conjunction) with other patterns or 
-  the pattern may contain other patterns. This expresses the usage rules 
-  for the pattern in a pattern language.
+  Guide: Overview, Guide: Quickstarts, Guide: Tutorials, Guide: Samples, Guide: Concepts
 Authors: |
-  The name of contributors who identifies the pattern.
+  Kris Crider 
 Revisions: |
   The history of the versions of the pattern document.
+  https://github.com/MicrosoftDocs/docs-help-pr/commits/main/help-content/contribute/contribute-get-started-mvc.md
+Notes: |
+  https://review.docs.microsoft.com/en-us/help/contribute/contribute-get-started-mvc?branch=main
+  This will likely be a legacy pattern. However the pattern is currently defined in the _Contributor Guide_.
