@@ -1,0 +1,23 @@
+---
+Title: Name of the docset
+Type: MVC
+Version: 1.0.0
+Items:
+  - Title: Overview
+    Type: Overview.1.0.0.yml
+    Required: Yes
+  - Title: Quickstart
+    Type: Quickstart.1.0.0.yml
+    Required: Recommended
+  - Title: Tutorial
+    Type: tutorial.1.0.0.yml
+    Required: Yes
+  - Title: Samples
+    Type: Samples.1.0.0.yml
+    Required: Recommended
+  - Title: How-to
+    Type: How-to.1.0.0.yml
+    Required: No
+  - Title: Concepts
+    Type: Concepts.1.0.0.yml
+    Required: No

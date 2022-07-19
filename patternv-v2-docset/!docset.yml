@@ -1,0 +1,13 @@
+---
+Title: Name of the docset
+Type: docset-pattern-type
+Version: 1.0.0
+Items:
+  - Title: Overview
+  - Type: Overview.1.0.0.yml
+  - Title: Quickstart
+  - Type: Quickstart.1.0.0.yml
+  - Title: How-to
+  - Type: How-to.1.0.0.yml
+  - Title: Concepts
+  - Type: Concepts.1.0.0.yml

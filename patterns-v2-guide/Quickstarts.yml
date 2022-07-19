@@ -1,0 +1,20 @@
+---
+Title: Quickstarts
+Type: Quickstarts
+Version: 1.0.0
+Items:
+  - Title: Name of overview.
+    Filename: file-name.md
+    Type: quickstart.1.0.0.yml
+    Author: msft-alias
+    Required: Yes
+  - Title: Name of overview.
+    Filename: file-name.md
+    Type: quickstart.1.0.0.yml
+    Author: msft-alias
+    Required: No
+  - Title: Name of overview.
+    Filename: file-name.md
+    Type: quickstart.1.0.0.yml
+    Author: msft-alias
+    Required: No

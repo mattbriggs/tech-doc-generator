@@ -1,0 +1,20 @@
+---
+Title: Concepts
+Type: Concepts
+Version: 1.0.0
+Items:
+  - Title: Name of overview.
+    Filename: overview.1.0.0.md
+    Type: overview
+    Author: msft-alias
+    Required: Yes
+  - Title: Name of overview.
+    Filename: overview.1.0.0.md
+    Type: overview
+    Author: msft-alias
+    Required: Yes
+  - Title: Name of overview.
+    Filename: overview.1.0.0.md
+    Type: overview
+    Author: msft-alias
+    Required: No

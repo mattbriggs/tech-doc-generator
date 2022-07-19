@@ -14,12 +14,11 @@ the main branch.-->
 
 # {{Title}}
 
-[add your introductory paragraph]
+[Add your introductory paragraph]
 
 ## Heading 2
 
-# Heading
-This is the boilerplate.
+[Add your paragraph summarizing what becomes before or after.]
 
 <!-- Remove all the comments in this template before you sign-off or merge 
 to the main branch. -->

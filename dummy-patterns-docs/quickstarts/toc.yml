@@ -1,7 +1,0 @@
-items:
-- name: Guide name
-  href: overview.md
-- name: Topic type
-  href: create-extension.md
-- name: Topic type
-  href: troubleshoot-extensions.md

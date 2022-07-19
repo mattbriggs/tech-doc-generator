@@ -14,12 +14,11 @@ the main branch.-->
 
 # {{Title}}
 
-[add your introductory paragraph]
+[Add your introductory paragraph]
 
-# Heading
-This is the boilerplate.
+[Add your paragraph summarizing what becomes before or after.]
 
-<-- Type the instructions in markdown down authoring the element.Start this article with an introductory paragraph. The goal is to help 
+<-- A summary gives a concise overview of the document, section, introduction or reviewing the main points in your own words.Start this article with an introductory paragraph. The goal is to help 
 customers quickly determine whether the article is relevant.
 
 Here are the details:
@@ -41,8 +40,7 @@ Here are the details:
 |table     |data       |here        |
 |it doesn't|actually   |have to line up nicely!|
 
-# Heading
-This is the boilerplate.
+[Add your paragraph summarizing what becomes before or after.]
 
 ## Heading 2
 
@@ -56,8 +54,7 @@ End the section with the text "The result of this section is a starting
 point for consideration. Use the following sections to perform a 
 detailed evaluation of the service to confirm that it meets your needs."
  -->
-# Heading
-This is the boilerplate.
+[Add your paragraph summarizing what becomes before or after.]
 
 |This is   |a simple   |table header|
 |----------|-----------|------------|
@@ -66,8 +63,7 @@ This is the boilerplate.
 
 ## Heading 2
 
-# Heading
-This is the boilerplate.
+[Add your paragraph summarizing what becomes before or after.]
 
 |This is   |a simple   |table header|
 |----------|-----------|------------|

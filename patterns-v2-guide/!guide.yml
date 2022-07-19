@@ -1,0 +1,17 @@
+---
+Title: Name of the pattern
+Type: Guide pattern
+Version: 1.0.0
+Items:
+  - Title: document-title
+    Filename: file-name.md
+    Type: doc-pattern-name-template
+    Author: msft-alias
+  - Title: document-title
+    Filename: file-name.md
+    Type: doc-pattern-name-template
+    Author: msft-alias
+  - Title: document-title
+    Filename: file-name.md
+    Type: doc-pattern-name-template
+    Author: msft-alias
