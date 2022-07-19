@@ -39,4 +39,4 @@ Revisions: |
   https://github.com/MicrosoftDocs/docs-help-pr/commits/main/help-content/contribute/contribute-get-started-mvc.md
 Notes: |
   https://review.docs.microsoft.com/en-us/help/contribute/contribute-get-started-mvc?branch=main
-  This will likely be a legacy pattern. However the pattern is currently defined in the _Contributor Guide_.
+  This will likely be a legacy pattern. However the pattern is currently defined in the _Contributor Guide_. In many ways this is a good pattern to critique since it may not meet the needs of someone looking for a pattern. It meets the needs of the org, but not the person creating the content set.

@@ -1,14 +1,16 @@
 ---
 Title: |
-  The name of the pattern.
+  Samples
 Version: |
-  The semantic version number of the pattern.
+  1.0.0
 Context: |
   In what situation does this pattern find itself?
 Pattern category: |
   [Component, Document, Guide, DocSet, Domain], [Docs, Learn, Navigation, Code]
 Problem: |
-  Use a problem statement for the problem that was encountered.
+  Use a problem statement for the problem that was encountered. Example scripts 
+  that align to the most common tasks. The scripts should be short, simple, and 
+  quick to complete.
 Intent: |
   What is the context and intended purpose of the pattern and solution? 
   This section contains the statement of the solution approach. It is the 
