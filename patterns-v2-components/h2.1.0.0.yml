@@ -8,6 +8,8 @@ Boilerplate: |
 Generator: |
   ## {{Gen-keyword}}
 Instructions: 
-  Type the instructions in markdown down authoring the element.
+  Give each H2 a heading that sets expectations for the content that follows.
+  Follow the H2 headings with a sentence about how the section contributes to
+  the whole.
 Validation: |
   Place holder for validation logic.

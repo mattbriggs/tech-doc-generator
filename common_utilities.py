@@ -55,8 +55,8 @@ def get_files(inpath, ext):
     outlist = []
     for (path, dirs, files) in os.walk(inpath):
         for filename in files:
-            ext_index = filename.find(".")
-            if filename[ext_index+1:] == ext:
+            ext_index = filename.find(ext)
+            if ext_index > 0:
                 entry = path + "\\" + filename
                 outlist.append(entry)
     return outlist

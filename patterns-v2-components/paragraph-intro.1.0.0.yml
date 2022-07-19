@@ -4,12 +4,12 @@ Name: "Component Name"
 Modality: "None"
 Version: 1.0.0
 Boilerplate: |
-  # Heading
-  This is the boilerplate.
+  [add your introductory paragraph]
 Generator: |
   ## {{Tite}}
   {{Gen: sentence-type}}
 Instructions: 
-  Type the instructions in markdown down authoring the element.
+  Lead with a light intro that describes what the article covers. Answer the
+  fundamental "why would I want to know this?" question. Keep it short.
 Validation: |
   Place holder for validation logic.

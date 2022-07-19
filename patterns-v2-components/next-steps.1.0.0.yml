@@ -10,6 +10,7 @@ Generator: |
   > [!div class="nextstepaction"]
   > [button text](link to topic)
 Instructions: 
-  Add a next step action button to Docs pages.
+  Provide at least one next step and no more than three. Include some 
+  context so the customer can determine why they would click the link.
 Validation: |
   Place holder for validation logic.

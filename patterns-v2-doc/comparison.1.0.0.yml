@@ -1,0 +1,70 @@
+---
+ID: "ECD8D92C-F55C-45F8-A3CF-3BEA009A4BA2"
+Name: "comparison"
+Modality: "None"
+Version: 1.0.0
+Purpose: |
+  This template provides the basic structure of a standard product comparison 
+  article. The comparison pattern is an article pattern that guides a customer 
+  to select the best product or service for their needs.
+Components:
+  - Component: metadata.1.0.0.yml
+    Boiler: "comparison"
+  - Component: open-template-instruction.1.0.0.yml
+  - Component: h1.1.0.0.yml
+    Boiler: "{{Title}}"
+  - Component: paragraph-intro.1.0.0.yml
+    Boiler: None
+  - Component: paragraph-summary.1.0.0.yml
+    Boiler: "This section helps you select the most likely services for your needs."
+    Help: |
+      Start this article with an introductory paragraph. The goal is to help 
+      customers quickly determine whether the article is relevant.
+
+      Here are the details:
+
+      - Begin with a 1-2 sentence summary of the category and the use cases to 
+        which the services apply.
+      - Include a bulleted list with this lead-in sentence: "This article 
+        compares the following services:".
+      - In each bulleted item, include a link to the overview article for the 
+        service. (TODO: FOR DISCUSSION)
+  - Place this section immediately after the article headline (H1).
+  - Component: list-bulleted.1.0.0.yml
+    Boiler: None
+  - Component: table.1.0.0.yml
+    Boiler: None
+  - Component: paragraph-summary.1.0.0.yml
+    Boiler: None
+  - Component: h2.1.0.0.yml
+    Boiler: "Choose a candidate service"
+    Help: |
+      Position this section as the first H2 in the article; that is, place it 
+      immediately after the introduction.
+      Begin with the text "This section helps you select the most likely services 
+      for your needs."
+      Include a concise decision guide as a flowchart, table, and/or text as 
+      appropriate.
+      End the section with the text "The result of this section is a starting 
+      point for consideration. Use the following sections to perform a 
+      detailed evaluation of the service to confirm that it meets your needs."
+  - Component: paragraph-summary.1.0.0.yml
+    Boiler: "This section helps you select the most likely services for your needs."
+  - Component: table.1.0.0.yml
+    Boiler: None
+    Repeat: End
+  - Component: h2.1.0.0.yml
+    Boiler: "{{Criterion-category}}"
+    Repeat: Begin
+  - Component: paragraph-summary.1.0.0.yml
+    Boiler: None
+  - Component: table.1.0.0.yml
+    Boiler: None
+  - Component: close-template-instruction.1.0.0.yml
+    Boiler: None
+Instructions-Open: |
+  Type the opening instructions for the document pattern.
+Instructions-Close: |
+  Type the closing instructions for the document pattern.
+Validation: |
+  Place holder for validation logic.

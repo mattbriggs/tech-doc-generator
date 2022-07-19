@@ -10,7 +10,7 @@ Boilerplate: |
   author: {{Author}} #Required; your GitHub user alias, with correct capitalization.
   ms.author: {{Author}} #Required; microsoft alias of author; optional team alias.
   ms.service: #Required; service per approved list. slug assigned by ACOM.
-  ms.topic: conceptual #Required; leave this attribute/value as-is.
+  ms.topic: {{doctype}} #Required; leave this attribute/value as-is.
   ms.date: {{Date}} #Required; mm/dd/yyyy format.
   ms.custom: template-concept #Required; leave this attribute/value as-is.
   ---

@@ -1,22 +1,50 @@
 ---
 ID: "AEB82747-0F8A-41D9-ACA9-3DFEDB0E99A3"
-Name: "Template name"
+Name: "glossary"
 Modality: "None"
 Version: 1.0.0
 Purpose: |
-  Textual description of the purpose of the document pattern.
+  This template provides the basic structure of a glossary article pattern.
+  See the [Glossary pattern](article-glossary.md) in the pattern library.
 Components:
-  - Component: file-name.1.0.0.yml
+  - Component: metadata.1.0.0.yml
+    Boiler: "comparison"
+    Repeat: No
+  - Component: open-template-instruction.1.0.0.yml
+    Repeat: No
+  - Component: h1.1.0.0.yml
+    Boiler: "Glossary: {{product}}"
+    Repeat: No
+  - Component: paragraph-intro.1.0.0.yml
     Boiler: None
     Repeat: No
-  - Component: file-name.1.0.0.yml
+  - Component: h2.1.0.0.yml
+    Boiler: "A, B, C, etc."
+    Repeat: No
+  - Component: paragraph-summary.1.0.0.yml
+    Boiler: "Choose a candidate service"
+    Repeat: No
+  - Component: close-template-instruction.1.0.0.yml
     Boiler: None
     Repeat: No
-  - Component: file-name.1.0.0.yml
-    Boiler: None
-    Repeat: Yes
 Instructions-Open: |
-  Type the opening instructions for the document pattern.
+  Make the H2s letters in alphabetical order and use H3s for the terms.
+
+  Keep them short and format consistently to optimize readability. There are three elements:
+
+    * What the term is.
+    * What the term does.
+    * Example if helpful.
+    
+    You can optionally add a link to further information.
+
+  * Provide usage guidance -- Adding this guidance is optional although some feedback from 
+  social media suggests users like these details:
+
+    * Capitalization.
+    * First use vs. subsequent uses.
+    * Approved and unapproved acronyms and abbreviations.
+
 Instructions-Close: |
   Type the closing instructions for the document pattern.
 Validation: |
