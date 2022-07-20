@@ -16,7 +16,7 @@ def main():
     for i in template_defs:
         if i.find("!") < 0:
             t = get_yaml(i)
-            outpath = "./gentemplates/{}{}.md".format(t["Name"], t["Version"])
+            outpath = "./patterns-v2-doc-gen/{}{}.md".format(t["Name"], t["Version"])
             print("Creating... {}".format(outpath))
             outfile = ""
 

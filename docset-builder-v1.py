@@ -80,9 +80,15 @@ def main():
             print("Creating {}".format(pathname))
             create_doc(documents, pathname, i)
         toc_path = pathstem + "{}\\".format(pat) + "toc.yml"
+        land_path = pathstem + "index.yml"
 
         print("Creating {}".format(toc_path))
         create_toc_yaml(toc_path, guide_toc)
+
+        print("Creating {}".format(land_path))
+        toc_get = CU.get_text_from_file("./patterns-v1-docset/index.yml")
+        toc_file = ST.render(toc_get, design)
+        CU.write_text(toc_file, land_path)
 
     top_path = pathstem + "toc.yml"
     create_toc_yaml(top_path, top_toc)

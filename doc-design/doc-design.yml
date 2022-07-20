@@ -1,5 +1,9 @@
 ---
 Title: Name of the docset
+Service: Service Name
+Author: mabrigg
+ms.author: mattbriggs
+Date: 7/20/2020
 Patterns:
   Overview:
     - Title: Overview of the docset
