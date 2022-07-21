@@ -39,6 +39,12 @@ You will need the following parts installed:
 
 The document level templates are based on the proof of concept document templates. I use the [Mustache](https://mustache.github.io/) template system with the [Pystache](https://github.com/sarnold/pystache) implementation.
 
+## Notes on writing the pattern definitions
+
+The graphics use Graphviz DOT notation.
+ - For more information see [DOT Language](http://graphviz.org/doc/info/lang.html)
+ - [GraphViz Visual Editor](http://magjac.com/graphviz-visual-editor/)
+
 ## If you have issues, file a GitHub issue
 
 [Create a GitHub Issue](https://github.com/mattbriggs/tech-doc-generator/issues/new/choose)
