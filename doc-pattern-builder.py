@@ -1,7 +1,7 @@
 import os
 import yaml
 import markdown
-import graphviz
+import pydot
 import pystache as ST
 import common_utilities as CU
 
@@ -29,19 +29,17 @@ def main():
             if s == "Title":
                 outfile += "# {}: {}\n".format(s, patterns[i][s])
             elif s == "Diagram":
-                try:
+                if patterns[i][s][:7] == "digraph":
                     graphname = i + ".svg"
-                    dotname = i + ".gv"
-                    CU.write_text(patterns[i][s], './pattern-definitions/media/' + dotname)
-                    graphplink = '![{}]({})'.format(i, './pattern-definitions/media/' + graphname)
-
-                    graphviz.render('dot', 'svg', graphplink).replace('\\', '/')
-                    './pattern-definitions/media/' + graphname
-
-                    outfile += "# {}: \n{}\n".format(s, graphplink)
-                except:
-                    outfile += "# {}: \n{}\n".format(s, patterns[i][s])
-
+                    graphpath_write = "./pattern-definitions-help/media/" + graphname
+                    graphath_ref = "./media/" + graphname
+                    graphplink = '![{}]({})'.format(i, graphath_ref)
+                    graph = pydot.graph_from_dot_data(patterns[i][s])
+                    output_graphviz_svg = graph[0].create_svg().decode()
+                    CU.write_text(output_graphviz_svg, graphpath_write )
+                    outfile += "## {}: \n{}\n".format(s, graphplink)
+                else:
+                    outfile += "## {}: \n{}\n".format(s, patterns[i][s])
             else:
                 outfile += "## {}:\n{}\n".format(s, patterns[i][s])
         html =  html = markdown.markdown(outfile)
