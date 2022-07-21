@@ -11,6 +11,16 @@ def get_yaml(filepath):
         outdict = yaml.load(stream, Loader=yaml.CLoader)
     return outdict
 
+def build_index(inlist, filename):
+    '''With a list of touples and a filename create and save the index.'''
+    indexfile = "# Skilling patterns draft\n"
+    for i in inlist:
+        indexfile += "[{}]({})\n\n".format(i[0],i[1])
+    indexfile += "<hr>[Microsoft content pattern library](https://review.docs.microsoft.com/en-us/help/patterns/?branch=patterns)"
+    html =  html = markdown.markdown(indexfile)
+    CU.write_text(html, filename)
+    print("Creating {}".format(filename))
+
 def main():
     '''Main generator logic.'''
     patterns = {}
@@ -20,9 +30,11 @@ def main():
         temp_text = get_yaml(i)
         patterns[temp] = temp_text
     pat_names = patterns.keys()
+    index_files = []
     for i in pat_names:
         sk = patterns[i].keys()
         filename = "./pattern-definitions-help/" + "{}.html".format(i)
+        shortfilename = "{}.html".format(i)
         print("Creating {}".format(filename))
         outfile = ""
         for s in sk:
@@ -42,8 +54,11 @@ def main():
                     outfile += "## {}: \n{}\n".format(s, patterns[i][s])
             else:
                 outfile += "## {}:\n{}\n".format(s, patterns[i][s])
+        index_files.append((i, shortfilename))
+        outfile += "<hr>[Top](index.html) | [Microsoft content pattern library](https://review.docs.microsoft.com/en-us/help/patterns/?branch=patterns)"
         html =  html = markdown.markdown(outfile)
         CU.write_text(html, filename)
+    build_index(index_files, "./pattern-definitions-help/index.html")
 
 
 if __name__ == "__main__":
