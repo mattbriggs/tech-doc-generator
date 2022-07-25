@@ -27,7 +27,11 @@ Related patterns: |
   The pattern may co-exist (work on conjunction) with other patterns or 
   the pattern may contain other patterns. This expresses the usage rules 
   for the pattern in a pattern language.
+Implementations: |
+  Links to implementations of the pattern.
 Authors: |
   The name of contributors who identifies the pattern.
 Revisions: |
   The history of the versions of the pattern document.
+Notes : |
+  Notes and a discussion of the pattern.
