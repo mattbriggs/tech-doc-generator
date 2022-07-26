@@ -102,5 +102,7 @@
 [guide-Tutorials1.0.0](guide-Tutorials1.0.0.md)
 
 
+
 <hr>
+
 [Microsoft content pattern library](https://review.docs.microsoft.com/en-us/help/patterns/?branch=patterns)

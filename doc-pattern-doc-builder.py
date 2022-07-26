@@ -17,7 +17,7 @@ def build_index(inlist, ext, filename):
     indexfile = "# Skilling patterns draft\n"
     for i in inlist:
         indexfile += "[{}]({})\n\n".format(i[0],i[1])
-    indexfile += "\n<hr>\n[Microsoft content pattern library](https://review.docs.microsoft.com/en-us/help/patterns/?branch=patterns)"
+    indexfile += "\n\n<hr>\n\n[Microsoft content pattern library](https://review.docs.microsoft.com/en-us/help/patterns/?branch=patterns)"
 
     if ext == ".html":
         genfile = markdown.markdown(indexfile)
@@ -83,10 +83,10 @@ def main():
                 outfile += "## {}:\n{}\n".format(s, patterns[i][s])
         index_files.append((i, shortfilename))
         if fileext == ".html":
-            outfile += "\n<hr>\n[Top](index.html) | [Microsoft content pattern library](https://review.docs.microsoft.com/en-us/help/patterns/?branch=patterns)"
+            outfile += "\n\n<hr>\n\n[Top](index.html) | [Microsoft content pattern library](https://review.docs.microsoft.com/en-us/help/patterns/?branch=patterns)"
             genfile = markdown.markdown(outfile)
         else:
-            outfile += "\n<hr>\n[Top](index.md) | [Microsoft content pattern library](https://review.docs.microsoft.com/en-us/help/patterns/?branch=patterns)"
+            outfile += "\n\n<hr>\n\n[Top](index.md) | [Microsoft content pattern library](https://review.docs.microsoft.com/en-us/help/patterns/?branch=patterns)"
             genfile = outfile
         CU.write_text(genfile, filename)
     indexext = outpath + "index{}".format(fileext)

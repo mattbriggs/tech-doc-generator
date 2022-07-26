@@ -47,5 +47,7 @@ The history of the versions of the pattern document.
 ## Notes:
 Notes and a discussion of the pattern.
 
+
 <hr>
+
 [Top](index.md) | [Microsoft content pattern library](https://review.docs.microsoft.com/en-us/help/patterns/?branch=patterns)
