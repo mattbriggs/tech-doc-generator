@@ -36,4 +36,6 @@ The history of the versions of the pattern document.
 ## Notes:
 [https://review.docs.microsoft.com/en-us/help/contribute/contribute-get-started-mvc?branch=main](https://github.com/MicrosoftDocs/docs-help-pr/commits/main/help-content/contribute/contribute-get-started-mvc.md)
 This will likely be a legacy pattern. However the pattern is currently defined in the _Contributor Guide_. In many ways this is a good pattern to critique since it may not meet the needs of someone looking for a pattern. It meets the needs of the org, but not the person creating the content set.
-<hr>[Top](index.md) | [Microsoft content pattern library](https://review.docs.microsoft.com/en-us/help/patterns/?branch=patterns)
+
+<hr>
+[Top](index.md) | [Microsoft content pattern library](https://review.docs.microsoft.com/en-us/help/patterns/?branch=patterns)
