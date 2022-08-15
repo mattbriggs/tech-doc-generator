@@ -1,8 +1,12 @@
 erDiagram
-        PORTFOLIO |o--o| DOMAIN : contains
+        PORTFOLIO |o--o| DOCDESIGN : contains
+        PORTFOLIO  |o--o| MODULEDESIGN : contains
+        DOCDESIGN |o--o| DOMAIN : defines
+        MODULEDESIGN |o--o| PATH : defines
         DOMAIN |o--o| COLLECTION: contains
         COLLECTION }|--|{ PATH : contains
         PATH }|--|{ ARTIFACT : contains
         ARTIFACT }|--|{ UNIT : contains
         UNIT }o--o{ COMPONENT : contains
         ARTIFACT }o--o{ COMPONENT : contains
+        ARCHTYPE |o--o{ ARTIFACT : based-on
