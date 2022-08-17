@@ -4,7 +4,12 @@ erDiagram
     PATTERM-IMPLEMENTATION |o--o| TEMPLATE : contains
     TEMPLATE-SCHEMA |o--o| TEMPLATE : structured
     TEMPLATE-RULES |o--o| TEMPLATE :  defined-by
-    ARCHTYPE |o--o{ TEMPLATE-SCHEMA : defines
+    ARCHETYPE |o--o{ TEMPLATE-SCHEMA : defines
     UNIT }o--o| TEMPLATE : made-of
     COMPONENT }o--o{ TEMPLATE : made-of
     COMPONENT }o--o{ UNIT : made-of
+
+    PORTFOLIO ||--|| DOCDESIGN : contains
+    PORTFOLIO  ||--|| MODULEDESIGN : contains
+    DOCDESIGN |o--|{ TEMPLATE : expresses
+    MODULEDESIGN |o--|{ TEMPLATE : expresses
