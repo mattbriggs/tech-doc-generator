@@ -32,7 +32,7 @@ You will need the following parts installed:
     ```
 8.  Update `target` to the target directory.  Be sure to escape the virgules. That is \\ rather than \.
 9. Update `docdesign` to the full path and filename to your design document.
-10. Run the script:`python docset-builder.py`.
+10. Run the script:`python docset-builder-V1.py`.
 11. Open your target directory and review the output in Visual Studio Code. You can create a branch, commit the changed, and create a PR to generate an OPS preview of the content.
 
 ## Notes on the code
