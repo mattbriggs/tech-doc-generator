@@ -1,0 +1,74 @@
+---
+Title: Azure Cosmos DB Pattern POC
+Service: Cosmos DB
+Author: mabrigg
+ms.author: mattbriggs
+Date: 7/20/2020 # 12:19
+Patterns:
+  Get started:
+  - Title: Introduction to Cosmo DB
+    Filename: intro-to-cosmo-db.md
+    Type: overview
+    Author: mabrigg
+  - Title: Choose the best storage solution
+    Filename: choose-the-best.md
+    Type: comparison
+    Author: mabrigg
+  - Title: Build your first database using Cosmo DB
+    Filename: build-your-first-cosmo-db.md
+    Type: qucikstart
+    Author: mabrigg
+  Build-implement:
+  - Title: Overview of Implementation of Cosmo DB
+    Filename: overview-of-build.md
+    Type: overview
+    Author: mabrigg
+  - Title: How to build Cosmo DB
+    Filename: how-to-build.md
+    Type: how-to
+    Author: mabrigg
+  Install, setup, deploy:
+  - Title: Overview of Set up of Cosmo DB
+    Filename: overview-of-setup.md
+    Type: overview
+    Author: mabrigg
+  - Title: How to XXX
+    Filename: how-to-setup.md
+    Type: how-to
+    Author: mabrigg
+  Maintain:
+  - Title: Overview of Maintaining Cosmo DB
+    Filename: overview-of-maintain.md
+    Type: overview
+    Author: mabrigg
+  - Title: How to maintain CosmoDB
+    Filename: how-to-maintain.md
+    Type: how-to
+    Author: mabrigg
+  Upgrade, migrate:
+  - Title: Overview of Moving data to Cosmo DB
+    Filename: overview-of-migration.md
+    Type: overview
+    Author: mabrigg
+  - Title: How to Move Data into Cosmo DB
+    Filename: how-to-upgrade.md
+    Type: how-to
+    Author: mabrigg
+  Troubleshoot:
+  - Title: Overview of resolving issues in Cosmo DB
+    Filename: overview-of-troubleshoot.md
+    Type: overview
+    Author: mabrigg
+  - Title: How to Resolve Issues with Cosmo DB
+    Filename: how-to-troubleshoot.md
+    Type: troubleshooting
+    Author: mabrigg
+  Deprecate:
+  - Title: How to close down Cosmo DB
+    Filename: overview-of-deprecate.md
+    Type: overview
+    Author: mabrigg
+  - Title: How to Retire Cosmo DB
+    Filename: how-to-deprecate.md
+    Type: how-to
+    Author: mabrigg
