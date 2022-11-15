@@ -1,0 +1,311 @@
+---
+Title: Implementation Schemas
+Service: Content Design Pattern Library
+Author: mabrigg
+ms.author: mattbriggs
+Date: 9/16/2020
+Patterns:
+  level3build:
+    - Title: Template instructions for the Build implement - General
+      Filename: build-implement-general-instructions-v.0.0.0.md
+      Type: imp-instructions
+      pattern: Build implement
+      implementation-name: Build implement - General
+    - Title: Reference for the Build implement - General
+      Filename: build-implement-general-schema-v0-0-0.md
+      Type: imp-schema
+      pattern: Build implement
+      Author: mabrigg
+      implementation-name: Build implement - General
+    - Title: Template for Build implement - General
+      Filename: build-implement-general-template-v.0.0.0.md
+      Type: imp-template
+      pattern: Build implement
+      Author: mabrigg
+      implementation-name: Build implement - General
+    - Title: Pattern definition for Build implement
+      Filename: build-implement-pattern-definition-v.0.0.0.md
+      Type: imp-pattern-definition
+      pattern: Build implement
+      Author: mabrigg
+      implementation-name: Build implement - General
+    - Title: Template instructions for the Deprecate - General
+      Filename: deprecate-general-instructions-v.0.0.0.md
+      Type: imp-instructions
+      pattern: Deprecate
+      Author: mabrigg
+      implementation-name: Deprecate - General
+    - Title: Reference for the Deprecate - General
+      Filename: deprecate-general-schema-v0-0-0.md
+      Type: imp-schema
+      pattern: Deprecate
+      Author: mabrigg
+      implementation-name: Deprecate - General
+    - Title: Template for Deprecate - General
+      Filename: deprecate-general-template-v.0.0.0.md
+      Type: imp-template
+      pattern: Deprecate
+      Author: mabrigg
+      implementation-name: Deprecate - General
+    - Title: Pattern definition for Deprecate
+      Filename: deprecate-pattern-definition-v.0.0.0.md
+      Type: imp-pattern-definition
+      pattern: Deprecate
+      Author: mabrigg
+      implementation-name: Deprecate - General
+    - Title: Template instructions for the Get started level3 - General
+      Filename: get-started-l3-general-instructions-v.0.0.0.md
+      Type: imp-instructions
+      pattern: Get started level3
+    - Title: Reference for the Get started level3 - General
+      Filename: get-started-l3-general-schema-v0-0-0.md
+      Type: imp-schema
+      pattern: Get started level3
+    - Title: Template for Get started level3 - General
+      Filename: get-started-l3-general-template-v.0.0.0.md
+      Type: imp-template
+      pattern: Get started level3
+    - Title: Pattern definition for Get started level3
+      Filename: get-started-l3-pattern-definition-v.0.0.0.md
+      Type: imp-pattern-definition
+      pattern: Get started level3
+    - Title: Template instructions for the How to level3 - General
+      Filename: how-to-l3-general-instructions-v.0.0.0.md
+      Type: imp-instructions
+      pattern: How to level3
+      Author: mabrigg
+      implementation-name: How to level3 - General
+    - Title: Reference for the How to level3 - General
+      Filename: how-to-l3-general-schema-v0-0-0.md
+      Type: imp-schema
+      pattern: How to level3
+      Author: mabrigg
+      implementation-name: How to level3 - General
+    - Title: Template for How to level3 - General
+      Filename: how-to-l3-general-template-v.0.0.0.md
+      Type: imp-template
+      pattern: How to level3
+      Author: mabrigg
+      implementation-name: How to level3 - General
+    - Title: Pattern definition for How to level3
+      Filename: how-to-l3-pattern-definition-v.0.0.0.md
+      Type: imp-pattern-definition
+      pattern: How to level3
+      Author: mabrigg
+      implementation-name: How to level3 - General
+    - Title: Template instructions for the Install setup deploy - General
+      Filename: install-setup-deploy-general-instructions-v.0.0.0.md
+      Type: imp-instructions
+      pattern: Install setup deploy
+      Author: mabrigg
+      implementation-name: Install setup deploy - General
+    - Title: Reference for the Install setup deploy - General
+      Filename: install-setup-deploy-general-schema-v0-0-0.md
+      Type: imp-schema
+      pattern: Install setup deploy
+      Author: mabrigg
+      implementation-name: Install setup deploy - General
+    - Title: Template for Install setup deploy - General
+      Filename: install-setup-deploy-general-template-v.0.0.0.md
+      Type: imp-template
+      pattern: Install setup deploy
+      Author: mabrigg
+      implementation-name: Install setup deploy - General
+    - Title: Pattern definition for Install setup deploy
+      Filename: install-setup-deploy-pattern-definition-v.0.0.0.md
+      Type: imp-pattern-definition
+      pattern: Install setup deploy
+      Author: mabrigg
+      implementation-name: Install setup deploy - General
+    - Title: Template instructions for the Integration - General
+      Filename: integration-general-instructions-v.0.0.0.md
+      Type: imp-instructions
+      pattern: Integration
+      Author: mabrigg
+      implementation-name: Integration - General
+    - Title: Reference for the Integration - General
+      Filename: integration-general-schema-v0-0-0.md
+      Type: imp-schema
+      pattern: Integration
+      Author: mabrigg
+      implementation-name: Integration - General
+    - Title: Template for Integration - General
+      Filename: integration-general-template-v.0.0.0.md
+      Type: imp-template
+      pattern: Integration
+      Author: mabrigg
+      implementation-name: Integration - General
+    - Title: Pattern definition for Integration
+      Filename: integration-pattern-definition-v.0.0.0.md
+      Type: imp-pattern-definition
+      pattern: Integration
+      Author: mabrigg
+      implementation-name: Integration - General
+    - Title: Template instructions for the Maintain - General
+      Filename: maintain-general-instructions-v.0.0.0.md
+      Type: imp-instructions
+      pattern: Maintain
+      Author: mabrigg
+      implementation-name: Maintain - General
+    - Title: Reference for the Maintain - General
+      Filename: maintain-general-schema-v0-0-0.md
+      Type: imp-schema
+      pattern: Maintain
+      Author: mabrigg
+      implementation-name: Maintain - General
+    - Title: Template for Maintain - General
+      Filename: maintain-general-template-v.0.0.0.md
+      Type: imp-template
+      pattern: Maintain
+      Author: mabrigg
+      implementation-name: Maintain - General
+    - Title: Pattern definition for Maintain
+      Filename: maintain-pattern-definition-v.0.0.0.md
+      Type: imp-pattern-definition
+      pattern: Maintain
+      Author: mabrigg
+      implementation-name: Maintain - General
+    - Title: Template instructions for the Overview level3 - General
+      Filename: overview-l3-general-instructions-v.0.0.0.md
+      Type: imp-instructions
+      pattern: Overview level3
+      Author: mabrigg
+      implementation-name: Overview level3 - General
+    - Title: Reference for the Overview level3 - General
+      Filename: overview-l3-general-schema-v0-0-0.md
+      Type: imp-schema
+      pattern: Overview level3
+      Author: mabrigg
+      implementation-name: Overview level3 - General
+    - Title: Template for Overview level3 - General
+      Filename: overview-l3-general-template-v.0.0.0.md
+      Type: imp-template
+      pattern: Overview level3
+      Author: mabrigg
+      implementation-name: Overview level3 - General
+    - Title: Pattern definition for Overview level3
+      Filename: overview-l3-pattern-definition-v.0.0.0.md
+      Type: imp-pattern-definition
+      pattern: Overview level3
+      Author: mabrigg
+      implementation-name: Overview level3 - General
+    - Title: Template instructions for the Planning - General
+      Filename: planning-general-instructions-v.0.0.0.md
+      Type: imp-instructions
+      pattern: Planning
+      Author: mabrigg
+      implementation-name: Planning - General
+    - Title: Reference for the Planning - General
+      Filename: planning-general-schema-v0-0-0.md
+      Type: imp-schema
+      pattern: Planning
+      Author: mabrigg
+      implementation-name: Planning - General
+    - Title: Template for Planning - General
+      Filename: planning-general-template-v.0.0.0.md
+      Type: imp-template
+      pattern: Planning
+      Author: mabrigg
+      implementation-name: Planning - General
+    - Title: Pattern definition for Planning
+      Filename: planning-pattern-definition-v.0.0.0.md
+      Type: imp-pattern-definition
+      pattern: Planning
+      Author: mabrigg
+      implementation-name: Planning - General
+    - Title: Template instructions for the Reference - General
+      Filename: reference-general-instructions-v.0.0.0.md
+      Type: imp-instructions
+      pattern: Reference
+      Author: mabrigg
+      implementation-name: Reference - General
+    - Title: Reference for the Reference - General
+      Filename: reference-general-schema-v0-0-0.md
+      Type: imp-schema
+      pattern: Reference
+      Author: mabrigg
+      implementation-name: Reference - General
+    - Title: Template for Reference - General
+      Filename: reference-general-template-v.0.0.0.md
+      Type: imp-template
+      pattern: Reference
+      Author: mabrigg
+      implementation-name: Reference - General
+    - Title: Pattern definition for Reference
+      Filename: reference-pattern-definition-v.0.0.0.md
+      Type: imp-pattern-definition
+      pattern: Reference
+      Author: mabrigg
+      implementation-name: Reference - General
+    - Title: Template instructions for the Resources - General
+      Filename: resources-general-instructions-v.0.0.0.md
+      Type: imp-instructions
+      pattern: Resources
+      Author: mabrigg
+      implementation-name: Resources - General
+    - Title: Reference for the Resources - General
+      Filename: resources-general-schema-v0-0-0.md
+      Type: imp-schema
+      pattern: Resources
+      Author: mabrigg
+      implementation-name: Resources - General
+    - Title: Template for Resources - General
+      Filename: resources-general-template-v.0.0.0.md
+      Type: imp-template
+      pattern: Resources
+      Author: mabrigg
+      implementation-name: Resources - General
+    - Title: Pattern definition for Resources
+      Filename: resources-pattern-definition-v.0.0.0.md
+      Type: imp-pattern-definition
+      pattern: Resources
+      Author: mabrigg
+      implementation-name: Resources - General
+    - Title: Template instructions for the Troubleshoot level3 - General
+      Filename: troubleshoot-l3-general-instructions-v.0.0.0.md
+      Type: imp-instructions
+      pattern: Troubleshoot level3
+      Author: mabrigg
+      implementation-name: Troubleshoot level3 - General
+    - Title: Reference for the Troubleshoot level3 - General
+      Filename: troubleshoot-l3-general-schema-v0-0-0.md
+      Type: imp-schema
+      pattern: Troubleshoot level3
+      Author: mabrigg
+      implementation-name: Troubleshoot level3 - General
+    - Title: Template for Troubleshoot level3 - General
+      Filename: troubleshoot-l3-general-template-v.0.0.0.md
+      Type: imp-template
+      pattern: Troubleshoot level3
+      Author: mabrigg
+      implementation-name: Troubleshoot level3 - General
+    - Title: Pattern definition for Troubleshoot level3
+      Filename: troubleshoot-l3-pattern-definition-v.0.0.0.md
+      Type: imp-pattern-definition
+      pattern: Troubleshoot level3
+      Author: mabrigg
+      implementation-name: Troubleshoot level3 - General
+    - Title: Template instructions for the Upgrade migrate level3 - General
+      Filename: upgrade-migrate-l3-general-instructions-v.0.0.0.md
+      Type: imp-instructions
+      pattern: Upgrade migrate level3
+      Author: mabrigg
+      implementation-name: Upgrade migrate level3 - General
+    - Title: Reference for the Upgrade migrate level3 - General
+      Filename: upgrade-migrate-l3-general-schema-v0-0-0.md
+      Type: imp-schema
+      pattern: Upgrade migrate level3
+      Author: mabrigg
+      implementation-name: Upgrade migrate level3 - General
+    - Title: Template for Upgrade migrate level3 - General
+      Filename: upgrade-migrate-l3-general-template-v.0.0.0.md
+      Type: imp-template
+      pattern: Upgrade migrate level3
+      Author: mabrigg
+      implementation-name: Upgrade migrate level3 - General
+    - Title: Pattern definition for Upgrade migrate level3
+      Filename: upgrade-migrate-l3-pattern-definition-v.0.0.0.md
+      Type: imp-pattern-definition
+      pattern: Upgrade migrate level3
+      Author: mabrigg
+      implementation-name: Upgrade migrate level3 - General

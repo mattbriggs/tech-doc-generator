@@ -1,0 +1,203 @@
+---
+Title: Implementation Schemas
+Service: Content Design Pattern Library
+Author: mabrigg
+ms.author: mattbriggs
+Date: 7/20/2020
+Patterns:
+  Schemas:
+    - Title: SDLC
+      Filename: sdlc-implementation-general-schema-v0-0-0.md
+      Type: imp-schema
+      Author: mabrigg
+      implementation-name: sdlc-general
+    - Title: MVC
+      Filename: mvc-implementation-general-schema-v0-0-0.md
+      Type: imp-schema
+      Author: mabrigg
+      implementation-name: mvc-general
+    - Title: Focused-Release
+      Filename: focused-release-implementation-general-schema-v0-0-0.md
+      Type: imp-schema
+      Author: mabrigg
+      implementation-name: focused-release-general
+    - Title: Get started Level3
+      Filename: get-started-level3-implementation-general-schema-v0-0-0.md
+      Type: imp-schema
+      Author: mabrigg
+      implementation-name: get-started-level3-general
+    - Title: Build/Implement
+      Filename: build-implement-implementation-general-schema-v0-0-0.md
+      Type: imp-schema
+      Author: mabrigg
+      implementation-name: build-implement-general
+    - Title: Install, setup, deploy pattern
+      Filename: install-setup-deploy-implementation-general-schema-v0-0-0.md
+      Type: imp-schema
+      Author: mabrigg
+      implementation-name: install-setup-deploy-general
+    - Title: Maintain pattern
+      Filename: maintain-implementation-general-schema-v0-0-0.md
+      Type: imp-schema
+      Author: mabrigg
+      implementation-name: maintain-general
+    - Title: Upgrade, migrate pattern
+      Filename: upgrade-migrate-implementation-general-schema-v0-0-0.md
+      Type: imp-schema
+      Author: mabrigg
+      implementation-name: upgrade-migrate-general
+    - Title: Troubleshoot Level3 pattern
+      Filename: troubleshoot-level3-implementation-general-schema-v0-0-0.md
+      Type: imp-schema
+      Author: mabrigg
+      implementation-name: troubleshoot-level3-general
+    - Title: Deprecate pattern
+      Filename: deprecate-implementation-general-schema-v0-0-0.md
+      Type: imp-schema
+      Author: mabrigg
+      implementation-name: deprecate-general
+    - Title: Reference pattern
+      Filename: reference-implementation-general-schema-v0-0-0.md
+      Type: imp-schema
+      Author: mabrigg
+      implementation-name: reference-general
+    - Title: Overview
+      Filename: overview-implementation-general-schema-v0-0-0.md
+      Type: imp-schema
+      Author: mabrigg
+      implementation-name: overview-general
+    - Title: Planning
+      Filename: planning-implementation-general-schema-v0-0-0.md
+      Type: imp-schema
+      Author: mabrigg
+      implementation-name: planning-general
+    - Title: Integration
+      Filename: integration-implementation-general-schema-v0-0-0.md
+      Type: imp-schema
+      Author: mabrigg
+      implementation-name: integration-general
+    - Title: How-to Level3
+      Filename: how-to-level3-implementation-general-schema-v0-0-0.md
+      Type: imp-schema
+      Author: mabrigg
+      implementation-name: how-to-level3-general
+    - Title: Resources
+      Filename: resources-implementation-general-schema-v0-0-0.md
+      Type: imp-schema
+      Author: mabrigg
+      implementation-name: resources-general
+    - Title: Checklist
+      Filename: checklist-implementation-general-schema-v0-0-0.md
+      Type: imp-schema
+      Author: mabrigg
+      implementation-name: checklist-general
+    - Title: Concept pattern
+      Filename: concept-implementation-general-schema-v0-0-0.md
+      Type: imp-schema
+      Author: mabrigg
+      implementation-name: concept-general
+    - Title: Get started pattern
+      Filename: get-started-implementation-general-schema-v0-0-0.md
+      Type: imp-schema
+      Author: mabrigg
+      implementation-name: get-started-general
+    - Title: Glossary pattern
+      Filename: glossary-implementation-general-schema-v0-0-0.md
+      Type: imp-schema
+      Author: mabrigg
+      implementation-name: glossary-general
+    - Title: Reliability guide pattern
+      Filename: reliability-guide-implementation-general-schema-v0-0-0.md
+      Type: imp-schema
+      Author: mabrigg
+      implementation-name: reliability-guide-general
+    - Title: Feature variation guide pattern
+      Filename: feature-variation-guide-implementation-general-schema-v0-0-0.md
+      Type: imp-schema
+      Author: mabrigg
+      implementation-name: feature-variation-guide-general
+    - Title: How-to guide pattern
+      Filename: how-to-guide-implementation-general-schema-v0-0-0.md
+      Type: imp-schema
+      Author: mabrigg
+      implementation-name: how-to-guide-general
+    - Title: Install, setup and deployment guide pattern
+      Filename: install-setup-and-deployment-guide-implementation-general-schema-v0-0-0.md
+      Type: imp-schema
+      Author: mabrigg
+      implementation-name: install-setup-and-deployment-guide-general
+    - Title: Limits and quotas pattern
+      Filename: limits-and-quotas-implementation-general-schema-v0-0-0.md
+      Type: imp-schema
+      Author: mabrigg
+      implementation-name: limits-and-quotas-general
+    - Title: Overview pattern
+      Filename: overview-implementation-general-schema-v0-0-0.md
+      Type: imp-schema
+      Author: mabrigg
+      implementation-name: overview-general
+    - Title: Product comparison pattern
+      Filename: product-comparison-implementation-general-schema-v0-0-0.md
+      Type: imp-schema
+      Author: mabrigg
+      implementation-name: product-comparison-general
+    - Title: SDK overview Pattern
+      Filename: sdk-overview-implementation-general-schema-v0-0-0.md
+      Type: imp-schema
+      Author: mabrigg
+      implementation-name: sdk-overview-general
+    - Title: Tutorial pattern
+      Filename: tutorial-implementation-general-schema-v0-0-0.md
+      Type: imp-schema
+      Author: mabrigg
+      implementation-name: tutorial-general
+    - Title: Troubleshooting - Problem resolution pattern
+      Filename: troubleshooting-problem-resolution-implementation-general-schema-v0-0-0.md
+      Type: imp-schema
+      Author: mabrigg
+      implementation-name: troubleshooting-problem-resolution
+    - Title: Troubleshooting - Known issues pattern
+      Filename: troubleshooting-known-issues-implementation-general-schema-v0-0-0.md
+      Type: imp-schema
+      Author: mabrigg
+      implementation-name: troubleshooting-known-issues
+    - Title: Troubleshooting - Error codes pattern
+      Filename: troubleshooting-error-codes-implementation-general-schema-v0-0-0.md
+      Type: imp-schema
+      Author: mabrigg
+      implementation-name: troubleshooting-error-codes
+    - Title: What's new in Docs pattern
+      Filename: what's-new-in-docs-implementation-general-schema-v0-0-0.md
+      Type: imp-schema
+      Author: mabrigg
+      implementation-name: whats-new-in-docs-general
+    - Title: Standard task-based
+      Filename: standard-task-based-implementation-general-schema-v0-0-0.md
+      Type: imp-schema
+      Author: mabrigg
+      implementation-name: standard-task-based-general
+    - Title: Build your first using product
+      Filename: build-your-first-using-product-implementation-general-schema-v0-0-0.md
+      Type: imp-schema
+      Author: mabrigg
+      implementation-name: build-your-first-using-product-general
+    - Title: Challenge project
+      Filename: challenge-project-implementation-general-schema-v0-0-0.md
+      Type: imp-schema
+      Author: mabrigg
+      implementation-name: challenge-project-general
+    - Title: Choose the best product
+      Filename: choose-the-best-product-implementation-general-schema-v0-0-0.md
+      Type: imp-schema
+      Author: mabrigg
+      implementation-name: choose-the-best-product-general
+    - Title: Intro to product
+      Filename: intro-to-product-implementation-general-schema-v0-0-0.md
+      Type: imp-schema
+      Author: mabrigg
+      implementation-name: intro-to-product-general
+    - Title: Guided project
+      Filename: guided-project-implementation-general-schema-v0-0-0.md
+      Type: imp-schema
+      Author: mabrigg
+      implementation-name: guided-project-general

@@ -1,0 +1,20 @@
+---
+ID: "407FBF90-14D2-4853-A17B-5D461F7C9B91"
+Name: "unit name"
+Category: "None"
+Version: 1.0.0
+Purpose: |
+  Textual description of the purpose of the document pattern (unit level).
+Components:
+  - Component: file-name.1.0.0.yml
+    Boiler: None
+  - Component: file-name.1.0.0.yml
+    Boiler: None
+  - Component: file-name.1.0.0.yml
+    Boiler: None
+Instructions-Open: |
+  Type the opening instructions for the document pattern.
+Instructions-Close: |
+  Type the closing instructions for the document pattern.
+Validation: |
+  Place holder for validation logic.

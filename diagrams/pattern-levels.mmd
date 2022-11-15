@@ -1,7 +1,8 @@
 erDiagram
-        DOMAIN |o--o| COLLECTION: contains
-        COLLECTION }|--|{ PATH : contains
-        PATH }|--|{ ARTIFACT : contains
+        DOMAIN |o--o{ TOC: contains
+        TOC }|--|{ GUIDE : contains
+        GUIDE }|--|{ GUIDE : contains
+        GUIDE }|--|{ ARTIFACT : contains
         ARTIFACT }|--|{ UNIT : contains
         UNIT }o--o{ COMPONENT : contains
         ARTIFACT }o--o{ COMPONENT : contains

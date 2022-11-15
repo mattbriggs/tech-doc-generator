@@ -1,0 +1,100 @@
+---
+Title: Implementation Schemas
+Service: Content Design Pattern Library
+Author: mabrigg
+ms.author: mattbriggs
+Date: 9/16/2020
+Patterns:
+  level3build2:
+    - Title: Template instructions for Concepts - General
+      Filename: concepts-general-instructions-v.0.0.0.md
+      Type: imp-instructions
+      pattern: concepts
+      implementation-name: Concepts - General
+    - Title: Reference for the concepts- General
+      Filename: concepts-general-schema-v0-0-0.md
+      Type: imp-schema
+      pattern: concepts
+      Author: mabrigg
+      implementation-name: Concepts - General
+    - Title: Template for Concepts - General
+      Filename: concepts-general-template-v.0.0.0.md
+      Type: imp-template
+      pattern: concepts
+      Author: mabrigg
+      implementation-name: Concepts - General
+    - Title: Pattern definition for concepts
+      Filename: concepts-pattern-definition-v.0.0.0.md
+      Type: imp-pattern-definition
+      pattern: concepts
+      Author: mabrigg
+      implementation-name: Concepts - General
+    - Title: Template instructions for Quickstarts Level3 - General
+      Filename: quickstarts-l3-general-instructions-v.0.0.0.md
+      Type: imp-instructions
+      pattern: Quickstarts Level3
+      implementation-name: Quickstarts Level3 - General
+    - Title: Reference for the Quickstarts Level3- General
+      Filename: quickstarts-l3-general-schema-v0-0-0.md
+      Type: imp-schema
+      pattern: Quickstarts Level3
+      Author: mabrigg
+      implementation-name: Quickstarts Level3 - General
+    - Title: Template for Quickstarts Level3 - General
+      Filename: quickstarts-l3-general-template-v.0.0.0.md
+      Type: imp-template
+      pattern: Quickstarts Level3
+      Author: mabrigg
+      implementation-name: Quickstarts Level3 - General
+    - Title: Pattern definition for Quickstarts Level3
+      Filename: quickstarts-l3-pattern-definition-v.0.0.0.md
+      Type: imp-pattern-definition
+      pattern: Quickstarts Level3
+      Author: mabrigg
+      implementation-name: Quickstarts Level3 - General
+    - Title: Template instructions for Samples - General
+      Filename: samples-general-instructions-v.0.0.0.md
+      Type: imp-instructions
+      pattern: Samples
+      implementation-name: Samples - General
+    - Title: Reference for the Samples- General
+      Filename: samples-general-schema-v0-0-0.md
+      Type: imp-schema
+      pattern: Samples
+      Author: mabrigg
+      implementation-name: Samples - General
+    - Title: Template for Samples - General
+      Filename: samples-general-template-v.0.0.0.md
+      Type: imp-template
+      pattern: Samples
+      Author: mabrigg
+      implementation-name: Samples - General
+    - Title: Pattern definition for Samples
+      Filename: samples-pattern-definition-v.0.0.0.md
+      Type: imp-pattern-definition
+      pattern: Samples
+      Author: mabrigg
+      implementation-name: Samples - General
+    - Title: Template instructions for Tutorials Level3 - General
+      Filename: tutorials-l3-general-instructions-v.0.0.0.md
+      Type: imp-instructions
+      pattern: Tutorials Level3
+      implementation-name: Tutorials Level3 - General
+    - Title: Reference for the Tutorials Level3- General
+      Filename: tutorials-l3-general-schema-v0-0-0.md
+      Type: imp-schema
+      pattern: Tutorials Level3
+      Author: mabrigg
+      implementation-name: Tutorials Level3 - General
+    - Title: Template for Tutorials Level3 - General
+      Filename: tutorials-l3-general-template-v.0.0.0.md
+      Type: imp-template
+      pattern: Tutorials Level3
+      Author: mabrigg
+      implementation-name: Tutorials Level3 - General
+    - Title: Pattern definition for Tutorials Level3
+      Filename: tutorials-l3-pattern-definition-v.0.0.0.md
+      Type: imp-pattern-definition
+      pattern: Tutorials Level3
+      Author: mabrigg
+      implementation-name: Tutorials Level3 - General

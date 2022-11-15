@@ -1,0 +1,188 @@
+---
+Title: Implementation Schemas
+Service: Content Design Pattern Library
+Author: mabrigg
+ms.author: mattbriggs
+Date: 10/12/2022
+Patterns:
+  level4build2:
+  - Title: FAQ schema and criteria
+    Filename: FAQ-general-schema.md
+    Type: imp-schema
+    pattern: FAQ
+    implementation-name: FAQ - general
+
+  - Title: FAQ pattern definition
+    Filename: FAQ-pattern-definition.md
+    Type: imp-pattern-definition
+    pattern: FAQ
+    implementation-name: FAQ - general
+
+  - Title: Integration schema and criteria
+    Filename: integration-general-schema.md
+    Type: imp-schema
+    pattern: Integration
+    implementation-name: Integration general
+
+  - Title: Integration pattern definition
+    Filename: integration-pattern-definition.md
+    Type: imp-pattern-definition
+    pattern: Integration
+    implementation-name: Integration general
+
+  - Title: Managed identities schema and criteria
+    Filename: managed-identities-general-schema.md
+    Type: imp-schema
+    pattern: Managed identities
+    implementation-name: Managed identities general
+
+  - Title: Managed identities pattern definition
+    Filename: managed-identities-pattern-definition.md
+    Type: imp-pattern-definition
+    pattern: Managed identities
+    implementation-name: Managed identities general
+
+  - Title: Move service resources to a different region schema and criteria
+    Filename: move-service-resources-to-a-different-region-general-schema.md
+    Type: imp-schema
+    pattern: Move service resources to a different region
+    implementation-name: Move service resources to a different region - general
+
+  - Title: Move service resources to a different region pattern definition
+    Filename: move-service-resources-to-a-different-pattern-definition.md
+    Type: imp-pattern-definition
+    pattern: Move service resources to a different region
+    implementation-name: Move service resources to a different region - general
+
+  - Title: Partner tools schema and criteria
+    Filename: partner-tools-general-schema.md
+    Type: imp-schema
+    pattern: Partner tools
+    implementation-name: Partner tools general
+
+  - Title: Partner tools pattern definition
+    Filename: partner-tools-pattern-definition.md
+    Type: imp-pattern-definition
+    pattern: Partner tools
+    implementation-name: Partner tools general
+
+  - Title: quickstart ARM pattern definition
+    Filename: quickstart-arm--pattern-definition.md
+    Type: imp-pattern-definition
+    pattern: quickstart ARM
+    implementation-name: Quickstart ARM - general
+
+  - Title: Quickstart ARM chema and Criteria
+    Filename: quickstart-arm-pattern-definition.md
+    Type: imp-pattern-definition
+    pattern: Quickstart ARM
+    implementation-name: Quickstart ARM - general
+
+  - Title: Quickstart BICEP pattern definition
+    Filename: quickstart-bicep-pattern-definition.md
+    Type: imp-pattern-definition
+    pattern: Quickstart BICEP
+    implementation-name: Quickstart BICEP general
+
+  - Title: Quickstart BICEP schema and criteria
+    Filename: quickstart-bicep-schema.md
+    Type: imp-schema
+    pattern: Quickstart BICEP
+    implementation-name: Quickstart BICEP general
+
+  - Title: Quickstart SDK schema and criteria
+    Filename: quickstart-sdk-general-schema.md
+    Type: imp-schema
+    pattern: Quickstart SDK
+    implementation-name: Quickstart SDK general
+
+  - Title: Quickstart SDK pattern definition
+    Filename: quickstart-sdk-pattern-definition.md
+    Type: imp-pattern-definition
+    pattern: Quickstart SDK
+    implementation-name: Quickstart SDK general
+
+  - Title: Release notes schema and criteria
+    Filename: release-notes-general-schema.md
+    Type: imp-schema
+    pattern: Release notes
+    implementation-name: Release notes general
+
+  - Title: release notes pattern definition
+    Filename: release-notes-pattern-definition.md
+    Type: imp-pattern-definition
+    pattern: release notes
+    implementation-name: release notes - general
+
+  - Title: Terraform schema and criteria
+    Filename: terraform-general-schema.md
+    Type: imp-schema
+    pattern: Terraform
+    implementation-name: Terraform - general
+
+  - Title: Terraform pattern definition
+    Filename: terraform-pattern-definition.md
+    Type: imp-pattern-definition
+    pattern: Terraform
+    implementation-name: Terraform - general
+
+  - Title: Troubleshooting problem resolution Schema and Criteria
+    Filename: ts-problem-resolution-general-schema.md
+    Type: imp-schema
+    pattern: Troubleshooting problem resolution
+    implementation-name: Troubleshooting problem-resolution - general
+
+  - Title: Troubleshooting problem-resolution pattern definition
+    Filename: ts-problem-resolution-pattern-definition.md
+    Type: imp-pattern-definition
+    pattern: Troubleshooting problem resolution
+    implementation-name: Troubleshooting problem-resolution - general
+
+  - Title: Troubleshooting known issue Schema and Criteria
+    Filename: ts-known-issue-general-schema.md
+    Type: imp-schema
+    pattern: Troubleshooting known issue
+    implementation-name: Troubleshooting known issue - general
+
+  - Title: Troubleshooting known issue pattern definition
+    Filename: ts-known-issue-pattern-definition.md
+    Type: imp-pattern-definition
+    pattern: Troubleshooting known issue
+    implementation-name: Troubleshooting known issue - general
+
+  - Title: Troubleshooting error codes Schema and Criteria
+    Filename: ts-error-codes-general-schema.md
+    Type: imp-schema
+    pattern: Troubleshooting error codes 
+    implementation-name: Troubleshooting error codes  - general
+
+  - Title: Troubleshooting error codes  pattern definition
+    Filename: ts-error-codes-pattern-definition.md
+    Type: imp-pattern-definition
+    pattern: Troubleshooting error codes 
+    implementation-name: Troubleshooting error codes - general
+
+  - Title: What's new schema and criteria
+    Filename: whats-new-general-schema.md
+    Type: imp-schema
+    pattern: What's new
+    implementation-name: What's new general
+
+  - Title: What's new pattern definition
+    Filename: whats-new-pattern-definition.md
+    Type: imp-pattern-definition
+    pattern: What's new 
+    implementation-name: What's new general
+
+  - Title: What's new landing page schema and criteria
+    Filename: whats-new-landing-page-general-schema.md
+    Type: imp-schema
+    pattern: What's new landing page
+    implementation-name: Whats' new landing page - general
+
+  - Title: What's new landing page pattern definition
+    Filename: whats-new-landing-page-pattern-definition.md
+    Type: imp-pattern-definition
+    pattern: What's new landing page 
+    implementation-name: what's-new-landing-page - general
+
