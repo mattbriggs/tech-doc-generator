@@ -1,0 +1,14 @@
+# ms.topic: implemenation-name-guide
+items:
+- name: template1 
+  href: ../templates/template1.md
+  required: yes
+  limit: 1
+- name: template2 
+  href: ../templates/template2.md
+  required: no
+  limit: 1
+- name: template3 
+  href: ../templates/template3.md
+  required: yes
+  limit: none
