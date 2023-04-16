@@ -24,9 +24,9 @@ graph TD
     F[Error Handling]
     A-->D
     B-->C
-    B-->D
+    C-->D
     C-->E
-    D-->F
+    E-->F
 ```
 
 Explanation of the diagram:
