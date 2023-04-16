@@ -253,7 +253,7 @@ To create a JSON Schema document to validate the specific markdown content type 
 
 Document templates for the Skilling organization can be represented as JSON objects.
 
-```marmaid
+```mermaid
 graph LR
     A[document] --> B[heading]
     A --> C[paragraph]
@@ -264,7 +264,7 @@ graph LR
     A --> H[list]
     H --> I[link]
     H --> J[link]
-    ```
+```
 
 In this graph, A represents the root of the JSON object, which is the document element. B, C, D, E, F, and H represent the various elements within the document element, such as headings, paragraphs, and lists. I and J represent the link elements within the list element.
 
@@ -342,7 +342,7 @@ An example representation of the given markdown document as a JSON object using 
     }
   ]
 }
-
+```
 In this representation, each element in the markdown document, such as headings, paragraphs, and links, is represented as a JSON object with a type property indicating the type of element, and additional properties as needed to capture the relevant information, such as the text content, heading level, and URL. The JSON object is structured as a tree-like structure, with nested objects representing the hierarchical relationships between the elements in the markdown document.
 
 ```
@@ -514,23 +514,20 @@ The following table explains the attributes of the JSON schema
 
 ## How to use the JSON schema to validate a JSON document
 
-Here are the general steps to use a JSON schema to validate a JSON document:
+Here are the general steps to use a JSON schema to validate a JSON document.
 
-Step 1: Obtain a JSON schema: You can either create your own JSON schema or use an existing one that matches your requirements. In this case, you can use the JSON schema provided in the previous response.
-
-Step 2: Choose a JSON schema validator: There are several JSON schema validators available in various programming languages. Choose a JSON schema validator that is compatible with the programming language you are using. Some popular options include Ajv for JavaScript, jsonschema for Python, and Newtonsoft.Json.Schema for C#.
-
-Step 3: Load the JSON schema: Load the JSON schema into your programming environment or application. This typically involves reading the JSON schema from a file or a string, and parsing it into a data structure that can be used by the JSON schema validator.
-
-Step 4: Load the JSON document: Load the JSON document that you want to validate into your programming environment or application. This typically involves reading the JSON document from a file or a string, and parsing it into a data structure that can be validated against the JSON schema.
-
-Step 5: Validate the JSON document against the JSON schema: Use the JSON schema validator to validate the JSON document against the loaded JSON schema. This typically involves passing the JSON document and the JSON schema to a validation function provided by the JSON schema validator, and checking the validation result.
-
-Step 6: Interpret the validation result: The validation result will typically indicate whether the JSON document is valid or not, based on the rules defined in the JSON schema. If the JSON document is valid, you can proceed with using it in your application. If the JSON document is not valid, you can handle the validation errors according to your application's requirements.
+| Order | Step | Description |
+| --- | --- | --- |
+| Step 1 |  Obtain a JSON schema |  You can either create your own JSON schema or use an existing one that matches your requirements. In this case, you can use the JSON schema provided in the previous response. |
+| Step 2 |  Choose a JSON schema validator |  There are several JSON schema validators available in various programming languages. Choose a JSON schema validator that is compatible with the programming language you are using. Some popular options include Ajv for JavaScript, jsonschema for Python, and Newtonsoft.Json.Schema for C#. |
+| Step 3 |  Load the JSON schema |  Load the JSON schema into your programming environment or application. This typically involves reading the JSON schema from a file or a string, and parsing it into a data structure that can be used by the JSON schema validator. |
+| Step 4 |  Load the JSON document |  Load the JSON document that you want to validate into your programming environment or application. This typically involves reading the JSON document from a file or a string, and parsing it into a data structure that can be validated against the JSON schema. |
+| Step 5 |  Validate the JSON document against the JSON schema |  Use the JSON schema validator to validate the JSON document against the loaded JSON schema. This typically involves passing the JSON document and the JSON schema to a validation function provided by the JSON schema validator, and checking the validation result. |
+| Step 6 |  Interpret the validation result |  The validation result will typically indicate whether the JSON document is valid or not, based on the rules defined in the JSON schema. If the JSON document is valid, you can proceed with using it in your application. If the JSON document is not valid, you can handle the validation errors according to your application's requirements. |
 
 ## Use Python to validate a JSON document using the JSON schema
 
-You will use the 
+
 
 ### Install your requirements
 
