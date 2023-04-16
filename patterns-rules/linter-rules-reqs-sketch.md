@@ -17,7 +17,7 @@ Using an object model described in JSON and JSON Schema for a validation pipelin
 ```mermaid
 graph TD
     A[Input JSON Document]
-    B[JSON Schema - Object Model]
+    B[JSON Schema - Media Object Model]
     C[JSON Schema - Content Type]
     D[JSON Schema Validation Library/Tool]
     E[Validation Result]
@@ -25,8 +25,9 @@ graph TD
     A-->D
     B-->C
     C-->D
-    C-->E
+    D-->E
     E-->F
+
 ```
 
 Explanation of the diagram:
@@ -34,7 +35,7 @@ Explanation of the diagram:
 | Step | Description |
 | --- | --- |
 | A  |  input JSON document that needs to be validated. |
-| B  |  base JSON Schema representing the Document Object Model for markdown files. |
+| B  |  base JSON Schema representing the Media Object Model. |
 | C  |  JSON Schema that defines the specific content type and validation rules. |
 | D  |  JSON Schema validation library/tool that performs the actual validation against the JSON Schema. |
 | E  |  validation result, which can be a boolean (true or false) or a detailed report with validation errors. |
