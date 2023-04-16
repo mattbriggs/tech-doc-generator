@@ -1,83 +1,176 @@
-# Sketch of requirements for Skilling Linter Rules
+# Sketch of requirements for Skilling rules
 
+This document is a sketch of the requirements and the rules for content types managed my the Content Architecture team in the Skilling organization at Microsoft.
+
+The Skilling rules must accommodate a variety of media types, such as bitmapped graphics (`png`), markdown files (`md`), `yaml` files, video binaries (`mp4`). In addition the validation rules are documents stored in a governed version control repository. As documents they must be human and machine readable and use a flexible and documented format. The rules must be useable by multiple clients using a validation pipelines.
 
 ## Overview of the validation requirements
 
-Using an object model described in JSON and JSON Schema for a validation pipeline involves several steps. 
+The validation pipeline is based on common standards using a machine and human readable document type (JSON) with a wide set of tools supporting common coding languages. Specifically the pipeline uses JSON and JSON Schema. For the purpose of this specification, rules will focus on markdown. However, this pipeline could be adapted to any parser that had meet the following criteria:
 
-The following diagram shows the validation pipeline using JSON and JSON Schema:
+- Produces a JSON object as a representation of the source object. For instance, a parser could render a video binary as a JSON object.
+- A media object model describes every possible valid expression of the media. For instance, markdown files inherits properties from a JSON object representing the Document Object Model.
+- A JSON Schema can describes the specific validation rules associated with a content type that is an instance of the media object model.
+
+Using an object model described in JSON and JSON Schema for a validation pipeline involves several steps. The following diagram shows the validation pipeline using JSON and JSON Schema:
 
 ```mermaid
 graph TD
     A[Input JSON Document]
-    B[JSON Schema]
-    C[JSON Schema Validation Library/Tool]
-    D[Validation Result]
-    E[Error Handling]
-    A-->C
+    B[JSON Schema - Object Model]
+    C[JSON Schema - Content Type]
+    D[JSON Schema Validation Library/Tool]
+    E[Validation Result]
+    F[Error Handling]
+    A-->D
     B-->C
-    C-->D
-    D-->E
+    B-->D
+    C-->E
+    D-->F
 ```
 
 Explanation of the diagram:
 
- - A represents the input JSON document that needs to be validated.
- - B represents the JSON Schema that defines the object model and validation rules.
- - C represents the JSON Schema validation library/tool that performs the actual validation against the JSON Schema.
- - D represents the validation result, which can be a boolean (true or false) or a detailed report with validation errors.
- - E represents the error handling step, where the validation errors are handled according to the defined error handling strategy.
- - 
+| Step | Description |
+| --- | --- |
+| A  |  input JSON document that needs to be validated. |
+| B  |  base JSON Schema representing the Document Object Model for markdown files. |
+| C  |  JSON Schema that defines the specific content type and validation rules. |
+| D  |  JSON Schema validation library/tool that performs the actual validation against the JSON Schema. |
+| E  |  validation result, which can be a boolean (true or false) or a detailed report with validation errors. |
+| F  |  error handling step, where the validation errors are handled according to the defined error handling strategy. |
+
 This diagram illustrates the basic flow of a validation pipeline using JSON and JSON Schema. The input JSON document and the JSON Schema are passed to the JSON Schema validation library/tool, which performs the validation and produces a validation result. The validation result can be used to handle errors according to the defined error handling strategy, such as logging, displaying error messages, or taking other appropriate actions.
 
 ## Overview of the process
 
-1. Define the object model in JSON: First, you need to define the object model you want to validate using JSON. JSON (JavaScript Object Notation) is a lightweight data interchange format that is easy to read and write. You can define your object model by creating a JSON document that represents the structure and properties of the object you want to validate. For example, if you're validating a user object with properties like name, email, and age, you would create a JSON document that represents this structure.
-1. Create a JSON Schema: JSON Schema is a standard for describing the structure, format, and validation rules for JSON documents. It provides a way to define the expected structure and properties of a JSON object, as well as specify validation rules for each property. You can create a JSON Schema that corresponds to your object model by defining the expected properties, their types, and any validation rules using the JSON Schema syntax. JSON Schema allows you to specify constraints such as required fields, allowed values, maximum and minimum lengths, and more.
-1. Integrate JSON Schema into your validation pipeline: Once you have created a JSON Schema for your object model, you can integrate it into your validation pipeline. A validation pipeline is a series of steps that a JSON document goes through to ensure it meets the specified validation rules. Depending on your application's requirements, your validation pipeline may include steps such as data extraction, data transformation, and data validation. You can add a validation step to your pipeline that involves validating the JSON document against the JSON Schema you created. This step typically involves parsing the JSON document and validating it against the JSON Schema using a JSON Schema validation library or tool.
-1. Perform validation: When a JSON document is passed through the validation pipeline, the JSON Schema is used to validate the document against the defined object model and validation rules. The JSON document is compared against the JSON Schema, and any validation errors are flagged. For example, if a required field is missing or a property has an invalid value, the validation step will raise an error or return a validation report indicating the issues found in the JSON document. This allows you to ensure that the JSON document adheres to the expected structure and validation rules defined in the JSON Schema.
-1. Handle validation results: Once the validation is complete, you can handle the validation results according to your application's requirements. If the JSON document passes validation, you can continue processing it in your application. If validation errors are detected, you can handle them based on your application's error handling strategy. This may involve rejecting the document, logging the errors, or taking other appropriate actions.
+1. **Define the object model in JSON**
 
-Using an object model described in JSON and JSON Schema for a validation pipeline provides a standardized and flexible way to validate JSON documents against a defined structure and validation rules. It helps ensure that the input data meets the expected requirements and can improve the quality and reliability of your application's data processing.
+    First, you need to define the object model you want to validate using JSON. JSON (JavaScript Object Notation) is a lightweight data interchange format that is easy to read and write. You can define your object model by creating a JSON document that represents the structure and properties of the object you want to validate. For example, if you're validating a user object with properties like name, email, and age, you would create a JSON document that represents this structure.
+
+1. **Create a JSON Schema**
+
+    JSON Schema is a standard for describing the structure, format, and validation rules for JSON documents. It provides a way to define the expected structure and properties of a JSON object, as well as specify validation rules for each property. You can create a JSON Schema that corresponds to your object model by defining the expected properties, their types, and any validation rules using the JSON Schema syntax. JSON Schema allows you to specify constraints such as required fields, allowed values, maximum and minimum lengths, and more.
+
+1. **Integrate JSON Schema into your validation pipeline**
+
+    Once you have created a JSON Schema for your object model, you can integrate it into your validation pipeline. A validation pipeline is a series of steps that a JSON document goes through to ensure it meets the specified validation rules. Depending on your application's requirements, your validation pipeline may include steps such as data extraction, data transformation, and data validation. You can add a validation step to your pipeline that involves validating the JSON document against the JSON Schema you created. This step typically involves parsing the JSON document and validating it against the JSON Schema using a JSON Schema validation library or tool.
+
+1. **Perform validation**
+
+    When a JSON document is passed through the validation pipeline, the JSON Schema is used to validate the document against the defined object model and validation rules. The JSON document is compared against the JSON Schema, and any validation errors are flagged. For example, if a required field is missing or a property has an invalid value, the validation step will raise an error or return a validation report indicating the issues found in the JSON document. This allows you to ensure that the JSON document adheres to the expected structure and validation rules defined in the JSON Schema.
+
+1. **Handle validation results**
+
+    Once the validation is complete, you can handle the validation results according to your application's requirements. If the JSON document passes validation, you can continue processing it in your application. If validation errors are detected, you can handle them based on your application's error handling strategy. This may involve rejecting the document, logging the errors, or taking other appropriate actions.
+
+1. **Schema**
+
+    Using an object model described in JSON and JSON Schema for a validation pipeline provides a standardized and flexible way to validate JSON documents against a defined structure and validation rules. It helps ensure that the input data meets the expected requirements and can improve the quality and reliability of your application's data processing.
 
 ### A list of resources needed to support this workflow
 
 Here's a list of resources that may be needed to support the workflow of using an object model described in JSON and JSON Schema for a validation pipeline
 
-1. JSON Schema specification: Familiarity with the JSON Schema specification is essential, as it provides the syntax and rules for defining JSON object models and validation rules. The official JSON Schema website (https://json-schema.org/) is a valuable resource for documentation, examples, and reference materials.
-1. JSON Schema validation library/tool: You'll need a JSON Schema validation library or tool to perform the actual validation against the JSON Schema. There are several popular libraries and tools available in different programming languages, such as jsonschema for Python, ajv for JavaScript, and Newtonsoft.Json.Schema for .NET. These libraries/tools provide APIs or command-line interfaces for parsing JSON documents and validating them against a JSON Schema.
-1. JSON editor: A JSON editor can be helpful for creating and editing JSON documents and JSON Schema. There are many free and paid JSON editors available, such as JSONEdit, JSONLint, and Visual Studio Code with JSON extensions. These editors provide features like syntax highlighting, code completion, and validation to help you create and edit JSON documents and JSON Schema more efficiently.
-1. Documentation and tutorials: Documentation and tutorials related to JSON Schema and JSON validation can be valuable resources for understanding the concepts, syntax, and best practices involved in using JSON Schema for validation. Many online platforms, websites, and blogs provide comprehensive documentation and tutorials on JSON Schema, along with examples and use cases that can help you learn and implement the validation pipeline effectively.
-1. Testing data: Having sample JSON documents that represent different scenarios and edge cases can be useful for testing your validation pipeline. You can use these sample JSON documents to validate against your JSON Schema and verify that your validation pipeline behaves as expected in various scenarios. You can create your own testing data or find publicly available datasets online that align with your object model and validation rules.
-1. Error handling strategy: Having a well-defined error handling strategy in place is crucial for handling validation errors effectively. Depending on your application's requirements, you may need to define error codes, error messages, logging mechanisms, and other error handling strategies to handle validation errors in a consistent and meaningful way. Planning and implementing error handling in your validation pipeline is an important part of the overall workflow.
-1. Development environment: You'll need a development environment that supports the programming language you're using for your validation pipeline. This may include an integrated development environment (IDE), a text editor, a command-line interface, or other tools that are compatible with your chosen programming language.
+1. **JSON Schema specification**
 
-These are some of the key resources that may be needed to support the workflow of using an object model described in JSON and JSON Schema for a validation pipeline. The specific resources required may vary depending on your application's requirements, programming language, and development environment.
+    Familiarity with the JSON Schema specification is essential, as it provides the syntax and rules for defining JSON object models and validation rules. The official JSON Schema website (https
+    
+    [json-schema.org](json-schema.org) is a valuable resource for documentation, examples, and reference materials.
+
+1. **JSON Schema validation library/tool**
+
+    You'll need a JSON Schema validation library or tool to perform the actual validation against the JSON Schema. There are several popular libraries and tools available in different programming languages, such as jsonschema for Python, ajv for JavaScript, and Newtonsoft.Json.Schema for .NET. These libraries/tools provide APIs or command-line interfaces for parsing JSON documents and validating them against a JSON Schema.
+
+1. **JSON editor**
+
+    A JSON editor can be helpful for creating and editing JSON documents and JSON Schema. There are many free and paid JSON editors available, such as JSONEdit, JSONLint, and Visual Studio Code with JSON extensions. These editors provide features like syntax highlighting, code completion, and validation to help you create and edit JSON documents and JSON Schema more efficiently.
+
+1. **Documentation and tutorials**
+
+    Documentation and tutorials related to JSON Schema and JSON validation can be valuable resources for understanding the concepts, syntax, and best practices involved in using JSON Schema for validation. Many online platforms, websites, and blogs provide comprehensive documentation and tutorials on JSON Schema, along with examples and use cases that can help you learn and implement the validation pipeline effectively.
+
+1. **Testing data**
+
+    Having sample JSON documents that represent different scenarios and edge cases can be useful for testing your validation pipeline. You can use these sample JSON documents to validate against your JSON Schema and verify that your validation pipeline behaves as expected in various scenarios. You can create your own testing data or find publicly available datasets online that align with your object model and validation rules.
+
+1. **Error handling strategy**
+
+    Having a well-defined error handling strategy in place is crucial for handling validation errors effectively. Depending on your application's requirements, you may need to define error codes, error messages, logging mechanisms, and other error handling strategies to handle validation errors in a consistent and meaningful way. Planning and implementing error handling in your validation pipeline is an important part of the overall workflow.
+
+1. **Development environment**
+
+    You'll need a development environment that supports the programming language you're using for your validation pipeline. This may include an integrated development environment (IDE), a text editor, a command-line interface, or other tools that are compatible with your chosen programming language.
+    
+    These are some of the key resources that may be needed to support the workflow of using an object model described in JSON and JSON Schema for a validation pipeline. The specific resources required may vary depending on your application's requirements, programming language, and development environment.
 
 ## Use the structure of the Document Object Model (DOM) as an API
 
 There are several reasons why using the structure of the Document Object Model (DOM) as an API can be beneficial:
 
-1. Familiarity: Many web developers are already familiar with the DOM, as it is the standard programming interface for manipulating HTML and XML documents in web browsers. Using the DOM structure as an API allows developers to leverage their existing knowledge and skills, making it easier to work with and manipulate the document structure programmatically.
-2. Accessibility: The DOM provides a way to programmatically access and manipulate the content of a web page, including its elements, attributes, and text. This enables developers to create more accessible web applications by dynamically updating the DOM to provide alternative content, such as screen reader-friendly text or keyboard accessible controls, based on user interactions or other events.
-3. Flexibility: The DOM structure is hierarchical, allowing for easy traversal and manipulation of the document tree. This flexibility enables developers to perform a wide range of operations on the document, such as adding, deleting, or modifying elements, attributes, and text. This makes the DOM structure a powerful tool for building dynamic and interactive web applications.
-4. Interoperability: The DOM is a standard API that is supported by all modern web browsers, making it highly interoperable across different platforms and devices. This means that code written using the DOM structure as an API can be easily ported and run on different web browsers, making it a reliable and widely compatible solution for web development.
-5. Extensibility: The DOM structure can be extended to support custom data structures or document types, allowing developers to create their own domain-specific APIs for working with specialized documents or data formats. This extensibility makes the DOM structure a versatile and adaptable solution for various use cases beyond traditional web development.
+1. **Familiarity**
+
+    Many web developers are already familiar with the DOM, as it is the standard programming interface for manipulating HTML and XML documents in web browsers. Using the DOM structure as an API allows developers to leverage their existing knowledge and skills, making it easier to work with and manipulate the document structure programmatically.
+
+2. **Accessibility**
+
+    The DOM provides a way to programmatically access and manipulate the content of a web page, including its elements, attributes, and text. This enables developers to create more accessible web applications by dynamically updating the DOM to provide alternative content, such as screen reader-friendly text or keyboard accessible controls, based on user interactions or other events.
+
+3. **Flexibility**
+
+    The DOM structure is hierarchical, allowing for easy traversal and manipulation of the document tree. This flexibility enables developers to perform a wide range of operations on the document, such as adding, deleting, or modifying elements, attributes, and text. This makes the DOM structure a powerful tool for building dynamic and interactive web applications.
+
+4. **Interoperability**
+
+    The DOM is a standard API that is supported by all modern web browsers, making it highly interoperable across different platforms and devices. This means that code written using the DOM structure as an API can be easily ported and run on different web browsers, making it a reliable and widely compatible solution for web development.
+
+5. **Extensibility**
+
+    The DOM structure can be extended to support custom data structures or document types, allowing developers to create their own domain-specific APIs for working with specialized documents or data formats. This extensibility makes the DOM structure a versatile and adaptable solution for various use cases beyond traditional web development.
 
 Using the structure of the DOM as an API provides developers with a familiar, accessible, flexible, interoperable, and extensible way to programmatically interact with web documents, making it a valuable choice for building modern web applications.
 
 ## Considerations of reating an API that uses the Document Object Model (DOM)
 
-1. Define Purpose: Clearly define the purpose and scope of the API. What specific tasks or operations will the API perform using the DOM? Identify the intended use cases and target audience for the API.
-1. Choose Programming Language: Decide on the programming language in which you will implement the API. The DOM is typically used with languages such as JavaScript, Python, Java, or C#, depending on the context and environment of your application.
-1. Define API Methods: Determine the specific methods and functions that your API will provide for working with the DOM. This may include methods for creating, modifying, and deleting DOM elements, manipulating attributes and text, and navigating the document tree.
-1. Define Input/Output Formats: Specify the input and output formats for your API. This includes the data formats that the API will accept as input (e.g., JSON, XML) and the formats in which it will return data (e.g., JSON, XML, plain text).
-1. Define Error Handling: Define how your API will handle errors and exceptions that may occur during DOM manipulation. This may include defining error codes, error messages, and error handling mechanisms such as try-catch blocks or error callbacks.
-1. Define Security Measures: Consider security measures for your API, such as input validation, authentication, and authorization mechanisms, to ensure that only authorized users can access and manipulate the DOM.
-1. Document Usage and Examples: Provide thorough documentation for developers to understand how to use your API effectively. Include usage instructions, examples, and code snippets that demonstrate how to interact with the DOM using your API.
-1. Test and Debug: Thoroughly test and debug your API to ensure its functionality and reliability. Use testing tools, frameworks, and techniques to identify and fix any issues or bugs.
-1. Follow Best Practices: Follow best practices for API design, such as using descriptive and consistent naming conventions, adhering to RESTful or other API design principles, and considering performance, scalability, and maintainability of your API.
-1. Consider Versioning: Consider versioning your API to allow for future updates and changes without breaking existing client applications. Include versioning information in your API documentation and implement backward compatibility strategies as needed.
+1. **Define Purpose**
+
+    Clearly define the purpose and scope of the API. What specific tasks or operations will the API perform using the DOM? Identify the intended use cases and target audience for the API.
+
+1. **Choose Programming Language**
+
+    Decide on the programming language in which you will implement the API. The DOM is typically used with languages such as JavaScript, Python, Java, or C#, depending on the context and environment of your application.
+
+1. **Define API Methods**
+
+    Determine the specific methods and functions that your API will provide for working with the DOM. This may include methods for creating, modifying, and deleting DOM elements, manipulating attributes and text, and navigating the document tree.
+
+1. **Define Input/Output Formats**
+
+    Specify the input and output formats for your API. This includes the data formats that the API will accept as input (e.g., JSON, XML) and the formats in which it will return data (e.g., JSON, XML, plain text).
+
+1. **Define Error Handling**
+
+    Define how your API will handle errors and exceptions that may occur during DOM manipulation. This may include defining error codes, error messages, and error handling mechanisms such as try-catch blocks or error callbacks.
+
+1. **Define Security Measures**
+
+    Consider security measures for your API, such as input validation, authentication, and authorization mechanisms, to ensure that only authorized users can access and manipulate the DOM.
+
+1. **Document Usage and Examples**
+
+    Provide thorough documentation for developers to understand how to use your API effectively. Include usage instructions, examples, and code snippets that demonstrate how to interact with the DOM using your API.
+
+1. **Test and Debug**
+
+    Thoroughly test and debug your API to ensure its functionality and reliability. Use testing tools, frameworks, and techniques to identify and fix any issues or bugs.
+
+1. **Follow Best Practices**
+
+    Follow best practices for API design, such as using descriptive and consistent naming conventions, adhering to RESTful or other API design principles, and considering performance, scalability, and maintainability of your API.
+
+1. **Consider Versioning**
+
+    Consider versioning your API to allow for future updates and changes without breaking existing client applications. Include versioning information in your API documentation and implement backward compatibility strategies as needed.
 
 By considering these requirements, you can create a well-designed and robust API that leverages the power and flexibility of the DOM for interacting with web documents in a consistent and efficient manner.
 
