@@ -84,3 +84,18 @@ A JSON Schema provides a contract for the JSON data required by a given applicat
 }
 
 ```
+
+# This is a template for an attribute object
+
+A component may have children and the data is stored in attributes in nodes.
+
+{
+    "type": "name",
+    "item-id" : "{{GUID}}",
+    "order": "1",
+    "parent" : "root",
+    "child" : []
+    "markdown": "#markdown",
+    "text": "text",
+    "attribute": ""
+}
