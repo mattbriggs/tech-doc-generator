@@ -2,52 +2,50 @@
 
 Content is the material that appears in the 'content well' of the learn.Microsoft.com website. This includes the table of contents and the text.
 
-Content is the material that appears in the 'content well' of the learn.Microsoft.com website. This includes the table of contents and the text. It is a subset of structures in the[Unified Content Model](https://review.learn.microsoft.com/help/patterns/library/contribute-unified-content-model). Contnet Architecture fits under the [Article](https://review.learn.microsoft.com/help/patterns/library/contribute-unified-content-mode#article) section of the UCM and provides support for the Table of Contents that is not listed in the UCM.
+Content is the material that appears in the 'content well' of the learn.Microsoft.com website. This includes the table of contents and the text. It is a subset of structures in the [Unified Content Model](https://review.learn.microsoft.com/help/patterns/library/contribute-unified-content-model) (UCM). Content Architecture fits under the [Article](https://review.learn.microsoft.com/help/patterns/library/contribute-unified-content-mode#article) section of the UCM and provides support for the Table of Contents that is not listed in the UCM.
 
 ## Content Architecture 
 
-A component can be thought of a component is an HTML block on the web site, and a JSON-LD representation for programmatic consumption of the content. To go to the beginning, the component exists antent block in HTML terms. A component fills the entire content column.
 
-A component exits in several states within the system. In it's final state, the component may exist in two states:s a markdown block. The markdown block is parsed into JSON and then fed to the rendering templates that create the HTML and JSON-LD public web state of the component.
-
-A component exists in relation to other elements of the content architecture. A unit object contains the an array of component objects. An article object contains an array of unit objects. Above the level of the article, a guide object contains an array of articles and label nodes. A TOC object contains an array of articles, labels, and articles.
-
-An article then can be described as a schema defining the array of units. And each unit can be described as an array of components.
 
 
 ## Hub pages, TOCs, Guides  
 
+An Hub page then can be described as a schema defining the array of TOCs/Landing pages. And each TOCs/Landing pages can be described as an array of guides. In turn each guide is an array of articles.
+
 ```
 Hub:
-	<hub metdata>
+    <hub metdata>    
 TOCs:
-	TOC 1:
-	<toc metadata>
-	Content:
-	<toc>
-		Guide 1:
-		<guide metadata>
-		Articles:
-			<...>
-	TOC 2:
-	<toc metadata>
-	Content:
-	<toc>
-		Guide 1:
-		<guide metadata>
-		Articles:
-			<...>
-	TOC 3:
-	<toc metadata>
-	Content:
-	<toc>
-		Guide 1:
-		<guide metadata>
-		Articles:
-			<...>	
+    TOC 1:
+    <toc metadata>
+    Content:
+    <toc>
+        Guide 1:
+        <guide metadata>
+        Articles:
+            <...>
+    TOC 2:
+    <toc metadata>
+    Content:
+    <toc>
+        Guide 1:
+        <guide metadata>
+        Articles:
+            <...>
+    TOC 3:
+    <toc metadata>
+    Content:
+    <toc>
+        Guide 1:
+        <guide metadata>
+        Articles:
+            <...>    
 ```
 
 ## Article, unit, component
+
+An article then can be described as a schema defining the array of units. And each unit can be described as an array of components.
 
 ```
 article:
@@ -88,39 +86,42 @@ article:
          name:
 ```
 
-
-
-
 ## Components
+
+A component can be thought of a component is an HTML block on the web site, and a JSON-LD representation for programmatic consumption of the content. To go to the beginning, the component exists antent block in HTML terms. A component fills the entire content column.
+
+A component exits in several states within the system. In it's final state, the component may exist in two states:s a markdown block. The markdown block is parsed into JSON and then fed to the rendering templates that create the HTML and JSON-LD public web state of the component.
+
+A component exists in relation to other elements of the content architecture. A unit object contains the an array of component objects. An article object contains an array of unit objects. Above the level of the article, a guide object contains an array of articles and label nodes. A TOC object contains an array of articles, labels, and articles.
 
 The types of media that are displayed in the content well include:
 - **Text blocks**: Content blocks that contains text elements are natural language parts that can be understood by a person reading the text. Text elements are not structured using purely prescriptive models, however they can be parsed into programmatic representations using a variety of techniques. NLP processing creates a syntactical model that contains attributes such a part of speech, entity recognition, sentence recognition, and so on. Vector representations convert text, sentences, and so on into a numeric coordinates. The purpose of text is to communicate information to a human reader. Textual superstructures such as modality organize text chunks with specific purposes to accomplish more complex information tasks such as teaching a reader skill or presenting information for a reader to accomplish a task. 
-	- **Text**: This refers to the primary content in any written communication. In digital media, it's the sequence of words, sentences, and paragraphs that convey information or a message to the reader.
-	- **Tables**: These are a means of arranging data in rows and columns, (a matrix). Tables are especially useful for presenting numerical data or information in a structured manner. A table typically consists of a header (with column names) and rows of data.
-	- **Lists**: These are ordered or unordered sequences of items. Ordered lists (often represented with numbers) have a specific sequence, while unordered lists (often represented with bullets) don't emphasize any particular order
-	- **Headings**: Headings are used to label sections or subsections of a text, helping to organize content and make it reader-friendly. They typically come in different levels (e.g., H1, H2, H3 in HTML) to indicate hierarchy.
-	- **Inline elements**: In web design and word processing, inline elements are those that don't start on a new line and only take up as much width as necessary. They flow within the text, as opposed to block-level elements which take up the full width available. Examples include **bold** or _italicized_ text.
-		- italic
-		- bold
-		- code
-		- Hyperlinks
-		- Managed terms
-		- Semantic markers
+    - **Text**: This refers to the primary content in any written communication. In digital media, it's the sequence of words, sentences, and paragraphs that convey information or a message to the reader.
+    - **Tables**: These are a means of arranging data in rows and columns, (a matrix). Tables are especially useful for presenting numerical data or information in a structured manner. A table typically consists of a header (with column names) and rows of data.
+    - **Lists**: These are ordered or unordered sequences of items. Ordered lists (often represented with numbers) have a specific sequence, while unordered lists (often represented with bullets) don't emphasize any particular order
+    - **Headings**: Headings are used to label sections or subsections of a text, helping to organize content and make it reader-friendly. They typically come in different levels (e.g., H1, H2, H3 in HTML) to indicate hierarchy.
+    - **Inline elements**: In web design and word processing, inline elements are those that don't start on a new line and only take up as much width as necessary. They flow within the text, as opposed to block-level elements which take up the full width available. Examples include **bold** or _italicized_ text.
+        - italic
+        - bold
+        - code
+        - Hyperlinks
+        - Managed terms
+        - Semantic markers
 - **Metadata**: Metadata is data about data. It is information that describes the characteristics of a data set, such as its size, format, and content. Metadata can also include information about the data's origin, purpose, and usage. Metadata is used to help organize, manage, and search for data, as well as to provide context for the data.
-	- **Metadata about the content**. This is metadata that accompanies the content such as titles, description, and so on.
-	- ** Metadata related to the organization**. This metadata is related to controlled vocabularies in managed taxonomies. 
-	- **Microdata**. Microdata is a type of structured data that is used to provide additional information about a web page or other online content. It is typically embedded in the HTML code of a web page and is used to provide search engines with more information about the page and its content. This can help search engines better understand the content of the page and provide more relevant search results. Microdata can also be used to provide additional information to web browsers, such as the author of the page or the date it was last updated.. 
+    - **Metadata about the content**. This is metadata that accompanies the content such as titles, description, and so on.
+    - ** Metadata related to the organization**. This metadata is related to controlled vocabularies in managed taxonomies. 
+    - **Microdata**. Microdata is a type of structured data that is used to provide additional information about a web page or other online content. It is typically embedded in the HTML code of a web page and is used to provide search engines with more information about the page and its content. This can help search engines better understand the content of the page and provide more relevant search results. Microdata can also be used to provide additional information to web browsers, such as the author of the page or the date it was last updated.. 
 - **Images**. An image is referenced as a content block in markdown as an image construct and in HTML as an \<img\> element.
-	- **Diagrams**: A diagram is a visual representation of information or data, usually presented in the form of a graph, chart, or illustration. It is used to convey complex ideas or concepts in a simple and easy-to-understand way. Diagrams can be used to represent relationships between different elements, or to show the flow of a process.
-	- **Screenshots**: Screenshots are digital images of what is currently being displayed on a computer monitor, smartphone, or other device. They are typically taken by pressing a combination of keys or buttons on the device, and can be used to capture a specific moment in time, or to document a problem or issue with a program or device. Screenshots can also be used to share information or to show someone how to do something on a device.
-	- **Conceptual art**: Conceptual art is an art form that focuses on the idea or concept behind the work, rather than the physical or visual aspects. It is often characterized by the use of unconventional materials and techniques, and is often seen as a form of protest against traditional art forms. Conceptual art often relies on the viewer to interpret the meaning behind the work, and can be seen as a form of communication between the artist and the viewer.
+    - **Diagrams**: A diagram is a visual representation of information or data, usually presented in the form of a graph, chart, or illustration. It is used to convey complex ideas or concepts in a simple and easy-to-understand way. Diagrams can be used to represent relationships between different elements, or to show the flow of a process.
+    - **Screenshots**: Screenshots are digital images of what is currently being displayed on a computer monitor, smartphone, or other device. They are typically taken by pressing a combination of keys or buttons on the device, and can be used to capture a specific moment in time, or to document a problem or issue with a program or device. Screenshots can also be used to share information or to show someone how to do something on a device.
+    - **Conceptual art**: Conceptual art is an art form that focuses on the idea or concept behind the work, rather than the physical or visual aspects. It is often characterized by the use of unconventional materials and techniques, and is often seen as a form of protest against traditional art forms. Conceptual art often relies on the viewer to interpret the meaning behind the work, and can be seen as a form of communication between the artist and the viewer.
 - **Code**: Code is a language-specific tokens that can be used in a compiler or runtime to run application. Code is a constructed language meant to communicate unambiguous instructions to a processor.
-	- **Code snippet**: A code snippet is a small piece of code that can be used to perform a specific task or solve a particular problem. It is usually a short segment of code that can be used to quickly and easily add a feature or functionality to a larger program. Code snippets can be used to reduce the amount of time and effort needed to write a program, as well as to make the code more readable and maintainable.
-	- **Code samples**: A code sample is a small piece of code that is used to demonstrate a programming concept or a specific syntax. It is typically used to illustrate how a particular programming language works, or to demonstrate a specific feature of a programming language. Code samples can be used to help developers learn a new language, or to help them understand a particular concept or feature.
+    - **Code snippet**: A code snippet is a small piece of code that can be used to perform a specific task or solve a particular problem. It is usually a short segment of code that can be used to quickly and easily add a feature or functionality to a larger program. Code snippets can be used to reduce the amount of time and effort needed to write a program, as well as to make the code more readable and maintainable.
+    - **Code samples**: A code sample is a small piece of code that is used to demonstrate a programming concept or a specific syntax. It is typically used to illustrate how a particular programming language works, or to demonstrate a specific feature of a programming language. Code samples can be used to help developers learn a new language, or to help them understand a particular concept or feature.
 - **Context switchers**. A context switcher is a feature of a web site interface that allows the user to switch between different contexts or views of the same web page. For example, a web page may have different views for desktop, tablet, and mobile devices. The context switcher allows the user to switch between these different views, allowing them to view the page in the context that best suits their device.
-	- Zone pivots
-	- Moniker (context)
-	- Content tabs
+    - Zone pivots
+    - Moniker (context)
+    - Content tabs
 
 Elements on the web site that are not content or are mixed with context and other concerns, are:
 - Navigation elements such as breadcrumbs and site menus
@@ -136,7 +137,7 @@ Alerts are a Markdown extension to create block quotes that render on Microsoft 
 
 **Diagram**
 
-
+```mermaid
 classDiagram
     class Alert {
         +type: Enum
@@ -150,6 +151,7 @@ classDiagram
         +WARNING
     }
     Alert --> Enum: type
+```
 
 **JSON Schema**
 
@@ -189,7 +191,7 @@ Negative potential consequences of an action.
 
 **Diagram**
 
-
+```mermaid
 classDiagram
 
 caution -- Regex
@@ -238,7 +240,7 @@ Definition
 
 **Diagram**
 
-
+```mermaid
 classDiagram
 
 important -- Regex
@@ -285,15 +287,13 @@ Information the user should notice even if skimming.
 
 **Diagram**
 
-
+```mermaid
 classDiagram
 
 note -- Regex
 note -- markdown
 Regex : string "> [!NOTE]\n> {{}}"
 note -- text
-
-
 ```
 
 
@@ -331,16 +331,16 @@ note -- text
 
 Definition
 
+
 **Diagram**
 
-
+```mermaid
 classDiagram
 
 public-preview -- Regex
 public-preview -- markdown
 Regex : string "> [!PREVIEW]\n> {{}}"
 public-preview -- text
-
 
 ```
 
@@ -366,7 +366,7 @@ Optional information to help a user be more successful.
 
 **Diagram**
 
-
+```mermaid
 classDiagram
 
 tip -- Regex
@@ -413,7 +413,7 @@ Definition
 
 **Diagram**
 
-
+```mermaid
 classDiagram
 
 warning -- Regex
@@ -459,7 +459,12 @@ A blockquote is used to indicate a section of text that is a quotation from anot
 
 **Diagram**
 
+```mermaid
+classDiagram
 
+object
+
+```
 
 ```markdown
 
@@ -505,14 +510,19 @@ A Markdown code block is a section of text used to display code, commands, or ot
 
 **Diagram**
 
+```mermaid
+classDiagram
 
+object
+
+```
+
+**Markdown**
 
 ```markdown
   ```code-type
   code
   ```
-
-```
 
 **Parsed**
 
@@ -530,7 +540,14 @@ A container for components that an inventory process can't identify as a defined
 
 **Diagram**
 
+```mermaid
+classDiagram
 
+object
+
+```
+
+**Markdown**
 
 ```markdown
 
@@ -553,7 +570,7 @@ Heading elements are used to define headings in HTML. They range from <h1> to <h
 
 **Diagram**
 
-
+```mermaid
 classDiagram
     class Heading {
         +Enum level
@@ -569,6 +586,9 @@ classDiagram
     }
     Heading --> Enum
 
+```
+
+**Markdown**
 
 **JSON Schema**
 
@@ -591,6 +611,7 @@ text: X
 Heading level 1 (# heading 1).
 
 **Diagram**
+
 
 
 
