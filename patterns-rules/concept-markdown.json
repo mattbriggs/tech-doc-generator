@@ -1,0 +1,19 @@
+{
+"content": "<p>title: string
+description: string 
+author: string
+ms-author: string
+ms-service: string
+ms-topic: string
+ms-date: string
+ms-custom: string</p>
+<h1>[H1 heading here]</h1>
+<p>[add your introductory paragraph]</p>
+<h2>[Section 1 heading]</h2>
+<h2>[Section 2 heading]</h2>
+<h2>[Section n heading]</h2>
+<h2>Next steps</h2>
+<ul>
+<li><a href=\"article-concept.md\">Write concepts</a></li>
+<li><a href=\"../contribute/links-how-to.md\">Links</a></li>
+</ul>"}
