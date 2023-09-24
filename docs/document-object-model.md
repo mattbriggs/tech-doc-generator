@@ -136,7 +136,7 @@ Alerts are a Markdown extension to create block quotes that render on Microsoft 
 
 **Diagram**
 
-```mermaidjs
+
 classDiagram
     class Alert {
         +type: Enum
@@ -150,7 +150,6 @@ classDiagram
         +WARNING
     }
     Alert --> Enum: type
-```
 
 **JSON Schema**
 
@@ -190,7 +189,7 @@ Negative potential consequences of an action.
 
 **Diagram**
 
-```mermaidjs
+
 classDiagram
 
 caution -- Regex
@@ -239,7 +238,7 @@ Definition
 
 **Diagram**
 
-```mermaidjs
+
 classDiagram
 
 important -- Regex
@@ -286,7 +285,7 @@ Information the user should notice even if skimming.
 
 **Diagram**
 
-```mermaidjs
+
 classDiagram
 
 note -- Regex
@@ -334,7 +333,7 @@ Definition
 
 **Diagram**
 
-```mermaidjs
+
 classDiagram
 
 public-preview -- Regex
@@ -367,7 +366,7 @@ Optional information to help a user be more successful.
 
 **Diagram**
 
-```mermaidjs
+
 classDiagram
 
 tip -- Regex
@@ -414,7 +413,7 @@ Definition
 
 **Diagram**
 
-```mermaidjs
+
 classDiagram
 
 warning -- Regex
@@ -460,9 +459,6 @@ A blockquote is used to indicate a section of text that is a quotation from anot
 
 **Diagram**
 
-```mermaidjs
-
-```
 
 
 ```markdown
@@ -486,9 +482,6 @@ Definition
 
 **Diagram**
 
-```mermaidjs
-
-```
 
 
 ```markdown
@@ -512,9 +505,6 @@ A Markdown code block is a section of text used to display code, commands, or ot
 
 **Diagram**
 
-```mermaidjs
-
-```
 
 
 ```markdown
@@ -540,9 +530,6 @@ A container for components that an inventory process can't identify as a defined
 
 **Diagram**
 
-```mermaidjs
-
-```
 
 
 ```markdown
@@ -566,7 +553,7 @@ Heading elements are used to define headings in HTML. They range from <h1> to <h
 
 **Diagram**
 
-```mermaidjs
+
 classDiagram
     class Heading {
         +Enum level
@@ -582,7 +569,6 @@ classDiagram
     }
     Heading --> Enum
 
-```
 
 **JSON Schema**
 
@@ -606,9 +592,6 @@ Heading level 1 (# heading 1).
 
 **Diagram**
 
-```mermaidjs
-
-```
 
 
 ```markdown
@@ -644,7 +627,7 @@ Heading level 2 (# heading 2).
 
 **Diagram**
 
-```mermaidjs
+
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "object",
@@ -687,7 +670,7 @@ Heading level 3 (# heading 3).
 
 **Diagram**
 
-```mermaidjs
+
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "object",
@@ -730,9 +713,6 @@ Heading level 4 (# heading 4).
 
 **Diagram**
 
-```mermaidjs
-
-```
 
 
 ```markdown
@@ -769,9 +749,6 @@ Heading level 5 (# heading 5).
 
 **Diagram**
 
-```mermaidjs
-
-```
 
 
 ```markdown
@@ -808,9 +785,6 @@ Heading level 6 (# heading 6).
 
 **Diagram**
 
-```mermaidjs
-
-```
 
 
 ```markdown
@@ -849,9 +823,6 @@ Definition
 
 **Diagram**
 
-```mermaidjs
-
-```
 
 
 ```markdown
@@ -876,9 +847,6 @@ Definition
 
 **Diagram**
 
-```mermaidjs
-
-```
 
 
 ```markdown
@@ -902,13 +870,7 @@ text: X
 Definition
 
 **Diagram**
-
-```mermaidjs
-
-```
-
-
-```markdown
+markdown
   ![Alt text that describes the content of the image.](/media/folder-with-same-name-as-article-file/service-technology-image-description.png)
 
 
@@ -934,9 +896,6 @@ Definition
 
 **Diagram**
 
-```mermaidjs
-
-```
 
 
 ```markdown
@@ -1076,9 +1035,6 @@ Definition
 
 **Diagram**
 
-```mermaidjs
-
-```
 
 
 ```markdown
@@ -1103,9 +1059,6 @@ Definition
 
 **Diagram**
 
-```mermaidjs
-
-```
 
 
 ```markdown
@@ -1131,9 +1084,6 @@ Definition
 
 **Diagram**
 
-```mermaidjs
-
-```
 
 
 ```markdown
@@ -1250,9 +1200,6 @@ Markdown syntax is not applicable (N/A) for many HTML tags as Markdown is a simp
 
 **Diagram**
 
-```mermaidjs
-
-```
 
 
 ```markdown
@@ -1280,9 +1227,6 @@ These are a means of arranging data in rows and columns, (a matrix). Tables are 
 
 **Diagram**
 
-```mermaidjs
-
-```
 
 
 ```markdown
@@ -1309,9 +1253,6 @@ Definition
 
 **Diagram**
 
-```mermaidjs
-
-```
 
 
 ```markdown
