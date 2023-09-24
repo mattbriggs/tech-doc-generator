@@ -168,7 +168,17 @@ Components are composed of elements that are part of the definition of each comp
 
 Alerts are a Markdown extension to create block quotes that render on Microsoft Learn with colors and icons that indicate the significance of the content.
 
-**Diagram**
+Alerts include:
+- caution
+- important
+- note
+- public-preview
+- tip
+- warning
+
+#### Diagram
+
+The following diagram displays the set of possible sub-elements of the component.
 
 ```mermaid
 classDiagram
@@ -186,151 +196,85 @@ classDiagram
     Alert --> Enum: type
 ```
 
-**JSON Schema**
+#### Example markdown
+
+The following markdown is an example of the artifact in a file.
+
+```md
+  > [!CAUTION]
+  > Negative potential consequences of an action.
+```
+
+#### JSON parsed object
+
+The following JSON represents the attributes of a parsed artifact.
 
 ```json
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "type": "alert",
+    "type": "alert",
+    "level": "Important",
+    "markdown": "  > [!CAUTION]\r\n  > Negative potential consequences of an action.",
+    "text": "The message conveying information about dangerous certain consequences of an action."
+}
+```
+
+#### JSON Schema for a parsed object
+
+A JSON Schema provides a contract for the JSON data required by a given application and how that JSON data should be structured. It describes the structure of the JSON data, specifying what properties are required, the types of values, and more.
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
   "properties": {
+    "type": {
+      "type": "string"
+    },
     "level": {
-      "type": "string",
+      "type": "string"
       "enum": ["IMPORTANT", "CAUTION", "NOTE", "TIP", "WARNING"],
       "description": "The type of the message. It can be 'IMPORTANT', 'CAUTION', 'NOTE', 'TIP', or 'WARNING'."
     },
+    "markdown": {
+      "type": "string"
+    },
     "text": {
-      "type": "string",
+      "type": "string"
       "minLength": 1,
       "description": "The message conveying information about dangerous certain consequences of an action."
     }
   },
-  "required": ["level", "text"]
+  "required": [
+    "type",
+    "level",
+    "markdown",
+    "text"
+  ]
 }
 
-```
-
-***Parsed**
-
-```json
-{
-	"type": "alert",
-	"level": "Important",
-	"markdown": "  > [!CAUTION]\r\n  > Negative potential consequences of an action.",
-	"text": "The message conveying information about dangerous certain consequences of an action."
-}
 ```
 
 #### caution
 
 Negative potential consequences of an action.
 
-**Diagram**
-
-```mermaid
-classDiagram
-
-caution -- Regex
-caution -- markdown
-Regex : string "> [!CAUTION]\n> {{}}"
-caution -- text
-
-```
-
-
-
-```Markdown
-
+```md
   > [!CAUTION]
   > Negative potential consequences of an action.
 ```
 
-**Parsed**
-
-```json
-
-{
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "type": "object",
-  "properties": {
-    "type": {
-      "type": "string",
-      "enum": ["CAUTION"],
-      "description": "The type of the message. Currently, only 'CAUTION' is supported."
-    },
-    "message": {
-      "type": "string",
-      "minLength": 1,
-      "description": "The message describing the potential consequences of an action."
-    }
-  },
-  "required": ["type", "message"]
-}
-
-
-```
-
 #### important
 
-Definition
-
-**Diagram**
-
-```mermaid
-classDiagram
-
-important -- Regex
-important -- markdown
-Regex : string "> [!IMPORTANT]\n> {{}}"
-important -- text
-
-
-```
-
-
+Essential information required for user success.
 
 ```markdown
   > [!IMPORTANT]
   > Essential information required for user success.
 
 ```
-
-**Parsed**
-
-```json
-{
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "type": "object",
-  "properties": {
-    "type": {
-      "type": "string",
-      "enum": ["IMPORTANT"],
-      "description": "The type of the message. Currently, only 'IMPORTANT' is supported."
-    },
-    "message": {
-      "type": "string",
-      "minLength": 1,
-      "description": "The message conveying essential information required for user success."
-    }
-  },
-  "required": ["type", "message"]
-}
-
-
 #### note
 
 Information the user should notice even if skimming.
-
-**Diagram**
-
-```mermaid
-classDiagram
-
-note -- Regex
-note -- markdown
-Regex : string "> [!NOTE]\n> {{}}"
-note -- text
-```
-
 
 ```markdown
   > [!NOTE]
@@ -338,80 +282,18 @@ note -- text
 
 ```
 
-**Parsed**
-
-```json
-{
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "type": "object",
-  "properties": {
-    "type": {
-      "type": "string",
-      "enum": ["NOTE"],
-      "description": "The type of the message. Currently, only 'NOTE' is supported."
-    },
-    "message": {
-      "type": "string",
-      "minLength": 1,
-      "description": "The message conveying information that the user should notice even if skimming."
-    }
-  },
-  "required": ["type", "message"]
-}
-
-
-```
-
 #### public-preview
 
 Definition
-
-
-**Diagram**
-
-```mermaid
-classDiagram
-
-public-preview -- Regex
-public-preview -- markdown
-Regex : string "> [!PREVIEW]\n> {{}}"
-public-preview -- text
-
-```
-
 
 ```markdown
 
 
 ```
 
-**Parsed**
-
-```json
-type: X
-level: X
-markdown:
-text: X
-```
-
-
 #### tip
 
 Optional information to help a user be more successful.
-
-**Diagram**
-
-```mermaid
-classDiagram
-
-tip -- Regex
-tip -- markdown
-Regex : string "> [!TIP]\n> {{}}"
-tip -- textalert
-
-
-```
-
 
 ```markdown
   > [!TIP]
@@ -419,123 +301,84 @@ tip -- textalert
 
 ```
 
-**Parsed**
-
-```json
-{
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "type": "object",
-  "properties": {
-    "type": {
-      "type": "string",
-      "enum": ["TIP"],
-      "description": "The type of the message. Currently, only 'TIP' is supported."
-    },
-    "message": {
-      "type": "string",
-      "minLength": 1,
-      "description": "The message conveying optional information to help a user be more successful."
-    }
-  },
-  "required": ["type", "message"]
-}
-
-```
-
 #### warning
 
 Definition
-
-**Diagram**
-
-```mermaid
-classDiagram
-
-warning -- Regex
-warning -- markdown
-Regex : string "> [!WARNING]\n> {{}}"
-warning -- text
-
-
-```
-
 
 ```markdown
   > [!WARNING]
   > Dangerous certain consequences of an action.
 ```
 
-**Parsed**
-
-```json
-{
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "type": "object",
-  "properties": {
-    "type": {
-      "type": "string",
-      "enum": ["WARNING"],
-      "description": "The type of the message. Currently, only 'WARNING' is supported."
-    },
-    "message": {
-      "type": "string",
-      "minLength": 1,
-      "description": "The message conveying information about dangerous certain consequences of an action."
-    }
-  },
-  "required": ["type", "message"]
-}
-
-```
-
 ### blockquote
 
 A blockquote is used to indicate a section of text that is a quotation from another source. It visually sets the quoted text apart from the main content, making it easy for readers to recognize that the text is a quote.
 
-**Diagram**
+#### Diagram
+
+The following diagram displays the set of possible sub-elements of the component.
 
 ```mermaid
 classDiagram
-
-object
-
+    class Blockquote {
+        +String type
+        +String markdown
+        +String text
+    }
 ```
 
-```markdown
+#### Example markdown
 
+The following markdown is an example of the artifact in a file.
 
+```md
+  > This is the text.
+  > This is the second line of text.
+  > This is the third line of text.
 ```
 
-**Parsed**
+This is the text.
+This is the second line of text.
+This is the third line of text.
+
+#### JSON parsed object
+
+The following JSON represents the attributes of a parsed artifact.
 
 ```json
-type: X
-level: X
-markdown:
-text: X
+{
+    "type": "blockquote",
+    "markdown": "  > This is the text.\r\n  > This is the second line of text.\r\n  > This is the third line of text.",
+    "text": "This is the text.\r\nThis is the second line of text.\r\nThis is the third line of text."
+}
 ```
 
+#### JSON Schema for a parsed object
 
-### blue-box-link
-
-Definition
-
-**Diagram**
-
-
-
-```markdown
-
-
-```
-
-**Parsed**
+A JSON Schema provides a contract for the JSON data required by a given application and how that JSON data should be structured. It describes the structure of the JSON data, specifying what properties are required, the types of values, and more.
 
 ```json
-type: X
-level: X
-markdown:
-text: X
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string"
+    },
+    "markdown": {
+      "type": "string"
+    },
+    "text": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "type",
+    "markdown",
+    "text"
+  ]
+}
+
 ```
 
 
@@ -543,29 +386,97 @@ text: X
 
 A Markdown code block is a section of text used to display code, commands, or other preformatted text. Unlike inline code, which is delimited by single backticks (`), a code block is delimited by triple backticks (```) or indented with four spaces. This ensures the content inside is displayed in a monospace font and is not processed as regular Markdown, preserving whitespace and special characters.
 
-**Diagram**
+#### Diagram
+
+The following diagram displays the set of possible sub-elements of the component.
 
 ```mermaid
 classDiagram
-
-object
+    class CodeBlock {
+        +String type
+        +String code
+        +String markdown
+        +String text
+    }
 
 ```
 
-**Markdown**
+#### Example markdown
 
-```markdown
-  ```code-type
-  code
-  ```
+The following markdown is an example of the artifact in a file.
 
-**Parsed**
+```md
+    ```python
+    def owl_to_json_schema(owl_filename, output_filename):
+        g = Graph()
+        g.parse(owl_filename, format="xml")
+    
+        # Define a simple JSON Schema template
+        json_schema = {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "type": "content-object",
+            "properties": {}
+        }
+    
+        # Iterate through all triples in the graph and look for "how-to" object
+        for subj, pred, obj in g:
+            if "how-to" in subj:
+                # Add properties to JSON Schema (This is just an example, modify as needed)
+                json_schema["properties"][str(pred)] = {"type": "string", "description": str(obj)}
+    
+        # Save JSON Schema to output file
+        with open(output_filename, 'w') as f:
+            json.dump(json_schema, f, indent=2)
+    ```
+```
+
+#### JSON parsed object
+
+The following JSON represents the attributes of a parsed artifact.
 
 ```json
-type: X
-level: X
-markdown:
-text: X
+{
+    "type": "code-block",
+    "code": "python",
+    "markdown": "```python\r\ndef owl_to_json_schema(owl_filename, output_filename):\r\n    g = Graph()\r\n    g.parse(owl_filename, format=\"xml\")\r\n\r\n    # Define a simple JSON Schema template\r\n    json_schema = {\r\n        \"$schema\": \"http:\/\/json-schema.org\/draft-07\/schema#\",\r\n        \"type\": \"content-object\",\r\n        \"properties\": {}\r\n    }\r\n\r\n    # Iterate through all triples in the graph and look for \"how-to\" object\r\n    for subj, pred, obj in g:\r\n        if \"how-to\" in subj:\r\n            # Add properties to JSON Schema (This is just an example, modify as needed)\r\n            json_schema[\"properties\"][str(pred)] = {\"type\": \"string\", \"description\": str(obj)}\r\n\r\n    # Save JSON Schema to output file\r\n    with open(output_filename, 'w') as f:\r\n        json.dump(json_schema, f, indent=2)\r\n```",
+    "text": "def owl_to_json_schema(owl_filename, output_filename):\r\n    g = Graph()\r\n    g.parse(owl_filename, format=\"xml\")\r\n\r\n    # Define a simple JSON Schema template\r\n    json_schema = {\r\n        \"$schema\": \"http:\/\/json-schema.org\/draft-07\/schema#\",\r\n        \"type\": \"content-object\",\r\n        \"properties\": {}\r\n    }\r\n\r\n    # Iterate through all triples in the graph and look for \"how-to\" object\r\n    for subj, pred, obj in g:\r\n        if \"how-to\" in subj:\r\n            # Add properties to JSON Schema (This is just an example, modify as needed)\r\n            json_schema[\"properties\"][str(pred)] = {\"type\": \"string\", \"description\": str(obj)}\r\n\r\n    # Save JSON Schema to output file\r\n    with open(output_filename, 'w') as f:\r\n        json.dump(json_schema, f, indent=2)"
+}
+```
+
+#### JSON Schema for a parsed object
+
+A JSON Schema provides a contract for the JSON data required by a given application and how that JSON data should be structured. It describes the structure of the JSON data, specifying what properties are required, the types of values, and more.
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string"
+    },
+    "level": {
+      "type": "string"
+      "enum": ["IMPORTANT", "CAUTION", "NOTE", "TIP", "WARNING"],
+      "description": "The type of the message. It can be 'IMPORTANT', 'CAUTION', 'NOTE', 'TIP', or 'WARNING'."
+    },
+    "markdown": {
+      "type": "string"
+    },
+    "text": {
+      "type": "string"
+      "minLength": 1,
+      "description": "The message conveying information about dangerous certain consequences of an action."
+    }
+  },
+  "required": [
+    "type",
+    "level",
+    "markdown",
+    "text"
+  ]
+}
+
 ```
 
 
@@ -573,29 +484,65 @@ text: X
 
 A container for components that an inventory process can't identify as a defined component.
 
-**Diagram**
+#### Diagram
+
+The following diagram displays the set of possible sub-elements of the component.
 
 ```mermaid
 classDiagram
-
-object
-
+    class UnknownComponent {
+        +String type
+        +String markdown
+        +String text
+    }
 ```
 
-**Markdown**
+#### Example markdown
 
-```markdown
+The following markdown is an example of the artifact in a file.
 
-
+```md
+{{unknown markdown construct}}
 ```
 
-**Parsed**
+#### JSON parsed object
+
+The following JSON represents the attributes of a parsed artifact.
 
 ```json
-type: X
-level: X
-markdown:
-text: X
+{
+    "type": "component-unknown",
+    "markdown": "markdown",
+    "text": "text-only"
+}
+```
+
+#### JSON Schema for a parsed object
+
+A JSON Schema provides a contract for the JSON data required by a given application and how that JSON data should be structured. It describes the structure of the JSON data, specifying what properties are required, the types of values, and more.
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string"
+    },
+    "markdown": {
+      "type": "string"
+    },
+    "text": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "type",
+    "markdown",
+    "text"
+  ]
+}
+
 ```
 
 
@@ -603,7 +550,9 @@ text: X
 
 Heading elements are used to define headings in HTML. They range from <h1> to <h6>, with <h1> representing the highest (or most important) level and <h6> the lowest (or least important) level.
 
-**Diagram**
+#### Diagram
+
+The following diagram displays the set of possible sub-elements of the component.
 
 ```mermaid
 classDiagram
@@ -623,357 +572,291 @@ classDiagram
 
 ```
 
-**Markdown**
+#### Example markdown
 
-**JSON Schema**
+The following markdown is an example of the artifact in a file.
 
-```json
-
+```md
+# Heading
 ```
 
-**Parsed**
+#### JSON parsed object
+
+The following JSON represents the attributes of a parsed artifact.
 
 ```json
-type: X
-level: X
-markdown:
-text: X
+{
+    "type": "header",
+    "level": "1"
+    "markdown": "# Title text for the header",
+    "text": "Title text for the header"
+}
 ```
 
+#### JSON Schema for a parsed object
+
+A JSON Schema provides a contract for the JSON data required by a given application and how that JSON data should be structured. It describes the structure of the JSON data, specifying what properties are required, the types of values, and more.
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Header",
+  "description": "Schema for a header object",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "The type of the object.",
+      "enum": ["header"]
+    },
+    "level": {
+      "type": "string",
+      "description": "The level of the header.",
+      "enum": ["1", "2", "3", "4", "5", "6"]
+    },
+    "markdown": {
+      "type": "string",
+      "description": "The markdown representation of the header."
+    },
+    "text": {
+      "type": "string",
+      "description": "The text of the header."
+    }
+  },
+  "required": ["type", "level", "markdown", "text"]
+}
+
+```
 
 #### h1
 
 Heading level 1 (# heading 1).
 
-**Diagram**
-
-
-
-
-```markdown
-  # {{Title}}
-```
-
-**Parsed**
-
-```json
-{
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "type": "object",
-  "properties": {
-    "level": {
-      "type": "integer",
-      "enum": [1],
-      "description": "The level of the heading. For '# Heading 1', the level is 1."
-    },
-    "content": {
-      "type": "string",
-      "minLength": 1,
-      "description": "The text content of the heading."
-    }
-  },
-  "required": ["level", "content"]
-}
-
-```
-
 #### h2
 
 Heading level 2 (# heading 2).
-
-**Diagram**
-
-
-{
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "type": "object",
-  "properties": {
-    "level": {
-      "type": "integer",
-      "enum": [2],
-      "description": "The level of the heading. For '## Heading 2', the level is 2."
-    },
-    "content": {
-      "type": "string",
-      "minLength": 1,
-      "description": "The text content of the heading."
-    }
-  },
-  "required": ["level", "content"]
-}
-
-```
-
-
-```markdown
-
-
-```
-
-**Parsed**
-
-```json
-type: X
-level: X
-markdown:
-text: X
-```
-
 
 #### h3
 
 Heading level 3 (# heading 3).
 
-**Diagram**
-
-
-{
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "type": "object",
-  "properties": {
-    "level": {
-      "type": "integer",
-      "enum": [3],
-      "description": "The level of the heading. For '### Heading 3', the level is 3."
-    },
-    "content": {
-      "type": "string",
-      "minLength": 1,
-      "description": "The text content of the heading."
-    }
-  },
-  "required": ["level", "content"]
-}
-
-```
-
-
-```markdown
-
-
-```
-
-**Parsed**
-
-```json
-type: X
-level: X
-markdown:
-text: X
-```
-
-
 #### h4
 
 Heading level 4 (# heading 4).
-
-**Diagram**
-
-
-
-```markdown
-
-
-```
-
-**Parsed**
-
-```json
-{
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "type": "object",
-  "properties": {
-    "level": {
-      "type": "integer",
-      "enum": [4],
-      "description": "The level of the heading. For '#### Heading 4', the level is 4."
-    },
-    "content": {
-      "type": "string",
-      "minLength": 1,
-      "description": "The text content of the heading."
-    }
-  },
-  "required": ["level", "content"]
-}
-
-```
 
 #### h5
 
 Heading level 5 (# heading 5).
 
-**Diagram**
-
-
-
-```markdown
-
-
-```
-
-**Parsed**
-
-```json
-{
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "type": "object",
-  "properties": {
-    "level": {
-      "type": "integer",
-      "enum": [5],
-      "description": "The level of the heading. For '##### Heading 5', the level is 5."
-    },
-    "content": {
-      "type": "string",
-      "minLength": 1,
-      "description": "The text content of the heading."
-    }
-  },
-  "required": ["level", "content"]
-}
-
-```
-
 #### h6
 
 Heading level 6 (# heading 6).
 
-**Diagram**
+### image
 
+Definition
 
+#### Diagram
 
-```markdown
+The following diagram displays the set of possible sub-elements of the component.
 
-
+```mermaid
+classDiagram
+    class ImageComponent {
+        +String type
+        +String markdown
+        +String text
+        +String href
+    }
 ```
 
-**Parsed**
+#### Example markdown: markdown image
+
+The following markdown is an example of the artifact in a file.
+
+```md
+![alt-text.](media/my-cool-graphic.png)
+```
+#### Example markdown: image extension
+
+```md
+:::image type="content" source="<folderPath>" alt-text="<alt text>" link="<https://link.com>":::
+```
+
+#### JSON parsed object
+
+The following JSON represents the attributes of a parsed artifact.
 
 ```json
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "image",
+    "markdown": "![alt-text.](media\/my-cool-graphic.png)",
+    "text": "Alt text",
+    "href": "media/my-cool-graphic.png"
+}
+```
+
+#### JSON Schema for a parsed object
+
+A JSON Schema provides a contract for the JSON data required by a given application and how that JSON data should be structured. It describes the structure of the JSON data, specifying what properties are required, the types of values, and more.
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "properties": {
-    "level": {
-      "type": "integer",
-      "enum": [6],
-      "description": "The level of the heading. For '###### Heading 6', the level is 6."
+    "type": {
+      "type": "string"
     },
-    "content": {
-      "type": "string",
-      "minLength": 1,
-      "description": "The text content of the heading."
+    "markdown": {
+      "type": "string"
+    },
+    "text": {
+      "type": "string"
+    },
+    "href": {
+      "type": "string"
     }
   },
-  "required": ["level", "content"]
+  "required": [
+    "type",
+    "markdown",
+    "text",
+    "href"
+  ]
 }
 
 ```
 
-### image
-
 #### diagram
 
 Definition
-
-**Diagram**
-
-
-
-```markdown
-  ![Alt text that describes the content of the image.](/media/folder-with-same-name-as-article-file/service-technology-image-description.png)
-
-
-```
-
-**Parsed**
-
-```json
-type: X
-level: X
-markdown:
-text: X
-```
 
 
 #### editorial
 
 Definition
 
-**Diagram**
-
-
-
-```markdown
-  ![Alt text that describes the content of the image.](/media/folder-with-same-name-as-article-file/service-technology-image-description.png)
-
-
-```
-
-**Parsed**
-
-```json
-type: X
-level: X
-markdown:
-text: X
-```
-
-
 #### screenshot
 
 Definition
 
-**Diagram**
-markdown
-  ![Alt text that describes the content of the image.](/media/folder-with-same-name-as-article-file/service-technology-image-description.png)
-
-
-```
-
-**Parsed**
-
-```json
-type: X
-level: X
-markdown:
-text: X
-```
-
-
 #### wayfinder
 
+Definition
 #### large-image
 
-`look up the definition.`
-
 Definition
-
-**Diagram**
-
-
-
-```markdown
-
-
-```
-
-**Parsed**
-
-```json
-type: X
-level: X
-markdown:
-text: X
-```
-
-
 ### list
 
 These are ordered or unordered sequences of items. Ordered lists (often represented with numbers) have a specific sequence, while unordered lists (often represented with bullets) don't emphasize any particular order.
 
-#### Nodes of a list
+#### Diagram
+
+The following diagram displays the set of possible sub-elements of the component.
+
+```mermaid
+classDiagram
+    class ListItem {
+        +String type
+        +String itemId
+        +String order
+        +String parent
+        +List<String> child
+        +String markdown
+        +String text
+    }
+```
+
+#### Example markdown
+
+The following markdown is an example of the artifac in a file.
+
+```md
+  > [!CAUTION]
+  > Negative potential consequences of an action.
+```
+
+#### JSON parsed object
+
+The following JSON represents the attributes of a parsed artifact.
+
+```json
+{
+    "type": "list-item",
+    "item-id" : "16BA0E6F-561B-44F1-A17D-7A8F63C51560",
+    "order": "1",
+    "parent" : "root",
+    "child" : [{
+    "type": "bold",
+    "item-id" : "04ADB55B-567B-4FD7-A889-2F68E86F6F1C",
+    "order": "1"
+    "parent" : "16BA0E6F-561B-44F1-A17D-7A8F63C51560",
+    "child" : []
+    "markdown": "**This**",
+    "text": "This"
+},{
+    "type": "link",
+    "item-id" : "AC055903-72A4-41FD-8BC5-6B526EB768D1",
+    "order": "2"
+    "parent" : "16BA0E6F-561B-44F1-A17D-7A8F63C51560",
+    "child" : []
+    "markdown": "[you want to go](file.md)",
+    "text": "you want to go",
+    "href": "file.md"
+}]
+    "markdown": "# **This** is where [you want to go](file.md).",
+    "text": "This is where you want to go"
+}
+```
+
+#### JSON Schema for a parsed object
+
+A JSON Schema provides a contract for the JSON data required by a given application and how that JSON data should be structured. It describes the structure of the JSON data, specifying what properties are required, the types of values, and more.
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string"
+    },
+    "item-id": {
+      "type": "string"
+    },
+    "order": {
+      "type": "string"
+    },
+    "parent": {
+      "type": "string"
+    },
+    "child": {
+      "type": "array",
+      "items": {}
+    },
+    "markdown": {
+      "type": "string"
+    },
+    "text": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "type",
+    "item-id",
+    "order",
+    "parent",
+    "child",
+    "markdown",
+    "text"
+  ]
+}
+
+```
+
+
+#### Discussion: Nodes of a list
 
 In HTML, a list item is represented by the `<li>` element. The `<li>` element can contain both inline-level content (phrasing content) and block-level content (flow content).
 
@@ -1165,7 +1048,85 @@ Content blocks that contains text elements are natural language parts that can b
 
 Text refers to the primary content in any written communication. In digital media, it's the sequence of words, sentences, and paragraphs that convey information or a message to the reader.
 
-#### Nodes of a Text Block
+#### Diagram
+
+The following diagram displays the set of possible sub-elements of the component.
+
+```mermaid
+classDiagram
+    class Alert {
+        +type: Enum
+        +message: String
+    }
+    class Enum {
+        +IMPORTANT
+        +CAUTION
+        +NOTE
+        +TIP
+        +WARNING
+    }
+    Alert --> Enum: type
+```
+
+#### Example markdown
+
+The following markdown is an example of the artifact in a file.
+
+```md
+  > [!CAUTION]
+  > Negative potential consequences of an action.
+```
+
+#### JSON parsed object
+
+The following JSON represents the attributes of a parsed artifact.
+
+```json
+{
+    "type": "component-unknown",
+    "markdown": "markdown",
+    "text": "text-only"
+}
+```
+
+#### JSON Schema for a parsed object
+
+A JSON Schema provides a contract for the JSON data required by a given application and how that JSON data should be structured. It describes the structure of the JSON data, specifying what properties are required, the types of values, and more.
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string"
+    },
+    "level": {
+      "type": "string"
+      "enum": ["IMPORTANT", "CAUTION", "NOTE", "TIP", "WARNING"],
+      "description": "The type of the message. It can be 'IMPORTANT', 'CAUTION', 'NOTE', 'TIP', or 'WARNING'."
+    },
+    "markdown": {
+      "type": "string"
+    },
+    "text": {
+      "type": "string"
+      "minLength": 1,
+      "description": "The message conveying information about dangerous certain consequences of an action."
+    }
+  },
+  "required": [
+    "type",
+    "level",
+    "markdown",
+    "text"
+  ]
+}
+
+```
+
+
+#### Discussion: Nodes of a Text Block
 
 In HTML, a paragraph is represented by the `<p>` element. The `<p>` element can only contain phrasing content, which is essentially a group of inline-level elements. Here are some of the valid child nodes that can be included inside a `<p>` (paragraph) element:
 
@@ -1277,29 +1238,163 @@ text: X
 
 `definition coming from Bobby.`
 
+#### Diagram
+
+The following diagram displays the set of possible sub-elements of the component.
+
+```mermaid
+classDiagram
+    class Alert {
+        +type: Enum
+        +message: String
+    }
+    class Enum {
+        +IMPORTANT
+        +CAUTION
+        +NOTE
+        +TIP
+        +WARNING
+    }
+    Alert --> Enum: type
+```
+
+#### Example markdown
+
+The following markdown is an example of the artifact in a file.
+
+```md
+  > [!CAUTION]
+  > Negative potential consequences of an action.
+```
+
+#### JSON parsed object
+
+The following JSON represents the attributes of a parsed artifact.
+
+```json
+{
+    "type": "component-unknown",
+    "markdown": "markdown",
+    "text": "text-only"
+}
+```
+
+#### JSON Schema for a parsed object
+
+A JSON Schema provides a contract for the JSON data required by a given application and how that JSON data should be structured. It describes the structure of the JSON data, specifying what properties are required, the types of values, and more.
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string"
+    },
+    "level": {
+      "type": "string"
+      "enum": ["IMPORTANT", "CAUTION", "NOTE", "TIP", "WARNING"],
+      "description": "The type of the message. It can be 'IMPORTANT', 'CAUTION', 'NOTE', 'TIP', or 'WARNING'."
+    },
+    "markdown": {
+      "type": "string"
+    },
+    "text": {
+      "type": "string"
+      "minLength": 1,
+      "description": "The message conveying information about dangerous certain consequences of an action."
+    }
+  },
+  "required": [
+    "type",
+    "level",
+    "markdown",
+    "text"
+  ]
+}
+
+```
+
+
 ### table
 
 These are a means of arranging data in rows and columns, (a matrix). Tables are especially useful for presenting numerical data or information in a structured manner. A table typically consists of a header (with column names) and rows of data.
 
-**Diagram**
+#### Diagram
 
+The following diagram displays the set of possible sub-elements of the component.
 
-
-```markdown
-  |This is   |a simple   |table header|
-  |----------|-----------|------------|
-  |table     |data       |here        |
-  |it doesn't|actually   |have to line up nicely!|
-
+```mermaid
+classDiagram
+    class Alert {
+        +type: Enum
+        +message: String
+    }
+    class Enum {
+        +IMPORTANT
+        +CAUTION
+        +NOTE
+        +TIP
+        +WARNING
+    }
+    Alert --> Enum: type
 ```
 
-**Parsed**
+#### Example markdown
+
+The following markdown is an example of the artifact in a file.
+
+```md
+  > [!CAUTION]
+  > Negative potential consequences of an action.
+```
+
+#### JSON parsed object
+
+The following JSON represents the attributes of a parsed artifact.
 
 ```json
-type: X
-level: X
-markdown:
-text: X
+{
+    "type": "component-unknown",
+    "markdown": "markdown",
+    "text": "text-only"
+}
+```
+
+#### JSON Schema for a parsed object
+
+A JSON Schema provides a contract for the JSON data required by a given application and how that JSON data should be structured. It describes the structure of the JSON data, specifying what properties are required, the types of values, and more.
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string"
+    },
+    "level": {
+      "type": "string"
+      "enum": ["IMPORTANT", "CAUTION", "NOTE", "TIP", "WARNING"],
+      "description": "The type of the message. It can be 'IMPORTANT', 'CAUTION', 'NOTE', 'TIP', or 'WARNING'."
+    },
+    "markdown": {
+      "type": "string"
+    },
+    "text": {
+      "type": "string"
+      "minLength": 1,
+      "description": "The message conveying information about dangerous certain consequences of an action."
+    }
+  },
+  "required": [
+    "type",
+    "level",
+    "markdown",
+    "text"
+  ]
+}
+
 ```
 
 
@@ -1307,21 +1402,79 @@ text: X
 
 Definition
 
-**Diagram**
+#### Diagram
 
+The following diagram displays the set of possible sub-elements of the component.
 
-
-```markdown
-  > [!VIDEO <embedded_video_link>]
-
+```mermaid
+classDiagram
+    class Alert {
+        +type: Enum
+        +message: String
+    }
+    class Enum {
+        +IMPORTANT
+        +CAUTION
+        +NOTE
+        +TIP
+        +WARNING
+    }
+    Alert --> Enum: type
 ```
 
-**Parsed**
+#### Example markdown
+
+The following markdown is an example of the artifact in a file.
+
+```md
+  > [!CAUTION]
+  > Negative potential consequences of an action.
+```
+
+#### JSON parsed object
+
+The following JSON represents the attributes of a parsed artifact.
 
 ```json
-type: X
-level: X
-markdown:
-text: X
+{
+    "type": "component-unknown",
+    "markdown": "markdown",
+    "text": "text-only"
+}
 ```
 
+#### JSON Schema for a parsed object
+
+A JSON Schema provides a contract for the JSON data required by a given application and how that JSON data should be structured. It describes the structure of the JSON data, specifying what properties are required, the types of values, and more.
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string"
+    },
+    "level": {
+      "type": "string"
+      "enum": ["IMPORTANT", "CAUTION", "NOTE", "TIP", "WARNING"],
+      "description": "The type of the message. It can be 'IMPORTANT', 'CAUTION', 'NOTE', 'TIP', or 'WARNING'."
+    },
+    "markdown": {
+      "type": "string"
+    },
+    "text": {
+      "type": "string"
+      "minLength": 1,
+      "description": "The message conveying information about dangerous certain consequences of an action."
+    }
+  },
+  "required": [
+    "type",
+    "level",
+    "markdown",
+    "text"
+  ]
+}
+
+```
