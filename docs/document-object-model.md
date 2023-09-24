@@ -212,10 +212,12 @@ classDiagram
 **Parsed**
 
 ```json
-type: alert
-level: "Important"
-markdown: "> Important\n>The message conveying information about dangerous certain consequences of an action."
-text: "The message conveying information about dangerous certain consequences of an action."
+{
+    type: alert
+    level: "Important"
+    markdown: "> Important\{n>The message conveying information about dangerous certain consequences of an action."
+    text: "The message conveying information about dangerous certain consequences of an action."
+}
 ```
 
 #### caution
