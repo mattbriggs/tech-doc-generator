@@ -1,22 +1,20 @@
 
 # YAML Style Guide for Technical Writers
 
-## **1. Introduction**
-
 YAML (YAML Ain't Markup Language) is a human-readable data format, primarily used for configuration files and data serialization. This guide aims to ensure consistency, clarity, and interoperability when writing YAML documents for both human and machine readers.
 
-## **2. General Principles**
+## General Principles
 
 - **Readability is Key**: YAML is designed to be readable by humans. Ensure that your structure and naming conventions are intuitive.
 - **Consistency**: Stick to a consistent style throughout the document. It reduces confusion for both human readers and machine parsers.
 
-## **3. Indentation and Spacing**
+## Indentation and Spacing
 
 - Use **two spaces** for indentation. Never use tabs.
 - Separate entries with a single blank line for clarity.
 - Avoid trailing whitespace.
 
-## **4. Naming Conventions**
+## Naming Conventions
 
 - Use **snake\_case** for multi-word keys.
 - Keys should be descriptive but concise.
@@ -26,7 +24,7 @@ YAML (YAML Ain't Markup Language) is a human-readable data format, primarily use
 	email_address: john.doe@example.com
 	```
 
-## **5. Scalars (Single Values)**
+## Scalars (Single Values)
 
 - Use plain, unquoted scalars whenever possible. 
 - Use double quotes for scalars that may be misinterpreted.
@@ -36,7 +34,7 @@ YAML (YAML Ain't Markup Language) is a human-readable data format, primarily use
 	note: "True isn't a confirmation here."
 	```
 
-## **6. Collections**
+## Collections
 
 - Use block sequences (dashes) for lists:
 
@@ -55,7 +53,7 @@ YAML (YAML Ain't Markup Language) is a human-readable data format, primarily use
 	  age: 30
 	```
 
-## **7. Comments**
+## Comments
 
 - Start comments with a space for readability.
 - Place comments on a new line above the code they refer to, not at the end of the line.
@@ -65,7 +63,7 @@ YAML (YAML Ain't Markup Language) is a human-readable data format, primarily use
 	age: 30
 	```
 
-## **8. Multi-Line Strings**
+## Multi-Line Strings
 
 - Use the literal block scalar (`|`) for multi-line strings where newlines need preservation.
 - Use the folded block scalar (`>`) for multi-line strings where newlines should be converted to spaces.
@@ -76,12 +74,12 @@ YAML (YAML Ain't Markup Language) is a human-readable data format, primarily use
 	  that spans multiple lines.
 	```
 
-## **9. Booleans and Nulls**
+## Booleans and Nulls
 
 - Use lowercase for boolean values: `true` and `false`.
 - Use `null` for null values.
 
-## **10. Anchors and Aliases**
+## Anchors and Aliases
 
 - Use anchors (`&`) and aliases (`*`) sparingly for reusing content, ensuring they improve readability rather than confuse.
 
@@ -93,15 +91,15 @@ YAML (YAML Ain't Markup Language) is a human-readable data format, primarily use
 	billing_address: *address
 	```
 
-## **11. Keep It Simple**
+## Keep It Simple
 
 - Avoid excessive nesting. If a document is too deeply nested, consider if there's a simpler representation or if some data can be abstracted.
 
-## **12. Validation**
+## *Validation
 
 - Always validate your YAML documents using online tools or libraries to ensure they're syntactically correct and machine-readable.
 
-## 13. Notes on using Markdown with YAML
+## Notes on using Markdown with YAML
 
 Combining Markdown within YAML can be useful, especially for configuration files of static site generators or other systems that require rich text configuration. However, there are some considerations to keep in mind:
 
@@ -194,7 +192,7 @@ description: |
 
 Remember, the combination of Markdown tables within YAML files is unconventional, so always ensure the context demands it and that the end result is both readable for humans and parsable for machines.
 
-## **Closing**
+## Closing
 
 Remember, the primary goal of YAML is readability and simplicity. Keep human readers in mind first, ensuring they can understand your document's structure and intent. Machines come second; they're quite good at adapting as long as the syntax is correct.
 
