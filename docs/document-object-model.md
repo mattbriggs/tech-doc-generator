@@ -204,19 +204,19 @@ classDiagram
       "description": "The message conveying information about dangerous certain consequences of an action."
     }
   },
-  "required": ["type", "message"]
+  "required": ["level", "text"]
 }
 
 ```
 
-**Parsed**
+***Parsed**
 
 ```json
 {
-    type: alert
-    level: "Important"
-    markdown: "> Important\{n>The message conveying information about dangerous certain consequences of an action."
-    text: "The message conveying information about dangerous certain consequences of an action."
+	"type": "alert",
+	"level": "Important",
+	"markdown": "  > [!CAUTION]\r\n  > Negative potential consequences of an action.",
+	"text": "The message conveying information about dangerous certain consequences of an action."
 }
 ```
 
