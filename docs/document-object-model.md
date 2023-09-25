@@ -109,6 +109,42 @@ article:
       body:
         {{represenation}} # see the json parsed object
 
+## Interaction of the YAML document format and the parser
+
+The document author works in a human-readable serializatoin langauge. The publishing platform uses YAML. YAML is a subset of JSON.
+
+```mermaid
+---
+title: Content Format State
+---
+stateDiagram-v2
+    [*] --> YAML
+    YAML --> JSON_CA_schema : Learn Linter/DocFX
+    JSON_CA_schema --> YAML : Learn Linter/DocFX
+    JSON_CA_schema --> JSON
+    JSON --> HTML
+    JSON --> JSON_LD
+    JSON --> RDF/OWL  : Not in scope
+    HTML --> [*]
+    JSON_LD --> [*]
+    RDF/OWL --> [*] : Not in scope
+
+```
+
+### tab YAML
+
+This is yaml section.
+
+### tab JSON_CA_schema
+
+This is the JSON_CA_schema section.
+### tab JSON
+
+This is the JSON section. 
+### tab HTML
+
+This is the HTML section.
+
 ## Components
 
 A component can be thought of a component is an HTML block on the web site, and a JSON-LD representation for programmatic consumption of the content. To go to the beginning, the component exists as content block in HTML terms. Like HTML content blocks, a component fills the entire content column.
