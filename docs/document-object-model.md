@@ -997,6 +997,8 @@ text: X
 
 `definition coming from Bobby.`
 
+https://review.learn.microsoft.com/en-us/help/platform/markdown-reference?branch=main#selectors
+
 #### Diagram
 
 The following diagram displays the set of possible sub-elements of the component.
@@ -1104,8 +1106,10 @@ classDiagram
 The following markdown is an example of the artifact in a file.
 
 ```md
-  > [!CAUTION]
-  > Negative potential consequences of an action.
+|This is   |a simple   |table header|
+|----------|-----------|------------|
+|table     |data       |here        |
+|it doesn't|actually   |have to line up nicely!|
 ```
 
 #### JSON parsed object
@@ -1114,15 +1118,37 @@ The following JSON represents the attributes of a parsed artifact.
 
 ```json
 {
-    "type": "component-unknown",
-    "markdown": "markdown",
-    "text": "text-only"
+	"type": "table",
+	"markdown": "|This is   |a simple   |table header|\r\n|----------|-----------|------------|\r\n|table     |data       |here        |\r\n|it doesn't|actually   |have to line up nicely!|",
+	"columns": "3",
+	"rows": "2",
+	"headers": [{
+		"1": "This is"
+	}, {
+		"2": "a simple"
+	}, {
+		"3": "table header"
+	}],
+	"1": [{
+		"1": "Table"
+	}, {
+		"2": "data"
+	}, {
+		"3": "here"
+	}],
+	"2": [{
+		"1": "it doesn't"
+	}, {
+		"2": "actually"
+	}, {
+		"3": "table header"
+	}]
 }
 ```
 
 #### JSON Schema for a parsed object
 
-A JSON Schema provides a contract for the JSON data required by a given application and how that JSON data should be structured. It describes the structure of the JSON data, specifying what properties are required, the types of values, and more.
+A JSON Schema provides a contract for the JSON data required by a given application and how that JSON data should be structured. It describes the structur"e of the JSON data, specifying what properties are required, the types of values, and more.
 
 ```json
 {
@@ -1132,25 +1158,138 @@ A JSON Schema provides a contract for the JSON data required by a given applicat
     "type": {
       "type": "string"
     },
-    "level": {
-      "type": "string"
-      "enum": ["IMPORTANT", "CAUTION", "NOTE", "TIP", "WARNING"],
-      "description": "The type of the message. It can be 'IMPORTANT', 'CAUTION', 'NOTE', 'TIP', or 'WARNING'."
-    },
     "markdown": {
       "type": "string"
     },
-    "text": {
+    "columns": {
       "type": "string"
-      "minLength": 1,
-      "description": "The message conveying information about dangerous certain consequences of an action."
+    },
+    "rows": {
+      "type": "string"
+    },
+    "headers": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "1": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "1"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "2": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "2"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "3": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "3"
+          ]
+        }
+      ]
+    },
+    "1": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "1": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "1"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "2": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "2"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "3": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "3"
+          ]
+        }
+      ]
+    },
+    "2": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "1": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "1"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "2": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "2"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "3": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "3"
+          ]
+        }
+      ]
     }
   },
   "required": [
     "type",
-    "level",
     "markdown",
-    "text"
+    "columns",
+    "rows",
+    "headers",
+    "1",
+    "2"
   ]
 }
 
@@ -1237,6 +1376,23 @@ A JSON Schema provides a contract for the JSON data required by a given applicat
 }
 
 ```
+
+## ToDo Components
+
+### Includes
+
+https://review.learn.microsoft.com/en-us/help/platform/includes-best-practices?branch=main
+### Columns
+
+https://review.learn.microsoft.com/en-us/help/platform/includes-best-practices?branch=main
+
+### Long images
+
+https://review.learn.microsoft.com/en-us/help/platform/markdown-reference?branch=main#custom-learn-markdown-for-complex-images-with-long-descriptions
+
+### Icons
+
+https://review.learn.microsoft.com/en-us/help/platform/markdown-reference?branch=main#custom-learn-markdown-for-complex-images-with-long-descriptions
 
 ## Library of attribute nodes
 
@@ -1691,3 +1847,7 @@ A JSON Schema provides a contract for the JSON data required by a given applicat
   ]
 }
 ```
+
+### Superscript/Subscript
+
+https://review.learn.microsoft.com/en-us/help/platform/markdown-reference?branch=main#subscript-and-superscript
