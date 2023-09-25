@@ -94,7 +94,7 @@ article:
         type:
         platformid:
       body:
-        {{represenation}}
+        {{represenation}} # see the json parsed object
   - unit:
     metadata:
     - items:
@@ -107,12 +107,7 @@ article:
         type:
         platformid:
       body:
-        markdown: entire link pararagrph
-        text: entire [link] paragrah
-        link:
-         href: 
-         name:
-```
+        {{represenation}} # see the json parsed object
 
 ## Components
 
