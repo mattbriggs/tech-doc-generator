@@ -1455,7 +1455,7 @@ A JSON Schema provides a contract for the JSON data required by a given applicat
 
 Anchor (Hyperlink). Defines a hyperlink.
 
-**HTML**: `<a href="URL">text</a>`
+**HTML**: `<a href="URL">text</a>`  
 Markdown `[text](URL)`
 
 A link can be categorized into the following types:
@@ -1521,8 +1521,8 @@ A JSON Schema provides a contract for the JSON data required by a given applicat
 
 Generic inline container.
 
-**HTML**: `<span>text</span>`
-Markdown `:::text:::`
+**HTML**: `<span>text</span>`  
+**Markdown**: `:::text:::`
 
 #### JSON parsed object
 
@@ -1567,8 +1567,8 @@ A JSON Schema provides a contract for the JSON data required by a given applicat
 
 Strong importance (bold).
 
-**HTML**: `<strong>text</strong>`
-Markdown `**text**` or `__text__`
+**HTML**: `<strong>text</strong>`  
+**Markdown**: `**text**` or `__text__`
 
 #### JSON parsed object
 
@@ -1613,8 +1613,8 @@ A JSON Schema provides a contract for the JSON data required by a given applicat
 
 Emphasized text (italic).
 
-**HTML**: `<em>text</em>`
-Markdown `*text*` or `_text_`
+**HTML**: `<em>text</em>`  
+**Markdown**: `*text*` or `_text_`
 
 #### JSON parsed object
 
@@ -1659,8 +1659,8 @@ A JSON Schema provides a contract for the JSON data required by a given applicat
 
 Bold text.
 
-**HTML**: `<b>text</b>`
-Markdown `**text**` or `__text__`
+**HTML**: `<b>text</b>`  
+**Markdown**: `**text**` or `__text__`
 
 #### JSON parsed object
 
@@ -1705,8 +1705,8 @@ A JSON Schema provides a contract for the JSON data required by a given applicat
 
 Italic text.
 
-**HTML**: `<i>text</i>`
-Markdown `*text*` or `_text_`
+**HTML**: `<i>text</i>`  
+**Markdown**: `*text*` or `_text_`
 
 #### JSON parsed object
 
@@ -1750,8 +1750,8 @@ A JSON Schema provides a contract for the JSON data required by a given applicat
 
 Image.
 
-**HTML**: `<img src="URL" alt = "alt-text">
-Markdown `![alt-text](URL)`
+**HTML**: `<img src="URL" alt = "alt-text">  
+**Markdown**: `![alt-text](URL)`
 
 #### JSON parsed object
 
@@ -1801,8 +1801,8 @@ A JSON Schema provides a contract for the JSON data required by a given applicat
 
 Inline code.
 
-**HTML**: `<code>text<\code>`
-Markdown ` `text` `
+**HTML**: `<code>text<\code>`  
+**Markdown**: ` `text` `
 
 #### JSON parsed object
 
