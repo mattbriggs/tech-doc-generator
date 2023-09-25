@@ -688,7 +688,7 @@ The following JSON represents the attributes of a parsed artifact.
     "type": "image",
     "markdown": "![alt-text.](media\/my-cool-graphic.png)",
     "text": "Alt text",
-    "href": "media/my-cool-graphic.png"
+    "source": "media/my-cool-graphic.png"
 }
 ```
 
@@ -933,46 +933,7 @@ Content blocks that contains text elements are natural language parts that can b
 
 Text refers to the primary content in any written communication. In digital media, it's the sequence of words, sentences, and paragraphs that convey information or a message to the reader.
 
-#### Diagram
-
-The following diagram displays the set of possible sub-elements of the component.
-
-```mermaid
-classDiagram
-    class Alert {
-        +type: Enum
-        +message: String
-    }
-    class Enum {
-        +IMPORTANT
-        +CAUTION
-        +NOTE
-        +TIP
-        +WARNING
-    }
-    Alert --> Enum: type
-```
-
-#### Example markdown
-
-The following markdown is an example of the artifact in a file.
-
-```md
-  > [!CAUTION]
-  > Negative potential consequences of an action.
-```
-
-#### JSON parsed object
-
-The following JSON represents the attributes of a parsed artifact.
-
-```json
-{
-    "type": "component-unknown",
-    "markdown": "markdown",
-    "text": "text-only"
-}
-```
+See the attribute node, [text node](#text-node).
 
 #### JSON Schema for a parsed object
 
@@ -1279,3 +1240,454 @@ A JSON Schema provides a contract for the JSON data required by a given applicat
 
 ## Library of attribute nodes
 
+Inline elements: In web design and word processing, inline elements are those that don't start on a new line and only take up as much width as necessary. They flow within the text, as opposed to block-level elements which take up the full width available. Examples include bold or italicized text.
+- italic
+- bold
+- code
+- Hyperlinks
+- Managed terms
+- Semantic markers
+
+### Text node
+
+Plain text content.
+
+**HTML**: `<p>This is paragraph text.</p>`
+**Markdown**: `This is paragraph text.`
+
+#### JSON parsed object
+
+A component may have children and the data is stored in attributes in nodes.
+
+```json
+{
+    "type": "p",
+    "child" : []
+    "markdown": "This is paragraph text.",
+    "text": "This is paragraph text.",
+}
+```
+
+#### JSON Schema for a parsed object
+
+A JSON Schema provides a contract for the JSON data required by a given application and how that JSON data should be structured. It describes the structure of the JSON data, specifying what properties are required, the types of values, and more.
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string"
+    },
+    "child": {
+      "type": "array",
+      "items": {}
+    },
+    "markdown": {
+      "type": "string"
+    },
+    "text": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "type",
+    "child",
+    "markdown",
+    "text"
+  ]
+}
+```
+
+### Anchor
+
+Anchor (Hyperlink). Defines a hyperlink.
+
+**HTML**: `<a href="URL">text</a>`
+Markdown `[text](URL)`
+
+A link can be categorized into the following types:
+
+| Type | Example | Description |
+| --- | --- | --- |
+|    |    |     |
+|    |    |     |
+|    |    |     |
+
+    "type": "name",
+#### JSON parsed object
+
+A component may have children and the data is stored in attributes in nodes.
+
+```json
+{
+    "type": "anchor",
+    "category" : "type-of-link",
+    "markdown": "[text](URL)",
+    "text": "text",
+    "href": "URL"
+}
+```
+
+#### JSON Schema for a parsed object
+
+A JSON Schema provides a contract for the JSON data required by a given application and how that JSON data should be structured. It describes the structure of the JSON data, specifying what properties are required, the types of values, and more.
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "markdown": {
+      "type": "string"
+    },
+    "text": {
+      "type": "string"
+    },
+    "href": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "type",
+    "category",
+    "markdown",
+    "text",
+    "href"
+  ]
+}
+```
+
+
+### Span
+
+Generic inline container.
+
+**HTML**: `<span>text</span>`
+Markdown `:::text:::`
+
+#### JSON parsed object
+
+A component may have children and the data is stored in attributes in nodes.
+
+```json
+{
+    "type": "span",
+    "markdown": ":::text:::",
+    "text": "text"
+}
+```
+
+#### JSON Schema for a parsed object
+
+A JSON Schema provides a contract for the JSON data required by a given application and how that JSON data should be structured. It describes the structure of the JSON data, specifying what properties are required, the types of values, and more.
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string"
+    },
+    "markdown": {
+      "type": "string"
+    },
+    "text": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "type",
+    "markdown",
+    "text"
+  ]
+}
+```
+
+### Strong
+
+Strong importance (bold).
+
+**HTML**: `<strong>text</strong>`
+Markdown `**text**` or `__text__`
+
+#### JSON parsed object
+
+A component may have children and the data is stored in attributes in nodes.
+
+```json
+{
+    "type": "bold",
+    "markdown": "**text**"
+    "text": "text"
+}
+```
+
+#### JSON Schema for a parsed object
+
+A JSON Schema provides a contract for the JSON data required by a given application and how that JSON data should be structured. It describes the structure of the JSON data, specifying what properties are required, the types of values, and more.
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string"
+    },
+    "markdown": {
+      "type": "string"
+    },
+    "text": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "type",
+    "markdown",
+    "text"
+  ]
+}
+```
+
+### Emphasis
+
+Emphasized text (italic).
+
+**HTML**: `<em>text</em>`
+Markdown `*text*` or `_text_`
+
+#### JSON parsed object
+
+A component may have children and the data is stored in attributes in nodes.
+
+```json
+{
+    "type": "italic",
+    "markdown": "*text*",
+    "text": "text"
+}
+```
+
+#### JSON Schema for a parsed object
+
+A JSON Schema provides a contract for the JSON data required by a given application and how that JSON data should be structured. It describes the structure of the JSON data, specifying what properties are required, the types of values, and more.
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string"
+    },
+    "markdown": {
+      "type": "string"
+    },
+    "text": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "type",
+    "markdown",
+    "text"
+  ]
+}
+```
+
+### Bold
+
+Bold text.
+
+**HTML**: `<b>text</b>`
+Markdown `**text**` or `__text__`
+
+#### JSON parsed object
+
+A component may have children and the data is stored in attributes in nodes.
+
+```json
+{
+    "type": "bold",
+    "markdown": "**bold**",
+    "text": "text"
+}
+```
+
+#### JSON Schema for a parsed object
+
+A JSON Schema provides a contract for the JSON data required by a given application and how that JSON data should be structured. It describes the structure of the JSON data, specifying what properties are required, the types of values, and more.
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string"
+    },
+    "markdown": {
+      "type": "string"
+    },
+    "text": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "type",
+    "markdown",
+    "text"
+  ]
+}
+```
+
+### Italic
+
+Italic text.
+
+**HTML**: `<i>text</i>`
+Markdown `*text*` or `_text_`
+
+#### JSON parsed object
+
+A component may have children and the data is stored in attributes in nodes.
+
+```json
+{
+    "type": "italic",
+    "markdown": "*text*",
+    "text": "text"
+}
+```
+
+#### JSON Schema for a parsed object
+
+A JSON Schema provides a contract for the JSON data required by a given application and how that JSON data should be structured. It describes the structure of the JSON data, specifying what properties are required, the types of values, and more.
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string"
+    },
+    "markdown": {
+      "type": "string"
+    },
+    "text": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "type",
+    "markdown",
+    "text"
+  ]
+}
+```
+### Image
+
+Image.
+
+**HTML**: `<img src="URL" alt = "alt-text">
+Markdown `![alt-text](URL)`
+
+#### JSON parsed object
+
+A component may have children and the data is stored in attributes in nodes.
+
+```json
+{
+    "type": "image",
+    "markdown": "![alt-text](URL)",
+    "text": "alt-text",
+    "source": "URL"
+}
+```
+
+#### JSON Schema for a parsed object
+
+A JSON Schema provides a contract for the JSON data required by a given application and how that JSON data should be structured. It describes the structure of the JSON data, specifying what properties are required, the types of values, and more.
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string"
+    },
+    "markdown": {
+      "type": "string"
+    },
+    "text": {
+      "type": "string"
+    },
+    "source": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "type",
+    "markdown",
+    "text",
+    "source"
+  ]
+}
+```
+
+### Code
+
+Inline code.
+
+**HTML**: `<code>text<\code>`
+Markdown ` `text` `
+
+#### JSON parsed object
+
+A component may have children and the data is stored in attributes in nodes.
+
+```json
+{
+    "type": "code",
+    "markdown": "`text`",
+    "text": "text"
+}
+```
+
+#### JSON Schema for a parsed object
+
+A JSON Schema provides a contract for the JSON data required by a given application and how that JSON data should be structured. It describes the structure of the JSON data, specifying what properties are required, the types of values, and more.
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string"
+    },
+    "markdown": {
+      "type": "string"
+    },
+    "text": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "type",
+    "markdown",
+    "text"
+  ]
+}
+```
