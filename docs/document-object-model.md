@@ -298,7 +298,11 @@ article:
                             "type": "paragraph",
                             "platformid": "7405A916-136C-4094-B753-B549D58F88C2"
                         },
-                        "body": "When crafting structured content for a publishing system, begin with a clear, concise title that encapsulates the main theme. Follow with an engaging introduction, outlining the content's purpose. Utilize headings and subheadings to organize ideas logically, and employ bullet points or numbered lists for clarity. Embed relevant keywords for SEO optimization and incorporate multimedia elements to enhance user engagement. Conclude with a succinct summary, reiterating key points. Review for coherence, consistency, and grammatical accuracy before publishing.\n"
+                        "body": {
+    "child" : [],
+    "markdown": ""When crafting structured content for a publishing system, begin with a clear, concise title that encapsulates the main theme. Follow with an engaging introduction, outlining the content's purpose. Utilize headings and subheadings to organize ideas logically, and employ bullet points or numbered lists for clarity. Embed relevant keywords for SEO optimization and incorporate multimedia elements to enhance user engagement. Conclude with a succinct summary, reiterating key points. Review for coherence, consistency, and grammatical accuracy before publishing.\n"",
+    "text": ""When crafting structured content for a publishing system, begin with a clear, concise title that encapsulates the main theme. Follow with an engaging introduction, outlining the content's purpose. Utilize headings and subheadings to organize ideas logically, and employ bullet points or numbered lists for clarity. Embed relevant keywords for SEO optimization and incorporate multimedia elements to enhance user engagement. Conclude with a succinct summary, reiterating key points. Review for coherence, consistency, and grammatical accuracy before publishing.\n"",
+},
                     }
                 ]
             },
