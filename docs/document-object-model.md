@@ -77,37 +77,32 @@ An article then can be described as a schema defining the array of units. And ea
 
 ```
 article:
-  metadata
-  - items:
+  - metadata:
     type:
     platformid:
-  body:
-  - unit:
-    metadata:
-    - items:
-      type:
-      platformid:
-    body:
-    - component:
-      metadata:
-      - items:
-        type:
-        platformid:
-      body:
-        {{represenation}} # see the json parsed object
-  - unit:
-    metadata:
-    - items:
-      type:
-      platformid:
-    body:
-    - component:
-      metadata:
-      - items:
-        type:
-        platformid:
-      body:
-        {{represenation}} # see the json parsed object
+  - body:
+      - unit:
+        - metadata:
+          type:
+          platformid:
+        - body:
+          - component:
+            - metadata:
+              type:
+              platformid:
+            - body |
+                {{represenation}} # see the json parsed object
+        - unit:
+          - metadata:
+            type:
+            platformid:
+          - body:
+            - component:
+              - metadata:
+                type:
+                platformid:
+              - body |
+                  {{represenation}} # see the json parsed object
 ```
 ## Interaction of the YAML document format and the parser
 
@@ -119,9 +114,12 @@ title: Content Format State
 ---
 stateDiagram-v2
     [*] --> YAML
-    YAML --> JSON_CA_schema : Learn Linter/DocFX
-    JSON_CA_schema --> YAML : Learn Linter/DocFX
-    JSON_CA_schema --> JSON
+    [*] --> MARKDOWN
+    YAML --> AUTHOR_TOOL_JSON_CA_Schema
+    AUTHOR_TOOL_JSON_CA_Schema--> YAML
+    MARKDOWN --> AUTHOR_TOOL_JSON_CA_Schema
+    AUTHOR_TOOL_JSON_CA_Schema--> MARKDOWN
+    AUTHOR_TOOL_JSON_CA_Schema --> JSON
     JSON --> HTML
     JSON --> JSON_LD
     JSON --> RDF/OWL  : Not in scope
@@ -131,6 +129,66 @@ stateDiagram-v2
 
 ```
 
+### [Markdown(#tab/markdown)]
+
+```
+---
+    type: how-to
+    platformid: 75BAFFCD-0FEF-4CBD-9ABF-B5546332F021
+    title: How to write a piece of structured content
+    description: Craft structured content for a publishing system, begin with a
+      clear, concise title that encapsulates the main theme
+    author: mattbriggs
+    ms.author: mabrigg
+    ms.service: testing
+    ms.date: 09/24/2023
+
+# CustomerIntent: As a < type of user >, I want < what? > so that < why? >.
+
+---
+
+# How to write a piece of structured content
+
+When crafting structured content for a publishing system, begin with a
+clear, concise title that encapsulates the main theme. Follow with
+an engaging introduction, outlining the content's purpose. Utilize
+headings and subheadings to organize ideas logically, and employ
+bullet points or numbered lists for clarity. Embed relevant keywords
+for SEO optimization and incorporate multimedia elements to enhance
+user engagement. Conclude with a succinct summary, reiterating key
+points. Review for coherence, consistency, and grammatical accuracy
+before publishing.
+
+## Prequisites
+
+Before your start writing structured content, you will need the 
+following things:
+  - You need this thing.
+  - You need this thing.
+  - You need this thing.
+
+## Do these these things to accomplish your goals
+
+You will do the following things:
+
+  # Do this action.
+  # Do this action.
+  # Do this action.
+
+## Do more things to accomplish even more of your goals
+
+You will do the following things:
+
+  # Do this action.
+  # Do this action.
+  # Do this action.
+
+## Next step
+
+> [!div class="nextstepaction"]
+> [Write concepts](article-concept.md)
+
+```
 ### [YAML](#tab/yaml)
 
 ```
@@ -206,7 +264,7 @@ article:
           metadata:
             type: h2
             platformid: C22A4EA0-5932-4C67-A4B0-ECE7AB926851
-          body: Do these these things to accomplish your ends
+          body: Do these these things to accomplish your goals
         - component: null
           metadata:
             type: paragraph
@@ -230,7 +288,7 @@ article:
           metadata:
             type: h2
             platformid: C22A4EA0-5932-4C67-A4B0-ECE7AB926851
-          body: Do more things to accomplish even more of your ends
+          body: Do more things to accomplish even more of your goals
         - component: null
           metadata:
             type: paragraph
