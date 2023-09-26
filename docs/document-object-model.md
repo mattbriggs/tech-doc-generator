@@ -106,7 +106,10 @@ article:
 ```
 ## Interaction of the YAML document format and the parser
 
-The document author works in a human-readable serializatoin langauge. The publishing platform uses YAML. YAML is a subset of JSON.
+The document author works in a human-readable serialization language. This section assums the publishing platform uses YAML/JSON. The state diagram places the CA Object Model (represented as an API by a set of JSON schemas) within the transformation of written and generated content into content delivered to the publishing targets:
+- **Web site (HTML)**. This is consumed by readers using a web browser.
+- **Semantic representation (JSON-LD)**. Moz writes "JSON-LD is implemented leveraging the Schema.org vocabulary, a joint effort by Google, Bing, Yahoo!, and Yandex in 2011 to create a unified structured data vocabulary for the web."
+- **RDF/OWL (Linked Data)**.  _Not in scope_. RDF and OWL are based on the Resource Description Framework (RDF) and the Web Ontology Language (OWL), respectively. They are used to represent data in a graph format, where nodes represent entities and edges represent relationships between them. RDF is used to represent metadata, while OWL is used to represent ontologies"([ref](https://spinrdf.org/shacl-and-owl.html)). RDF would support a Learn Knowledge Graph.
 
 ```mermaid
 ---
@@ -128,6 +131,17 @@ stateDiagram-v2
     RDF/OWL --> [*] : Not in scope
 
 ```
+
+| Format | Notes |
+| --- | --- |
+| MARKDOWN | An author can write in markdown or open a markdown document. The markdown down document will be parsed for structure and validated by a JSON Schema and set of rules. An author can save the file in YAML or Markdown. Markdown cannot be used as structured content. |
+| YAML | A YAML document is validated with a JSON Schema and set of rules. Saved, the file can be used as structured content.  |
+| AUTHOR_TOOL_JSON_CA_Schema | Authoring tools can use the JSON Schema and a set of rules to validate a document. This particular version of JSON is in this model called JSON CA Schema. |
+| JSON | The Publishing platform uses DocFX that renders content as 'content blocks." The platform also uses JSON Schema and set of rules to validate content. Valid content is sent through the rendering service which performs the transforms on the content to the publishing targets. |
+| HTML | HTML (HyperText Markup Language) is the foundational language for creating web pages on the World Wide Web. While it structures content for visual presentation, embedding links, images, and multimedia, HTML itself is not structured content; it doesn’t inherently convey the semantic meaning or relationship of the data, focusing more on the display aspect.|
+| JSON_LD | JSON-LD (JavaScript Object Notation for Linked Data) is a method of encoding Linked Data using JSON. As a publishing vehicle, it enables the structuring and representation of data in a way that is both human and machine-readable, allowing the definition and conveyance of semantic context and relationships within the data. |
+| RDF/OWL | RDF/OWL are foundational technologies of the Semantic Web. RDF (Resource Description Framework) publishes structured information about resources, allowing semantic interoperability. OWL (Web Ontology Language) extends RDF, enabling the expression of complex relationships and ontologies, allowing machines to understand and infer knowledge, fostering a more intelligent and integrated web. |
+
 
 ### [Markdown(#tab/markdown)]
 
@@ -193,6 +207,7 @@ You will do the following things:
 
 ```
 ---
+---
 article:
   metadata:
     type: how-to
@@ -206,115 +221,125 @@ article:
     ms.date: 09/24/2023
     CustomerIntent: As a < type of user >, I want < what? > so that < why? >.
   body:
-    - unit: null
-      metadata:
-        type: introduction
-        platformid: A5C26791-2143-4C45-9133-D3EB3FC9A5F4
-      body:
-        - component: null
-          metadata:
-            type: h1
-            platformid: 7405A916-136C-4094-B753-B549D58F88C2
-          body: How to write a piece of structured content
-        - component: null
-          metadata:
-            type: paragraph
-            platformid: 7405A916-136C-4094-B753-B549D58F88C2
-          body: >
-            When crafting structured content for a publishing system, begin with a
-            clear, concise title that encapsulates the main theme. Follow with
-            an engaging introduction, outlining the content's purpose. Utilize
-            headings and subheadings to organize ideas logically, and employ
-            bullet points or numbered lists for clarity. Embed relevant keywords
-            for SEO optimization and incorporate multimedia elements to enhance
-            user engagement. Conclude with a succinct summary, reiterating key
-            points. Review for coherence, consistency, and grammatical accuracy
-            before publishing.
-    - unit: null
-      metadata:
-        type: prequisites
-        platformid: 7D3098DB-1D8E-48AE-B309-2722C262E127
-      body:
-        - component: null
-          metadata:
-            type: h2
-            platformid: 6A37C122-E3AD-41BE-903A-B5D911DD898F
-          body: Prequisites
-        - component: null
-          metadata:
-            type: paragraph
-            platformid: 6A37C122-E3AD-41BE-903A-B5D911DD898F
-          body: >
-            Before your start writing structured content, you will need the following
-            things:
-        - component: null
-          metadata:
-            type: bullet-list
-            platformid: 6A37C122-E3AD-41BE-903A-B5D911DD898F
-          body: |
-            - You need this thing.
-            - You need this thing.
-            - You need this thing.
-    - unit: null
-      metadata:
-        type: procedural
-        platformid: E4666197-82B8-4515-8D0B-F222D05073FE
-      body:
-        - component: null
-          metadata:
-            type: h2
-            platformid: C22A4EA0-5932-4C67-A4B0-ECE7AB926851
-          body: Do these these things to accomplish your goals
-        - component: null
-          metadata:
-            type: paragraph
-            platformid: CB338313-9E6E-41D2-A47B-710DD0FCC0AB
-          body: |
-            You will do the following things:
-        - component: null
-          metadata:
-            type: bullet-list
-            platformid: DB120313-8295-4221-A8FB-807759D4DB45
-          body: |
-            # Do this action.
-            # Do this action.
-            # Do this action.
-    - unit: null
-      metadata:
-        type: procedural
-        platformid: E4666197-82B8-4515-8D0B-F222D05073FE
-      body:
-        - component: null
-          metadata:
-            type: h2
-            platformid: C22A4EA0-5932-4C67-A4B0-ECE7AB926851
-          body: Do more things to accomplish even more of your goals
-        - component: null
-          metadata:
-            type: paragraph
-            platformid: CB338313-9E6E-41D2-A47B-710DD0FCC0AB
-          body: |
-            You will do the following things:
-        - component: null
-          metadata:
-            type: bullet-list
-            platformid: DB120313-8295-4221-A8FB-807759D4DB45
-          body: |
-            # Do this action.
-            # Do this action.
-            # Do this action.
-    - unit: null
-      metadata:
-        type: next-step-unit
-        platformid: 7A31FB54-C5D1-41C2-9E98-0751310F99AA
-      body:
-        - component: null
-          metadata:
-            type: button-link
-            platformid: 61BBE6D9-D105-459D-B74A-9407D976174A
-          body: |
-            > [!div class="nextstepaction"]
-            > [Write concepts](article-concept.md)
+    - unit:
+        - metadata:
+            type: introduction
+            platformid: A5C26791-2143-4C45-9133-D3EB3FC9A5F4
+        - body:
+            - component:
+                - metadata:
+                    type: h1
+                    platformid: 7405A916-136C-4094-B753-B549D58F88C2
+                - body: How to write a piece of structured content
+            - component:
+                - metadata:
+                    type: paragraph
+                    platformid: 7405A916-136C-4094-B753-B549D58F88C2
+                - body: >
+                    When crafting structured content for a publishing system, begin with a
+
+                    clear, concise title that encapsulates the main theme. Follow with
+
+                    an engaging introduction, outlining the content's purpose. Utilize
+
+                    headings and subheadings to organize ideas logically, and employ
+
+                    bullet points or numbered lists for clarity. Embed relevant keywords
+
+                    for SEO optimization and incorporate multimedia elements to enhance
+
+                    user engagement. Conclude with a succinct summary, reiterating key
+
+                    points. Review for coherence, consistency, and grammatical accuracy
+
+                    before publishing.
+    - unit:
+        - metadata:
+            type: prequisites
+            platformid: 7D3098DB-1D8E-48AE-B309-2722C262E127
+        - body:
+            - component:
+                - metadata:
+                    type: h2
+                    platformid: 6A37C122-E3AD-41BE-903A-B5D911DD898F
+                - body: Prequisites
+            - component:
+                - metadata:
+                    type: paragraph
+                    platformid: 6A37C122-E3AD-41BE-903A-B5D911DD898F
+                - body: >
+                    Before your start writing structured content, you will need the following
+
+                    things:
+            - component:
+                - metadata:
+                    type: bullet-list
+                    platformid: 6A37C122-E3AD-41BE-903A-B5D911DD898F
+                - body: |
+                    - You need this thing.
+                    - You need this thing.
+                    - You need this thing.
+    - unit:
+        - metadata:
+            type: procedural
+            platformid: E4666197-82B8-4515-8D0B-F222D05073FE
+    - body:
+        - component:
+            - metadata:
+                type: h2
+                platformid: C22A4EA0-5932-4C67-A4B0-ECE7AB926851
+            - body: Do these these things to accomplish your goals
+        - component:
+            - metadata:
+                type: paragraph
+                platformid: CB338313-9E6E-41D2-A47B-710DD0FCC0AB
+            - body: |
+                You will do the following things:
+        - component:
+            - metadata:
+                type: bullet-list
+                platformid: DB120313-8295-4221-A8FB-807759D4DB45
+            - body: |
+                # Do this action.
+                # Do this action.
+                # Do this action.
+    - unit:
+        - metadata:
+            type: procedural
+            platformid: E4666197-82B8-4515-8D0B-F222D05073FE
+        - body:
+            - component:
+                - metadata:
+                    type: h2
+                    platformid: C22A4EA0-5932-4C67-A4B0-ECE7AB926851
+                - body: Do more things to accomplish even more of your goals
+            - component:
+                - metadata:
+                    type: paragraph
+                    platformid: CB338313-9E6E-41D2-A47B-710DD0FCC0AB
+                - body: |
+                    You will do the following things:
+            - component:
+                - metadata:
+                    type: bullet-list
+                    platformid: DB120313-8295-4221-A8FB-807759D4DB45
+                - body: |
+                    # Do this action.
+                    # Do this action.
+                    # Do this action.
+    - unit:
+        - metadata:
+            type: next-step-unit
+            platformid: 7A31FB54-C5D1-41C2-9E98-0751310F99AA
+        - body:
+            - component:
+                - metadata:
+                    type: button-link
+                    platformid: 61BBE6D9-D105-459D-B74A-9407D976174A
+            - body: |
+                > [!div class="nextstepaction"]
+                > [Write concepts](article-concept.md)
+
 ```
 ---
 
@@ -336,147 +361,228 @@ article:
         },
         "body": [
             {
-                "unit": null,
-                "metadata": {
-                    "type": "introduction",
-                    "platformid": "A5C26791-2143-4C45-9133-D3EB3FC9A5F4"
-                },
-                "body": [
+                "unit": [
                     {
-                        "component": null,
                         "metadata": {
-                            "type": "h1",
-                            "platformid": "7405A916-136C-4094-B753-B549D58F88C2"
-                        },
-                        "body": "How to write a piece of structured content"
+                            "type": "introduction",
+                            "platformid": "A5C26791-2143-4C45-9133-D3EB3FC9A5F4"
+                        }
                     },
                     {
-                        "component": null,
-                        "metadata": {
-                            "type": "paragraph",
-                            "platformid": "7405A916-136C-4094-B753-B549D58F88C2"
-                        },
-                        "body": {
-    "child" : [],
-    "markdown": ""When crafting structured content for a publishing system, begin with a clear, concise title that encapsulates the main theme. Follow with an engaging introduction, outlining the content's purpose. Utilize headings and subheadings to organize ideas logically, and employ bullet points or numbered lists for clarity. Embed relevant keywords for SEO optimization and incorporate multimedia elements to enhance user engagement. Conclude with a succinct summary, reiterating key points. Review for coherence, consistency, and grammatical accuracy before publishing.\n"",
-    "text": ""When crafting structured content for a publishing system, begin with a clear, concise title that encapsulates the main theme. Follow with an engaging introduction, outlining the content's purpose. Utilize headings and subheadings to organize ideas logically, and employ bullet points or numbered lists for clarity. Embed relevant keywords for SEO optimization and incorporate multimedia elements to enhance user engagement. Conclude with a succinct summary, reiterating key points. Review for coherence, consistency, and grammatical accuracy before publishing.\n"",
-},
+                        "body": [
+                            {
+                                "component": [
+                                    {
+                                        "metadata": {
+                                            "type": "h1",
+                                            "platformid": "7405A916-136C-4094-B753-B549D58F88C2"
+                                        }
+                                    },
+                                    {
+                                        "body": "How to write a piece of structured content"
+                                    }
+                                ]
+                            },
+                            {
+                                "component": [
+                                    {
+                                        "metadata": {
+                                            "type": "paragraph",
+                                            "platformid": "7405A916-136C-4094-B753-B549D58F88C2"
+                                        }
+                                    },
+                                    {
+                                        "body": "When crafting structured content for a publishing system, begin with a\nclear, concise title that encapsulates the main theme. Follow with\nan engaging introduction, outlining the content's purpose. Utilize\nheadings and subheadings to organize ideas logically, and employ\nbullet points or numbered lists for clarity. Embed relevant keywords\nfor SEO optimization and incorporate multimedia elements to enhance\nuser engagement. Conclude with a succinct summary, reiterating key\npoints. Review for coherence, consistency, and grammatical accuracy\nbefore publishing.\n"
+                                    }
+                                ]
+                            }
+                        ]
                     }
                 ]
             },
             {
-                "unit": null,
-                "metadata": {
-                    "type": "prequisites",
-                    "platformid": "7D3098DB-1D8E-48AE-B309-2722C262E127"
-                },
-                "body": [
+                "unit": [
                     {
-                        "component": null,
                         "metadata": {
-                            "type": "h2",
-                            "platformid": "6A37C122-E3AD-41BE-903A-B5D911DD898F"
-                        },
-                        "body": "Prequisites"
+                            "type": "prequisites",
+                            "platformid": "7D3098DB-1D8E-48AE-B309-2722C262E127"
+                        }
                     },
                     {
-                        "component": null,
-                        "metadata": {
-                            "type": "paragraph",
-                            "platformid": "6A37C122-E3AD-41BE-903A-B5D911DD898F"
-                        },
-                        "body": "Before your start writing structured content, you will need the following things:\n"
-                    },
-                    {
-                        "component": null,
-                        "metadata": {
-                            "type": "bullet-list",
-                            "platformid": "6A37C122-E3AD-41BE-903A-B5D911DD898F"
-                        },
-                        "body": "- You need this thing.\n- You need this thing.\n- You need this thing.\n"
+                        "body": [
+                            {
+                                "component": [
+                                    {
+                                        "metadata": {
+                                            "type": "h2",
+                                            "platformid": "6A37C122-E3AD-41BE-903A-B5D911DD898F"
+                                        }
+                                    },
+                                    {
+                                        "body": "Prequisites"
+                                    }
+                                ]
+                            },
+                            {
+                                "component": [
+                                    {
+                                        "metadata": {
+                                            "type": "paragraph",
+                                            "platformid": "6A37C122-E3AD-41BE-903A-B5D911DD898F"
+                                        }
+                                    },
+                                    {
+                                        "body": "Before your start writing structured content, you will need the following\nthings:\n"
+                                    }
+                                ]
+                            },
+                            {
+                                "component": [
+                                    {
+                                        "metadata": {
+                                            "type": "bullet-list",
+                                            "platformid": "6A37C122-E3AD-41BE-903A-B5D911DD898F"
+                                        }
+                                    },
+                                    {
+                                        "body": "- You need this thing.\n- You need this thing.\n- You need this thing.\n"
+                                    }
+                                ]
+                            }
+                        ]
                     }
                 ]
             },
             {
-                "unit": null,
-                "metadata": {
-                    "type": "procedural",
-                    "platformid": "E4666197-82B8-4515-8D0B-F222D05073FE"
-                },
-                "body": [
+                "unit": [
                     {
-                        "component": null,
                         "metadata": {
-                            "type": "h2",
-                            "platformid": "C22A4EA0-5932-4C67-A4B0-ECE7AB926851"
-                        },
-                        "body": "Do these these things to accomplish your ends"
-                    },
-                    {
-                        "component": null,
-                        "metadata": {
-                            "type": "paragraph",
-                            "platformid": "CB338313-9E6E-41D2-A47B-710DD0FCC0AB"
-                        },
-                        "body": "You will do the following things:\n"
-                    },
-                    {
-                        "component": null,
-                        "metadata": {
-                            "type": "bullet-list",
-                            "platformid": "DB120313-8295-4221-A8FB-807759D4DB45"
-                        },
-                        "body": "# Do this action.\n# Do this action.\n# Do this action.\n"
+                            "type": "procedural",
+                            "platformid": "E4666197-82B8-4515-8D0B-F222D05073FE"
+                        }
                     }
                 ]
             },
             {
-                "unit": null,
-                "metadata": {
-                    "type": "procedural",
-                    "platformid": "E4666197-82B8-4515-8D0B-F222D05073FE"
-                },
                 "body": [
                     {
-                        "component": null,
-                        "metadata": {
-                            "type": "h2",
-                            "platformid": "C22A4EA0-5932-4C67-A4B0-ECE7AB926851"
-                        },
-                        "body": "Do more things to accomplish even more of your ends"
+                        "component": [
+                            {
+                                "metadata": {
+                                    "type": "h2",
+                                    "platformid": "C22A4EA0-5932-4C67-A4B0-ECE7AB926851"
+                                }
+                            },
+                            {
+                                "body": "Do these these things to accomplish your goals"
+                            }
+                        ]
                     },
                     {
-                        "component": null,
-                        "metadata": {
-                            "type": "paragraph",
-                            "platformid": "CB338313-9E6E-41D2-A47B-710DD0FCC0AB"
-                        },
-                        "body": "You will do the following things:\n"
+                        "component": [
+                            {
+                                "metadata": {
+                                    "type": "paragraph",
+                                    "platformid": "CB338313-9E6E-41D2-A47B-710DD0FCC0AB"
+                                }
+                            },
+                            {
+                                "body": "You will do the following things:\n"
+                            }
+                        ]
                     },
                     {
-                        "component": null,
-                        "metadata": {
-                            "type": "bullet-list",
-                            "platformid": "DB120313-8295-4221-A8FB-807759D4DB45"
-                        },
-                        "body": "# Do this action.\n# Do this action.\n# Do this action.\n"
+                        "component": [
+                            {
+                                "metadata": {
+                                    "type": "bullet-list",
+                                    "platformid": "DB120313-8295-4221-A8FB-807759D4DB45"
+                                }
+                            },
+                            {
+                                "body": "# Do this action.\n# Do this action.\n# Do this action.\n"
+                            }
+                        ]
                     }
                 ]
             },
             {
-                "unit": null,
-                "metadata": {
-                    "type": "next-step-unit",
-                    "platformid": "7A31FB54-C5D1-41C2-9E98-0751310F99AA"
-                },
-                "body": [
+                "unit": [
                     {
-                        "component": null,
                         "metadata": {
-                            "type": "button-link",
-                            "platformid": "61BBE6D9-D105-459D-B74A-9407D976174A"
-                        },
-                        "body": "> [!div class=\"nextstepaction\"]\n> [Write concepts](article-concept.md)\n"
+                            "type": "procedural",
+                            "platformid": "E4666197-82B8-4515-8D0B-F222D05073FE"
+                        }
+                    },
+                    {
+                        "body": [
+                            {
+                                "component": [
+                                    {
+                                        "metadata": {
+                                            "type": "h2",
+                                            "platformid": "C22A4EA0-5932-4C67-A4B0-ECE7AB926851"
+                                        }
+                                    },
+                                    {
+                                        "body": "Do more things to accomplish even more of your goals"
+                                    }
+                                ]
+                            },
+                            {
+                                "component": [
+                                    {
+                                        "metadata": {
+                                            "type": "paragraph",
+                                            "platformid": "CB338313-9E6E-41D2-A47B-710DD0FCC0AB"
+                                        }
+                                    },
+                                    {
+                                        "body": "You will do the following things:\n"
+                                    }
+                                ]
+                            },
+                            {
+                                "component": [
+                                    {
+                                        "metadata": {
+                                            "type": "bullet-list",
+                                            "platformid": "DB120313-8295-4221-A8FB-807759D4DB45"
+                                        }
+                                    },
+                                    {
+                                        "body": "# Do this action.\n# Do this action.\n# Do this action.\n"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "unit": [
+                    {
+                        "metadata": {
+                            "type": "next-step-unit",
+                            "platformid": "7A31FB54-C5D1-41C2-9E98-0751310F99AA"
+                        }
+                    },
+                    {
+                        "body": [
+                            {
+                                "component": [
+                                    {
+                                        "metadata": {
+                                            "type": "button-link",
+                                            "platformid": "61BBE6D9-D105-459D-B74A-9407D976174A"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "body": "> [!div class=\"nextstepaction\"]\n> [Write concepts](article-concept.md)\n"
+                            }
+                        ]
                     }
                 ]
             }
