@@ -206,8 +206,6 @@ You will do the following things:
 ### [YAML](#tab/yaml)
 
 ```
----
----
 article:
   metadata:
     type: how-to
