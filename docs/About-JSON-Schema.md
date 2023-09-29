@@ -1,4 +1,5 @@
-# JSON Schema provides a way to validate JSON data 
+# JSON Schema provides a way to validate JSON data
+
 JSON Schema provides a way to validate JSON data. While JSON Schema has a comprehensive set of built-in validation keywords, sometimes you might want to add custom validations.
 
 You can't directly add custom validation fields to the standard JSON Schema, but you can employ several strategies to achieve custom validation:

@@ -1,4 +1,4 @@
-# Standards
+# Standards for structured content
 
 Structured content depends on the coordination of multiple groups both internally and externally to the platform team. Learn content is the content that appears on the website. This content is by and large unstructured content, but in order to meet the challenges of integration with third party systems and to provide the framework for generative AI, the content needs to move toward a structured content.
 

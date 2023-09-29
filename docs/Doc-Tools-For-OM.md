@@ -1,6 +1,8 @@
 # Online Tools used to help write these docs
 
-- Entit:y Relationship Diagrams:  
+This article contains links to online tools used in documenting the object model for Content Architecture.
+
+- Entity Relationship Diagrams:  
   https://mermaid.js.org/syntax/entityRelationshipDiagram.html
 
 - Mermaidv10.4.0 Live Editor  
