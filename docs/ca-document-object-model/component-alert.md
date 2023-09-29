@@ -1,14 +1,16 @@
-# This is a template for a component object
+# alert
 
-Components are composed of elements that are part of the definition of each component.
+Alerts are a Markdown extension to create block quotes that render on Microsoft Learn with colors and icons that indicate the significance of the content.
 
-## Component
+Alerts include:
+- caution
+- important
+- note
+- public-preview
+- tip
+- warning
 
-### {{name}}
-
-Definition
-
-#### Diagram
+## Diagram
 
 The following diagram displays the set of possible sub-elements of the component.
 
@@ -28,7 +30,7 @@ classDiagram
     Alert --> Enum: type
 ```
 
-#### Example markdown
+## Example markdown
 
 The following markdown is an example of the artifact in a file.
 
@@ -37,19 +39,20 @@ The following markdown is an example of the artifact in a file.
   > Negative potential consequences of an action.
 ```
 
-#### JSON parsed object
+## JSON parsed object
 
 The following JSON represents the attributes of a parsed artifact.
 
 ```json
 {
-	"type": "component-unknown",
-	"markdown": "markdown",
-	"text": "text-only"
+    "type": "alert",
+    "level": "Important",
+    "markdown": "  > [!CAUTION]\r\n  > Negative potential consequences of an action.",
+    "text": "The message conveying information about dangerous certain consequences of an action."
 }
 ```
 
-#### JSON Schema for a parsed object
+## JSON Schema for a parsed object
 
 A JSON Schema provides a contract for the JSON data required by a given application and how that JSON data should be structured. It describes the structure of the JSON data, specifying what properties are required, the types of values, and more.
 
@@ -85,17 +88,62 @@ A JSON Schema provides a contract for the JSON data required by a given applicat
 
 ```
 
-# This is a template for an attribute object
+## caution
 
-A component may have children and the data is stored in attributes in nodes.
+Negative potential consequences of an action.
 
-{
-    "type": "name",
-    "item-id" : "{{GUID}}",
-    "order": "1",
-    "parent" : "root",
-    "child" : []
-    "markdown": "#markdown",
-    "text": "text",
-    "attribute": ""
-}
+```md
+  > [!CAUTION]
+  > Negative potential consequences of an action.
+```
+
+## important
+
+Essential information required for user success.
+
+```markdown
+  > [!IMPORTANT]
+  > Essential information required for user success.
+
+```
+## note
+
+Information the user should notice even if skimming.
+
+```markdown
+  > [!NOTE]
+  > Information the user should notice even if skimming.
+
+```
+
+## public-preview
+
+Definition
+
+```markdown
+
+
+```
+
+## tip
+
+Optional information to help a user be more successful.
+
+```markdown
+  > [!TIP]
+  > Optional information to help a user be more successful.
+
+```
+
+## warning
+
+Definition
+
+```markdown
+  > [!WARNING]
+  > Dangerous certain consequences of an action.
+```
+
+## More components
+
+[Library of components](document-object-model.md#library-of-defined-components-in-the-ca-object-model)

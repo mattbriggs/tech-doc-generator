@@ -1,16 +1,8 @@
-### alert
+# video
 
-Alerts are a Markdown extension to create block quotes that render on Microsoft Learn with colors and icons that indicate the significance of the content.
+Definition
 
-Alerts include:
-- caution
-- important
-- note
-- public-preview
-- tip
-- warning
-
-#### Diagram
+## Diagram
 
 The following diagram displays the set of possible sub-elements of the component.
 
@@ -30,7 +22,7 @@ classDiagram
     Alert --> Enum: type
 ```
 
-#### Example markdown
+## Example markdown
 
 The following markdown is an example of the artifact in a file.
 
@@ -39,20 +31,21 @@ The following markdown is an example of the artifact in a file.
   > Negative potential consequences of an action.
 ```
 
-#### JSON parsed object
+## JSON parsed object
 
 The following JSON represents the attributes of a parsed artifact.
 
 ```json
 {
-	"type": "alert",
-	"level": "Important",
-	"markdown": "  > [!CAUTION]\r\n  > Negative potential consequences of an action.",
-	"text": "The message conveying information about dangerous certain consequences of an action."
+    "type": "component-unknown",
+    "markdown": "markdown",
+    "text": "text-only"
 }
 ```
 
-#### JSON Schema for a parsed object
+## JSON Schema for a parsed object
+
+A JSON Schema provides a contract for the JSON data required by a given application and how that JSON data should be structured. It describes the structure of the JSON data, specifying what properties are required, the types of values, and more.
 
 ```json
 {
@@ -85,3 +78,7 @@ The following JSON represents the attributes of a parsed artifact.
 }
 
 ```
+
+## More components
+
+[Library of components](document-object-model.md#library-of-defined-components-in-the-ca-object-model)
