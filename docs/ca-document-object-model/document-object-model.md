@@ -18,12 +18,12 @@ The Object Model also serves an API for systems that must integrate with the con
 
 The objects are:
 
-- **Hub page**: Design specification TBD
+- **Hub page**: Design specification `TBD`
 - **TOC/Landing Page**: [Design specification](https://review.learn.microsoft.com/help/patterns/program/design-pattern-library-level2?branch=main)
 - **Guide**: [Design specification](https://review.learn.microsoft.com/help/patterns/program/design-pattern-library-level3)
 - **Article**: [Design specification](https://review.learn.microsoft.com/help/patterns/program/design-pattern-library-level4)
-- **Unit**: Design specification TBD
-- **Component**: Design specification TBD
+- **Unit**: Design specification `TBD`
+- **Component**: Design specification `TBD`
 
 Broadly, content architecture is composed of a set of composite objects. The smallest item, a chunk of markdown, is called a component. A unit is defined as an array of components. An article is defined as an array of units. A guide is defined as an array of articles. a TOC/Landing page is defined as an array of guides. A Hub page is defined as an array of TOC/Landing pages.
 
@@ -668,8 +668,7 @@ The following table lists the currently defined components:
 | [Image long component](component-image-long.md) | `TBD` |
 | [Include component](component-include.md) | An include embed other Markdown files within a Markdown file.  |
 | [List component](component-list.md) | These are ordered or unordered sequences of items.  |
-| [Paragraph component](componnet-paragraph.md) | 
-In Markdown, a paragraph is text separated by blank lines. In HTML, it's enclosed in <p> tags. Both represent blocks of text in documents. |
+| [Paragraph component](componnet-paragraph.md) | In Markdown, a paragraph is text separated by blank lines. In HTML, it's enclosed in <p> tags. Both represent blocks of text in documents. |
 | [Select component](component-select.md) | `TBD` |
 | [Table component](component-table.md) | In Markdown, tables are created using pipes | and dashes - to define columns and headers. In HTML, tables use <table>, <tr>, and <td> tags. |
 | [Video component](component-video.md) | 
