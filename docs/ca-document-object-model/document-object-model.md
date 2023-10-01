@@ -668,7 +668,7 @@ The following table lists the currently defined components:
 | [Image long component](component-image-long.md) | `TBD` |
 | [Include component](component-include.md) | An include embed other Markdown files within a Markdown file.  |
 | [List component](component-list.md) | These are ordered or unordered sequences of items.  |
-| [Paragraph component](componnet-paragraph.md) | In Markdown, a paragraph is text separated by blank lines. In HTML, it's enclosed in `<p>` tags. Both represent blocks of text in documents. |
+| [Paragraph component](componet-paragraph.md) | In Markdown, a paragraph is text separated by blank lines. In HTML, it's enclosed in `<p>` tags. Both represent blocks of text in documents. |
 | [Select component](component-select.md) | `TBD` |
 | [Table component](component-table.md) | In Markdown, tables are created using pipes | and dashes - to define columns and headers. In HTML, tables use <table>, <tr>, and <td> tags. |
 | [Video component](component-video.md) | In Markdown, videos aren't natively supported. In HTML, a video block can be embedded using the `<video>` tag, with <source> tags defining the video source. |
