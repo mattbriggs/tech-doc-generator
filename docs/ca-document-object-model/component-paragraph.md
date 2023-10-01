@@ -6,7 +6,7 @@ Text refers to the primary content in any written communication. In digital medi
 
 Plain text content.
 
-**HTML**: `<p>This is paragraph text.</p>`
+**HTML**: `<p>This is paragraph text.</p>`  
 **Markdown**: `This is paragraph text.`
 
 ## JSON parsed object
