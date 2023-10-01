@@ -16,7 +16,7 @@ This formal description represents the concepts in the domain that includes the 
 
 The Object Model also serves an API for systems that must integrate with the content architecture. To support these systems, the subset of objects in the ontology are described using JSON Schema and these schemas are offered through the Object Store in the Learn.Microsoft.com platform.
 
-The objects are:
+The classes of objects are:
 
 - **Hub page**: Design specification `TBD`
 - **TOC/Landing Page**: [Design specification](https://review.learn.microsoft.com/help/patterns/program/design-pattern-library-level2?branch=main)
@@ -138,9 +138,9 @@ stateDiagram-v2
 | --- | --- |
 | MARKDOWN | An author can write in markdown or open a markdown document. The markdown down document will be parsed for structure and validated by a JSON Schema and set of rules. An author can save the file in YAML or Markdown. Markdown cannot be used as structured content. |
 | YAML | A YAML document is validated with a JSON Schema and set of rules. Saved, the file can be used as structured content.  |
-| AUTHOR_TOOL_JSON_CA_Schema | Authoring tools can use the JSON Schema and a set of rules to validate a document. This particular version of JSON is in this model called JSON CA Schema. |
-| JSON | The Publishing platform uses DocFX that renders content as 'content blocks." The platform also uses JSON Schema and set of rules to validate content. Valid content is sent through the rendering service which performs the transforms on the content to the publishing targets. |
-| HTML | HTML (HyperText Markup Language) is the foundational language for creating web pages on the World Wide Web. While it structures content for visual presentation, embedding links, images, and multimedia, HTML itself is not structured content; it doesn't inherently convey the semantic meaning or relationship of the data, focusing more on the display aspect.|
+| AUTHOR_TOOL_JSON_CA_Schema | Authoring tools can use the JSON Schema and a set of rules to validate a document. This particular version of JSON is in this model called JSON CA Schema. The JSON Schema describes the Content Architecture Object Model. |
+| JSON | The Publishing platform uses DocFX that renders content as _content blocks_. The platform also uses JSON Schema and set of rules to validate content. Valid content is sent through the rendering service which performs the transforms on the content to the publishing targets. |
+| HTML | HTML (HyperText Markup Language) is the foundational language for creating web pages on the World Wide Web. While it structures content for visual presentation, embedding links, images, and multimedia, HTML itself is not structured content; it doesn't inherently convey the semantic meaning or relationship of the data, focusing more on the aspects of display. |
 | JSON_LD | JSON-LD (JavaScript Object Notation for Linked Data) is a method of encoding Linked Data using JSON. As a publishing vehicle, it enables the structuring and representation of data in a way that is both human and machine-readable, allowing the definition and conveyance of semantic context and relationships within the data. |
 | RDF/OWL | RDF/OWL are foundational technologies of the Semantic Web. RDF (Resource Description Framework) publishes structured information about resources, allowing semantic interoperability. OWL (Web Ontology Language) extends RDF, enabling the expression of complex relationships and ontologies, allowing machines to understand and infer knowledge, fostering a more intelligent and integrated web. |
 
@@ -688,8 +688,7 @@ The following table lists the currently defined attributes nodes:
 
 | Name | Description |
 | --- | --- |
-| [Anchor attribute](node-anchor.md) | 
-Anchor (Hyperlink). Defines a hyperlink. |
+| [Anchor attribute](node-anchor.md) | Anchor (Hyperlink). Defines a hyperlink. |
 | [Bold attribute](node-bold.md) | Bold text. |
 | [Code attribute](node-code.md) | Inline code. |
 | [Emphasis attribute](node-emphasis.md) | Emphasized text (italic). |
