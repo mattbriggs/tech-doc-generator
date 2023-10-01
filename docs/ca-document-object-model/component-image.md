@@ -12,7 +12,7 @@ classDiagram
         +String type
         +String markdown
         +String text
-        +String href
+        +String source
     }
 ```
 
@@ -29,50 +29,7 @@ The following markdown is an example of the artifact in a file.
 :::image type="content" source="<folderPath>" alt-text="<alt text>" link="<https://link.com>":::
 ```
 
-## JSON parsed object
-
-The following JSON represents the attributes of a parsed artifact.
-
-```json
-{
-    "type": "image",
-    "markdown": "![alt-text.](media\/my-cool-graphic.png)",
-    "text": "Alt text",
-    "source": "media/my-cool-graphic.png"
-}
-```
-
-## JSON Schema for a parsed object
-
-A JSON Schema provides a contract for the JSON data required by a given application and how that JSON data should be structured. It describes the structure of the JSON data, specifying what properties are required, the types of values, and more.
-
-```json
-{
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "type": "object",
-  "properties": {
-    "type": {
-      "type": "string"
-    },
-    "markdown": {
-      "type": "string"
-    },
-    "text": {
-      "type": "string"
-    },
-    "href": {
-      "type": "string"
-    }
-  },
-  "required": [
-    "type",
-    "markdown",
-    "text",
-    "href"
-  ]
-}
-
-```
+See the attribute node, [image node](node-image.md). 
 
 ## diagram
 

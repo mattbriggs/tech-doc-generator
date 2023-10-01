@@ -1,6 +1,6 @@
-# Blockquote
+# Unknown component
 
-A blockquote is used to indicate a section of text that is a quotation from another source. It visually sets the quoted text apart from the main content, making it easy for readers to recognize that the text is a quote.
+A container for components that an inventory process can't identify as a defined component.
 
 ## Diagram
 
@@ -8,7 +8,7 @@ The following diagram displays the set of possible sub-elements of the component
 
 ```mermaid
 classDiagram
-    class Blockquote {
+    class UnknownComponent {
         +String type
         +String markdown
         +String text
@@ -20,9 +20,7 @@ classDiagram
 The following markdown is an example of the artifact in a file.
 
 ```md
-  > This is the text.
-  > This is the second line of text.
-  > This is the third line of text.
+{{unknown markdown construct}}
 ```
 
 ## JSON parsed object
@@ -31,14 +29,14 @@ The following JSON represents the attributes of a parsed artifact.
 
 ```json
 {
-    "type": "blockquote",
+    "type": "component-unknown",
     "id": "guid",
     "attributes": [
         {
-            "markdown": "  > This is the text.\r\n  > This is the second line of text.\r\n  > This is the third line of text."
+            "markdown": "markdown"
         },
         {
-            "text": "This is the text.\r\nThis is the second line of text.\r\nThis is the third line of text."
+            "text": "text-only"
         }
     ],
     "child": []
@@ -57,7 +55,7 @@ A JSON Schema provides a contract for the JSON data required by a given applicat
     "properties": {
         "type": {
             "type": "string",
-            "enum": ["blockquote"]
+            "enum": ["component-unknown"]
         },
         "id": {
             "type": "string",
@@ -73,8 +71,7 @@ A JSON Schema provides a contract for the JSON data required by a given applicat
                     "required": ["markdown"],
                     "properties": {
                         "markdown": {
-                            "type": "string",
-                            "pattern": "(^  > .*(\\r\\n  > .*)*$)"
+                            "type": "string"
                         }
                     },
                     "additionalProperties": false
@@ -100,7 +97,6 @@ A JSON Schema provides a contract for the JSON data required by a given applicat
     },
     "additionalProperties": false
 }
-
 ```
 
 ## More components

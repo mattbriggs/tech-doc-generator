@@ -39,183 +39,170 @@ The following JSON represents the attributes of a parsed artifact.
 
 ```json
 {
-	"type": "table",
-	"markdown": "|This is   |a simple   |table header|\r\n|----------|-----------|------------|\r\n|table     |data       |here        |\r\n|it doesn't|actually   |have to line up nicely!|",
-	"columns": "3",
-	"rows": "2",
-	"headers": [{
-		"1": "This is"
-	}, {
-		"2": "a simple"
-	}, {
-		"3": "table header"
-	}],
-	"1": [{
-		"1": "Table"
-	}, {
-		"2": "data"
-	}, {
-		"3": "here"
-	}],
-	"2": [{
-		"1": "it doesn't"
-	}, {
-		"2": "actually"
-	}, {
-		"3": "table header"
-	}]
+    "type": "table",
+    "id": "guid",
+    "attributes": [
+        {
+            "markdown": "|This is   |a simple   |table header|\r\n|----------|-----------|------------|\r\n|table     |data       |here        |\r\n|it doesn't|actually   |have to line up nicely!|"
+        },
+        {
+            "columns": "3"
+        },
+        {
+            "rows": "2"
+        },
+        {
+            "headers": [
+                {
+                    "1": "This is"
+                },
+                {
+                    "2": "a simple"
+                },
+                {
+                    "3": "table header"
+                }
+            ]
+        },
+        {
+            "1": [
+                {
+                    "1": "Table"
+                },
+                {
+                    "2": "data"
+                },
+                {
+                    "3": "here"
+                }
+            ]
+        },
+        {
+            "2": [
+                {
+                    "1": "it doesn't"
+                },
+                {
+                    "2": "actually"
+                },
+                {
+                    "3": "table header"
+                }
+            ]
+        }
+    ]
 }
 ```
+
+`TODO`: Each cell can contain a node with attributes and children.
 
 ## JSON Schema for a parsed object
 
-A JSON Schema provides a contract for the JSON data required by a given application and how that JSON data should be structured. It describes the structur"e of the JSON data, specifying what properties are required, the types of values, and more.
+A JSON Schema provides a contract for the JSON data required by a given application and how that JSON data should be structured. It describes the structure of the JSON data, specifying what properties are required, the types of values, and more.
 
 ```json
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "type": "object",
-  "properties": {
-    "type": {
-      "type": "string"
-    },
-    "markdown": {
-      "type": "string"
-    },
-    "columns": {
-      "type": "string"
-    },
-    "rows": {
-      "type": "string"
-    },
-    "headers": {
-      "type": "array",
-      "items": [
-        {
-          "type": "object",
-          "properties": {
-            "1": {
-              "type": "string"
-            }
-          },
-          "required": [
-            "1"
-          ]
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "required": ["type", "id", "attributes"],
+    "properties": {
+        "type": {
+            "type": "string",
+            "enum": ["table"]
         },
-        {
-          "type": "object",
-          "properties": {
-            "2": {
-              "type": "string"
-            }
-          },
-          "required": [
-            "2"
-          ]
+        "id": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9-]+$"
         },
-        {
-          "type": "object",
-          "properties": {
-            "3": {
-              "type": "string"
-            }
-          },
-          "required": [
-            "3"
-          ]
+        "attributes": {
+            "type": "array",
+            "minItems": 6,
+            "items": [
+                {
+                    "type": "object",
+                    "required": ["markdown"],
+                    "properties": {
+                        "markdown": {"type": "string"}
+                    },
+                    "additionalProperties": false
+                },
+                {
+                    "type": "object",
+                    "required": ["columns"],
+                    "properties": {
+                        "columns": {
+                            "type": "string",
+                            "pattern": "^[0-9]+$"
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                {
+                    "type": "object",
+                    "required": ["rows"],
+                    "properties": {
+                        "rows": {
+                            "type": "string",
+                            "pattern": "^[0-9]+$"
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                {
+                    "type": "object",
+                    "required": ["headers"],
+                    "properties": {
+                        "headers": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "minProperties": 1,
+                                "additionalProperties": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                {
+                    "type": "object",
+                    "patternProperties": {
+                        "^[0-9]+$": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "minProperties": 1,
+                                "additionalProperties": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "additionalProperties": false
+                }
+            ]
         }
-      ]
     },
-    "1": {
-      "type": "array",
-      "items": [
-        {
-          "type": "object",
-          "properties": {
-            "1": {
-              "type": "string"
-            }
-          },
-          "required": [
-            "1"
-          ]
-        },
-        {
-          "type": "object",
-          "properties": {
-            "2": {
-              "type": "string"
-            }
-          },
-          "required": [
-            "2"
-          ]
-        },
-        {
-          "type": "object",
-          "properties": {
-            "3": {
-              "type": "string"
-            }
-          },
-          "required": [
-            "3"
-          ]
-        }
-      ]
-    },
-    "2": {
-      "type": "array",
-      "items": [
-        {
-          "type": "object",
-          "properties": {
-            "1": {
-              "type": "string"
-            }
-          },
-          "required": [
-            "1"
-          ]
-        },
-        {
-          "type": "object",
-          "properties": {
-            "2": {
-              "type": "string"
-            }
-          },
-          "required": [
-            "2"
-          ]
-        },
-        {
-          "type": "object",
-          "properties": {
-            "3": {
-              "type": "string"
-            }
-          },
-          "required": [
-            "3"
-          ]
-        }
-      ]
-    }
-  },
-  "required": [
-    "type",
-    "markdown",
-    "columns",
-    "rows",
-    "headers",
-    "1",
-    "2"
-  ]
+    "additionalProperties": false
 }
+
 
 ```
 
+Notes on the JSON Schema.
+
+- The `type` property must be a string and its value must be "table".
+- The `id` property must be a string and can contain alphanumeric characters and hyphens.
+- The `attributes` property must be an array and should contain at least six items. 
+  - The first item must have a "markdown" property of type string.
+  - The second item must have a "columns" property of type string, representing a number.
+  - The third item must have a "rows" property of type string, representing a number.
+  - The fourth item must have a "headers" property which is an array of objects, each containing string values.
+  - The fifth and subsequent items represent the rows of the table, with each property being an array of objects containing string values.
+- `additionalProperties` is set to false to ensure no additional properties are present in the object.
+
+This schema generalizes the table construct, allowing for tables of different sizes with different headers and row data, while still maintaining the structure outlined in the provided JSON object.
 
 ## More components
 

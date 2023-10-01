@@ -1,5 +1,7 @@
 # Learn Microsoft.com Document Object Model
 
+Draft: 10/1/2023
+
 Content is the material that appears in the 'content well' of the learn.Microsoft.com website. This includes the table of contents and the articles (text, graphics, and videos). Current content modalities include technical documentation and training.
 
 Content Architecture defines a subset of structures in the [Unified Content Model](https://review.learn.microsoft.com/help/patterns/library/contribute-unified-content-model) (UCM). Content Architecture fits under the [Article](https://review.learn.microsoft.com/help/patterns/library/contribute-unified-content-mode#article) section of the UCM and provides support for the Table of Contents (that is not specified in the UCM).
@@ -599,13 +601,17 @@ This is the HTML section.
 A component can be thought of a component is an HTML block on the web site, and a JSON-LD representation for programmatic consumption of the content. To go to the beginning, the component exists as content block in HTML terms. Like HTML content blocks, a component fills the entire content column.
 
 
-### About component
+### About components
 
 Components are composed of elements that are part of the definition of each component. This section looks at what a components is, and is followed by the library of components that make up the defined Content Architecture Object Model.
 
-A component exits in several states within the system. In it's final state, the component may exist in two states:s a markdown block. The markdown block is parsed into JSON and then fed to the rendering templates that create the HTML and JSON-LD public web state of the component.
+A component exits in several states within the system. In its final state, the component may exist in two states: a markdown block and the text. The markdown block is parsed into JSON and then used by the rendering templates that create the HTML and JSON-LD public web state of the component.
 
 A component exists in relation to other elements of the content architecture. A unit object contains the an array of component objects. An article object contains an array of unit objects. Above the level of the article, a guide object contains an array of articles and label nodes. A TOC object contains an array of articles, labels, and articles.
+
+Components can contain components. For example, a list item can contain a list.
+
+### Components as content blocks
 
 The types of media that are displayed in the content well include:
 
@@ -668,15 +674,15 @@ In Markdown, a paragraph is text separated by blank lines. In HTML, it's enclose
 | [Table component](component-table.md) | In Markdown, tables are created using pipes | and dashes - to define columns and headers. In HTML, tables use <table>, <tr>, and <td> tags. |
 | [Video component](component-video.md) | 
 In Markdown, videos aren't natively supported. In HTML, a video block can be embedded using the <video> tag, with <source> tags defining the video source. |
-| [Unknown component](componnet-unknown.md) | A placeholder component for markdown that isn't recognized. |
+| [Unknown component](componet-unknown.md) | A placeholder component for markdown that isn't recognized. |
 
 ## Attributes nodes
 
-
+Attribute nodes are inline elements. In web design and word processing, inline elements are those that don't start on a new line and only take up as much width as necessary. Examples include bold or italicized text.
 
 ### About attribute nodes
 
-Inline elements: In web design and word processing, inline elements are those that don't start on a new line and only take up as much width as necessary. They flow within the text, as opposed to block-level elements which take up the full width available. Examples include bold or italicized text.
+In HTML attributes nodes contain very broad semantic meaning and typically indicate difference in typographic treatment such as bold, italic, underline and so on. Semantic markers can be introduced with the `<span>` tag which is not generally supported by OPS.
 
 ### Library of attribute nodes
 
@@ -693,9 +699,9 @@ Anchor (Hyperlink). Defines a hyperlink. |
 | [Italic attribute](node-italic.md) | Italic text. |
 | [Span attribute](node-span.md) | Generic inline container. |
 | [Strong attribute](node-strong.md) | Strong importance (bold). |
-| [Super/Sub attribute](node-super-sub.md) | TBD |
-| [Text attribute](node-text.md) | Plain text content. |
+| [Super/Sub attribute](node-super-sub.md) | `TBD` |
 | [Unknown attribute](node-unknown.md) | A placeholder attribute for markdown that isn't recognized. |
 
 ## For more information
 
+[Markdown guide](https://www.markdownguide.org/)

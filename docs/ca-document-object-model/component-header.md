@@ -39,9 +39,18 @@ The following JSON represents the attributes of a parsed artifact.
 ```json
 {
     "type": "header",
-    "level": "1"
-    "markdown": "# Title text for the header",
-    "text": "Title text for the header"
+    "id": "guid",
+    "attributes": [
+        {   "level": "1"
+        },
+        {
+            "markdown": "# Title text for the header"
+        },
+        {
+            "text": "Title text for the header"
+        }
+    ],
+    "child": []
 }
 ```
 
@@ -51,32 +60,67 @@ A JSON Schema provides a contract for the JSON data required by a given applicat
 
 ```json
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "Header",
-  "description": "Schema for a header object",
-  "type": "object",
-  "properties": {
-    "type": {
-      "type": "string",
-      "description": "The type of the object.",
-      "enum": ["header"]
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "required": ["type", "id", "attributes", "child"],
+    "properties": {
+        "type": {
+            "type": "string",
+            "enum": ["header"]
+        },
+        "id": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9-]+$"
+        },
+        "attributes": {
+            "type": "array",
+            "minItems": 3,
+            "maxItems": 3,
+            "items": [
+                {
+                    "type": "object",
+                    "required": ["level"],
+                    "properties": {
+                        "level": {
+                            "type": "string",
+                            "enum": ["1", "2", "3", "4", "5", "6"]
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                {
+                    "type": "object",
+                    "required": ["markdown"],
+                    "properties": {
+                        "markdown": {
+                            "type": "string",
+                            "pattern": "^(#{1,6}) .*$"
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                {
+                    "type": "object",
+                    "required": ["text"],
+                    "properties": {
+                        "text": {
+                            "type": "string"
+                        }
+                    },
+                    "additionalProperties": false
+                }
+            ]
+        },
+        "child": {
+            "type": "array",
+            "items": {
+                "type": "object"
+            }
+        }
     },
-    "level": {
-      "type": "string",
-      "description": "The level of the header.",
-      "enum": ["1", "2", "3", "4", "5", "6"]
-    },
-    "markdown": {
-      "type": "string",
-      "description": "The markdown representation of the header."
-    },
-    "text": {
-      "type": "string",
-      "description": "The text of the header."
-    }
-  },
-  "required": ["type", "level", "markdown", "text"]
+    "additionalProperties": false
 }
+
 
 ```
 

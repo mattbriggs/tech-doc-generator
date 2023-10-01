@@ -2,6 +2,8 @@
 
 These are ordered or unordered sequences of items. Ordered lists (often represented with numbers) have a specific sequence, while unordered lists (often represented with bullets) don't emphasize any particular order.
 
+TODO: Because lists can contain lists, a list contain the marker that tells if a list contained in a list is ordered or unordered.
+
 ## Diagram
 
 The following diagram displays the set of possible sub-elements of the component.
@@ -34,30 +36,21 @@ The following JSON represents the attributes of a parsed artifact.
 ```json
 {
     "type": "list-item",
-    "item-id" : "16BA0E6F-561B-44F1-A17D-7A8F63C51560",
-    "order": "1",
-    "parent" : "root",
-    "child" : [{
-    "type": "bold",
-    "item-id" : "04ADB55B-567B-4FD7-A889-2F68E86F6F1C",
-    "order": "1"
-    "parent" : "16BA0E6F-561B-44F1-A17D-7A8F63C51560",
-    "child" : []
-    "markdown": "**This**",
-    "text": "This"
-},{
-    "type": "link",
-    "item-id" : "AC055903-72A4-41FD-8BC5-6B526EB768D1",
-    "order": "2"
-    "parent" : "16BA0E6F-561B-44F1-A17D-7A8F63C51560",
-    "child" : []
-    "markdown": "[you want to go](file.md)",
-    "text": "you want to go",
-    "href": "file.md"
-}]
-    "markdown": "# **This** is where [you want to go](file.md).",
-    "text": "This is where you want to go"
+    "id": "guid",
+    "attributes": [
+        {
+            "order": "1"
+        },
+        {
+            "markdown": "- item"
+        },
+        {
+            "text": "item"
+        }
+    ],
+    "child": []
 }
+
 ```
 
 ## JSON Schema for a parsed object
@@ -66,41 +59,65 @@ A JSON Schema provides a contract for the JSON data required by a given applicat
 
 ```json
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "type": "object",
-  "properties": {
-    "type": {
-      "type": "string"
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "required": ["type", "id", "attributes", "child"],
+    "properties": {
+        "type": {
+            "type": "string",
+            "enum": ["list-item"]
+        },
+        "id": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9-]+$"
+        },
+        "attributes": {
+            "type": "array",
+            "minItems": 3,
+            "maxItems": 3,
+            "items": [
+                {
+                    "type": "object",
+                    "required": ["order"],
+                    "properties": {
+                        "order": {
+                            "type": "string",
+                            "pattern": "^[0-9]+$"
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                {
+                    "type": "object",
+                    "required": ["markdown"],
+                    "properties": {
+                        "markdown": {
+                            "type": "string",
+                            "pattern": "^- .*$"
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                {
+                    "type": "object",
+                    "required": ["text"],
+                    "properties": {
+                        "text": {
+                            "type": "string"
+                        }
+                    },
+                    "additionalProperties": false
+                }
+            ]
+        },
+        "child": {
+            "type": "array",
+            "items": {
+                "type": "object"
+            }
+        }
     },
-    "item-id": {
-      "type": "string"
-    },
-    "order": {
-      "type": "string"
-    },
-    "parent": {
-      "type": "string"
-    },
-    "child": {
-      "type": "array",
-      "items": {}
-    },
-    "markdown": {
-      "type": "string"
-    },
-    "text": {
-      "type": "string"
-    }
-  },
-  "required": [
-    "type",
-    "item-id",
-    "order",
-    "parent",
-    "child",
-    "markdown",
-    "text"
-  ]
+    "additionalProperties": false
 }
 
 ```

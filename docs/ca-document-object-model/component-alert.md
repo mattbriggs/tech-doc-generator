@@ -45,12 +45,24 @@ The following markdown is an example of the artifact in a file.
 The following JSON represents the attributes of a parsed artifact.
 
 ```json
-{ "type": "alert",
+
 {
-    "level": "Important",
-    "markdown": "  > [!CAUTION]\r\n  > Negative potential consequences of an action.",
-    "text": "The message conveying information about dangerous certain consequences of an action."
+    "type": "alert",
+    "id": "guid",
+    "attributes": [
+        {
+            "category": "Caution"
+        },
+        {
+            "markdown": "markdown"
+        },
+        {
+            "text": "text-only"
+        }
+    ],
+    "child": []
 }
+
 ```
 
 ## JSON Schema for a parsed object
@@ -59,30 +71,46 @@ A JSON Schema provides a contract for the JSON data required by a given applicat
 
 ```json
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "type": "alert",
-  "properties": {
-    "level": {
-      "type": "string",
-      "enum": ["IMPORTANT", "CAUTION", "NOTE", "TIP", "WARNING", "PUBLICPREVIEW],
-      "description": "The type of the message. It can be 'IMPORTANT', 'CAUTION', 'NOTE', 'TIP', 'WARNING', 'PUBLICPREVIEW'."
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "required": ["type", "id", "attributes", "child"],
+    "properties": {
+        "type": {
+            "type": "string",
+            "enum": ["alert"]
+        },
+        "id": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9-]+$"
+        },
+        "attributes": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "minProperties": 1,
+                "properties": {
+                    "category": {
+                        "type": "string",
+                        "enum": ["IMPORTANT", "CAUTION", "NOTE", "TIP", "WARNING", "PUBLICPREVIEW"]
+                    },
+                    "markdown": {
+                        "type": "string"
+                    },
+                    "text": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "child": {
+            "type": "array",
+            "items": {
+                "type": "object"
+            }
+        }
     },
-    "markdown": {
-      "type": "string"
-    },
-    "text": {
-      "type": "string",
-      "minLength": 1,
-      "description": "The message conveying information about dangerous certain consequences of an action."
-    }
-  },
-  "required": [
-    "level",
-    "markdown",
-    "text"
-  ]
+    "additionalProperties": false
 }
-
 ```
 
 ## caution
