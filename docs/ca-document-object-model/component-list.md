@@ -1,4 +1,4 @@
-# list
+# List
 
 These are ordered or unordered sequences of items. Ordered lists (often represented with numbers) have a specific sequence, while unordered lists (often represented with bullets) don't emphasize any particular order.
 

@@ -12,10 +12,18 @@ A component may have children and the data is stored in attributes in nodes.
 ```json
 {
     "type": "p",
-    "child" : []
-    "markdown": "This is paragraph text.",
-    "text": "This is paragraph text.",
+    "id": "guid",
+    "attributes": [
+        {
+            "markdown": "markdown"
+        },
+        {
+            "text": "text-only"
+        }
+    ],
+    "child": []
 }
+
 ```
 
 ## JSON Schema for a parsed object
@@ -24,29 +32,43 @@ A JSON Schema provides a contract for the JSON data required by a given applicat
 
 ```json
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "type": "object",
-  "properties": {
-    "type": {
-      "type": "string"
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "required": ["type", "id", "attributes", "child"],
+    "properties": {
+        "type": {
+            "type": "string",
+            "enum": ["p"]
+        },
+        "id": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9-]+$"
+        },
+        "attributes": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "minProperties": 1,
+                "properties": {
+                    "markdown": {
+                        "type": "string"
+                    },
+                    "text": {
+                        "type": "string"
+                    }
+                },
+                "additionalProperties": false
+            }
+        },
+        "child": {
+            "type": "array",
+            "items": {
+                "type": "object"
+            }
+        }
     },
-    "child": {
-      "type": "array",
-      "items": {}
-    },
-    "markdown": {
-      "type": "string"
-    },
-    "text": {
-      "type": "string"
-    }
-  },
-  "required": [
-    "type",
-    "child",
-    "markdown",
-    "text"
-  ]
+    "additionalProperties": false
 }
+
 ```
 

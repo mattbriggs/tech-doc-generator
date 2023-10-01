@@ -2,6 +2,11 @@
 
 Generic inline container.
 
+> [!NOTE] 
+> This is not directly supported the OPS. It is however supported by
+> Markdig. For more information about **Customer Container** see:
+> https://github.com/xoofx/markdig/blob/master/src/Markdig.Tests/Specs/CustomContainerSpecs.md
+
 **HTML**: `<span>text</span>`  
 **Markdown**: `:::text:::`
 
@@ -12,9 +17,18 @@ A component may have children and the data is stored in attributes in nodes.
 ```json
 {
     "type": "span",
-    "markdown": ":::text:::",
-    "text": "text"
+    "id": "guid",
+    "attributes": [
+        {
+            "markdown": ":::text:::"
+        },
+        {
+            "text": "text"
+        }
+    ],
+    "child": []
 }
+
 ```
 
 #### JSON Schema for a parsed object
@@ -23,25 +37,55 @@ A JSON Schema provides a contract for the JSON data required by a given applicat
 
 ```json
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "type": "object",
-  "properties": {
-    "type": {
-      "type": "string"
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "required": ["type", "id", "attributes", "child"],
+    "properties": {
+        "type": {
+            "type": "string",
+            "enum": ["span"]
+        },
+        "id": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9-]+$"
+        },
+        "attributes": {
+            "type": "array",
+            "minItems": 2,
+            "items": [
+                {
+                    "type": "object",
+                    "required": ["markdown"],
+                    "properties": {
+                        "markdown": {
+                            "type": "string",
+                            "pattern": "^:::.*:::$"
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                {
+                    "type": "object",
+                    "required": ["text"],
+                    "properties": {
+                        "text": {
+                            "type": "string"
+                        }
+                    },
+                    "additionalProperties": false
+                }
+            ]
+        },
+        "child": {
+            "type": "array",
+            "items": {
+                "type": "object"
+            }
+        }
     },
-    "markdown": {
-      "type": "string"
-    },
-    "text": {
-      "type": "string"
-    }
-  },
-  "required": [
-    "type",
-    "markdown",
-    "text"
-  ]
+    "additionalProperties": false
 }
+
 ```
 
 ## More nodes

@@ -37,9 +37,17 @@ The following JSON represents the attributes of a parsed artifact.
 
 ```json
 {
-	"type": "component-unknown",
-	"markdown": "markdown",
-	"text": "text-only"
+    "type": "p",
+    "id": "guid",
+    "attributes": [
+        {
+            "markdown": "markdown"
+        },
+        {
+            "text": "text-only"
+        }
+    ],
+    "child": []
 }
 ```
 

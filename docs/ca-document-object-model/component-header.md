@@ -1,4 +1,4 @@
-# header
+# Header
 
 Heading elements are used to define headings in HTML. They range from` <h1>` to` <h6>`, with `<h1> `representing the highest (or most important) level and `<h6>` the lowest (or least important) level.
 

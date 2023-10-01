@@ -1,4 +1,4 @@
-# table
+# Table
 
 These are a means of arranging data in rows and columns, (a matrix). Tables are especially useful for presenting numerical data or information in a structured manner. A table typically consists of a header (with column names) and rows of data.
 

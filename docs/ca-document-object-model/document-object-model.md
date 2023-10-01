@@ -657,9 +657,9 @@ The following table lists the currently defined components:
 | [code-block component](component-code-block.md) | A Markdown code block is a section of text used to display code, commands, or other preformatted text. |
 | [columns component](component-columns.md) | `TBD` |
 | [header component](component-header.md) | Heading elements are used to define headings in HTML.  |
-| [image component](component-image.md) | In Markdown, an image is added using ![Alt Text](URL). In HTML, it's embedded with <img src="URL" alt="Alt Text">, providing visuals in documents. |
-| [Image icon component](component-image-icon.md) |  |
-| [Image long component](component-image-long.md) |  |
+| [image component](component-image.md) | In Markdown, an image is added using `![Alt Text](URL)`. In HTML, it's embedded with `<img src="URL" alt="Alt Text">`, providing visuals in documents. |
+| [Image icon component](component-image-icon.md) | `TBD` |
+| [Image long component](component-image-long.md) | `TBD` |
 | [Include component](component-include.md) | An include embed other Markdown files within a Markdown file.  |
 | [List component](component-list.md) | These are ordered or unordered sequences of items.  |
 | [Paragraph component](componnet-paragraph.md) | 

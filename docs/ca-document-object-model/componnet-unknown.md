@@ -1,4 +1,4 @@
-# component-unknown
+# Unknown component
 
 A container for components that an inventory process can't identify as a defined component.
 

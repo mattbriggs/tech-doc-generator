@@ -21,10 +21,22 @@ A component may have children and the data is stored in attributes in nodes.
 ```json
 {
     "type": "anchor",
-    "category" : "type-of-link",
-    "markdown": "[text](URL)",
-    "text": "text",
-    "href": "URL"
+    "id": "guid",
+    "attributes": [
+        {
+            "markdown": "[text](URL)"
+        },
+        {
+            "text": "text"
+        },
+        {
+            "href": "URL"
+        },
+        {
+            "category": "type-of-link"
+        }
+    ],
+    "child": []
 }
 ```
 
@@ -34,33 +46,78 @@ A JSON Schema provides a contract for the JSON data required by a given applicat
 
 ```json
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "type": "object",
-  "properties": {
-    "type": {
-      "type": "string"
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "required": ["type", "id", "attributes", "child"],
+    "properties": {
+        "type": {
+            "type": "string",
+            "enum": ["anchor"]
+        },
+        "id": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9-]+$"
+        },
+        "attributes": {
+            "type": "array",
+            "minItems": 4,
+            "maxItems": 4,
+            "items": [
+                {
+                    "type": "object",
+                    "required": ["markdown"],
+                    "properties": {
+                        "markdown": {
+                            "type": "string",
+                            "pattern": "^\\[.*\\]\\(.*\\)$"
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                {
+                    "type": "object",
+                    "required": ["text"],
+                    "properties": {
+                        "text": {
+                            "type": "string"
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                {
+                    "type": "object",
+                    "required": ["href"],
+                    "properties": {
+                        "href": {
+                            "type": "string",
+                            "format": "uri"
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                {
+                    "type": "object",
+                    "required": ["category"],
+                    "properties": {
+                        "category": {
+                            "type": "string",
+                            "enum": ["type-of-link", "type1", "type2", "type3"]
+                        }
+                    },
+                    "additionalProperties": false
+                }
+            ]
+        },
+        "child": {
+            "type": "array",
+            "items": {
+                "type": "object"
+            }
+        }
     },
-    "category": {
-      "type": "string"
-    },
-    "markdown": {
-      "type": "string"
-    },
-    "text": {
-      "type": "string"
-    },
-    "href": {
-      "type": "string"
-    }
-  },
-  "required": [
-    "type",
-    "category",
-    "markdown",
-    "text",
-    "href"
-  ]
+    "additionalProperties": false
 }
+
 ```
 
 ## More nodes

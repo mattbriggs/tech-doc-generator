@@ -1,4 +1,4 @@
-# selector
+# Selector
 
 `definition coming from Bobby.`
 
