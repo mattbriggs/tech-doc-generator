@@ -671,8 +671,7 @@ The following table lists the currently defined components:
 | [Paragraph component](componnet-paragraph.md) | In Markdown, a paragraph is text separated by blank lines. In HTML, it's enclosed in `<p>` tags. Both represent blocks of text in documents. |
 | [Select component](component-select.md) | `TBD` |
 | [Table component](component-table.md) | In Markdown, tables are created using pipes | and dashes - to define columns and headers. In HTML, tables use <table>, <tr>, and <td> tags. |
-| [Video component](component-video.md) | 
-In Markdown, videos aren't natively supported. In HTML, a video block can be embedded using the <video> tag, with <source> tags defining the video source. |
+| [Video component](component-video.md) | In Markdown, videos aren't natively supported. In HTML, a video block can be embedded using the `<video>` tag, with <source> tags defining the video source. |
 | [Unknown component](componet-unknown.md) | A placeholder component for markdown that isn't recognized. |
 
 ## Attributes nodes
